@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.Pages.TestPage"
+             Title="TestPage">
+  
+    <ContentPage.Background>
+        <!-- StartPoint defaults to (0,0)      
+             Endpoint defaults to (1,1) -->
+        <!-- StartPoint defaults to (0,0)      
+             Endpoint defaults to (1,1) -->
+        <LinearGradientBrush >
+
+            <GradientStop Color="#82f2f0"
+                          Offset="0.2
+                          " />
+            <GradientStop Color="#1f8ead"
+                          Offset="1.05" />
+        </LinearGradientBrush>
+    </ContentPage.Background>
+
+    <RefreshView >
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20*"/>
+                <RowDefinition Height="500"/>
+                <RowDefinition Height="83"/>
+                <RowDefinition Height="50"/>
+
+            </Grid.RowDefinitions>
+            <VerticalStackLayout 
+            Grid.Row="1"
+            Grid.Column="2"
+            
+            AbsoluteLayout.LayoutBounds="10,50"
+            Spacing="25" 
+            Padding="25,0" 
+            VerticalOptions="Center">
+                <Frame BorderColor="#553FA5FF"
+                       BackgroundColor="#553FA5FF"
+                       
+                       CornerRadius="5"
+                       Padding="8">
+
+                    <StackLayout>
+                        <Label Text="Weekly Summary"
+                       FontSize="18"
+                       FontAttributes="Italic,Bold"                        
+                       HorizontalTextAlignment="Start"
+                       LineHeight="1.25"
+                       FontFamily="Sublima"
+                       TextColor="Black"
+                           />
+                        <BoxView Color="Black"
+                 HeightRequest="4"
+                 HorizontalOptions="Fill" />
+                        <Label Text="Pending Sales:                                                          2 &#10;Completed Sales:                                                     3 &#10;Profit:                                                               $22.55"
+                           />
+                        <Label Text="Active Listings:                                                          4"/>
+
+                    </StackLayout>
+                </Frame>
+
+                <Frame BorderColor="#553FA5FF"
+                       BackgroundColor="#553FA5FF"
+                       CornerRadius="10"
+                       Padding="8"
+                       >
+
+                    <StackLayout>
+                        <Label Text="Recent Activities (5 Days)"
+               FontSize="14"
+               FontAttributes="Bold" />
+                        <BoxView Color="Black"
+                 HeightRequest="2"
+                 HorizontalOptions="Fill" />
+                        <TableView Intent="Menu">
+                            <TableRoot>
+                                <TableSection>
+                                    <ImageCell Text="Sega Genesis"
+                                           TextColor="Black"
+                       Detail="Status: Delivered"
+                       ImageSource="pikachu.gif" />
+                                    <ImageCell Text="Assorted Books"
+                       TextColor="Black"
+                       Detail="Status: Posted"
+                       ImageSource="pikachu.gif" />
+                                    <ImageCell Text="Phone Case"
+                       TextColor="Black"
+                       Detail="Status: Awaiting Payment"
+                       ImageSource="pikachu.gif" />
+                                    <ImageCell Text="Vintage Bowl"
+                       TextColor="Black"
+                       Detail="Status: Offer Recieved"
+                       ImageSource="https://neftv.blob.core.windows.net/images/13b6f850-608f-4eaf-afa8-9c3a5f02f490.png" />
+                                </TableSection>
+                            </TableRoot>
+                        </TableView>
+                    </StackLayout>
+                </Frame>
+
+
+
+
+
+
+
+
+            </VerticalStackLayout>
+
+            <Image   Grid.Row="3"
+                     Source="{AppThemeBinding Light=bottomdesign.png, Dark=bottomdesign_alt.png}"
+                     Aspect="Fill"
+                     
+                />
+        </Grid>
+    </RefreshView>
+
+</ContentPage>
+  
