@@ -1,4 +1,4 @@
-namespace MauiApp1.Pages;
+namespace MauiApp1;
 
 public partial class TrainerBioPage : ContentPage
 {

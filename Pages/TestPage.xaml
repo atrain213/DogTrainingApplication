@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MauiApp1.Pages.TestPage"
+             x:Class="MauiApp1.TestPage"
              Title="TestPage">
   
     <ContentPage.Background>
@@ -14,7 +14,7 @@
             <GradientStop Color="#82f2f0"
                           Offset="0.2
                           " />
-            <GradientStop Color="#1f8ead"
+            <GradientStop Color="#ff8ead"
                           Offset="1.05" />
         </LinearGradientBrush>
     </ContentPage.Background>
@@ -92,7 +92,7 @@
                                     <ImageCell Text="Vintage Bowl"
                        TextColor="Black"
                        Detail="Status: Offer Recieved"
-                       ImageSource="https://neftv.blob.core.windows.net/images/13b6f850-608f-4eaf-afa8-9c3a5f02f490.png" />
+                       ImageSource="dotnet_bot.png" />
                                 </TableSection>
                             </TableRoot>
                         </TableView>

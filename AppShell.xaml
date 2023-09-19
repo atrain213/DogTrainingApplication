@@ -31,7 +31,7 @@
 
         </Tab>
         <Tab
-            Title = "Test Page">
+            Title = "Main Page">
             <ShellContent ContentTemplate="{DataTemplate local:TestPage}" />
 
         </Tab>
