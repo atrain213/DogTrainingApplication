@@ -5,8 +5,14 @@
              Title="Dogs">
     <VerticalStackLayout>
         <Label 
-            Text="Welcome to .NET MAUI!"
+            Text="Your Dogs"
             VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+            HorizontalOptions="CenterAndExpand" />
+        <Button 
+                x:Name="NewDog"
+                Text="Click to add a new dog!"
+                SemanticProperties.Hint="Counts the number of times you click"
+                Clicked="OnCounterClicked"
+                HorizontalOptions="Center" />
     </VerticalStackLayout>
 </ContentPage>

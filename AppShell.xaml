@@ -30,6 +30,11 @@
             <ShellContent ContentTemplate="{DataTemplate local:MainPage}" />
 
         </Tab>
+        <Tab
+            Title = "Test Page">
+            <ShellContent ContentTemplate="{DataTemplate local:TestPage}" />
+
+        </Tab>
     </TabBar>
 
 </Shell>
