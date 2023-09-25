@@ -27,5 +27,6 @@
       Text="Edit Profile"
       VerticalOptions="Center"
       HorizontalOptions="Center"/>
+       
     </VerticalStackLayout>
 </ContentPage>
