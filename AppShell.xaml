@@ -36,5 +36,6 @@
 
         </Tab>
     </TabBar>
+    <ShellContent ContentTemplate="{DataTemplate local:DogProfilePage}"/>
 
 </Shell>

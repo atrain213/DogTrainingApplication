@@ -1,5 +1,8 @@
 namespace MauiApp1;
 
+//using Syncfusion.ListView.XForms;
+//using Syncfusion.Maui.ListView;
+
 public partial class DogsPage : ContentPage
 {
     public DogsPage()
@@ -7,24 +10,20 @@ public partial class DogsPage : ContentPage
        
 
         InitializeComponent();
-        
+        //SfListView listView = new SfListView();
+        //this.Content = listView;
+
     }
 
     int count = 0;
-    private void OnCounterClicked(object sender, EventArgs e)
-    {
-        
-        count++;
 
-        if (count == 1)
-        {
-            NewDog.Text = $"Added {count} dog";
-        }
-        else
-        {
-            NewDog.Text = $"Added {count} dogs";
-        }
-        SemanticScreenReader.Announce(NewDog.Text);
+    private async void TapGestureRecognizer_Tapped(object sender, TappedEventArgs e)
+    {
+        await Shell.Current.GoToAsync($"/DogProfilePage");
+    }
+
+    private async void ImageCell_Tapped(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync($"/DogProfilePage");
     }
 }
-	

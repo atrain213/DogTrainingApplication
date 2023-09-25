@@ -22,7 +22,7 @@
             </Label>
             <Entry WidthRequest="125" HeightRequest="40" ></Entry>
             <Label Text="please enter the name" TextColor="Blue" 
-                    FontAttributes="Italic">
+                    FontAttributes="Italic" >
             </Label>
         </HorizontalStackLayout>
 

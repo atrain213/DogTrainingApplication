@@ -2,17 +2,80 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiApp1.DogsPage"
-             Title="Dogs">
+             >
+
     <VerticalStackLayout>
-        <Label 
-            Text="Your Dogs"
-            VerticalOptions="Center" 
-            HorizontalOptions="CenterAndExpand" />
-        <Button 
-                x:Name="NewDog"
-                Text="Click to add a new dog!"
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
-                HorizontalOptions="Center" />
+        <Grid>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <HorizontalStackLayout Spacing="5" Margin="15" Grid.Row="0">
+                <SearchBar Placeholder="Search..." WidthRequest="250" />
+                <ImageButton HeightRequest="40"
+                             WidthRequest="40"
+                             Source="filter.png"
+                             BackgroundColor="Blue"
+                             CornerRadius="10"
+                             Padding="5"
+                             Scale="1.00"/>
+
+                <ImageButton HeightRequest="40"
+                             WidthRequest="40"
+                             Source="descend.png"
+                             BackgroundColor="Blue"
+                             CornerRadius="10"
+                             Padding="5"
+                             Scale="1.00"/>
+
+            </HorizontalStackLayout>
+            <Label Text="Recent: " Grid.Row="1" FontAttributes="Bold" Margin="4" FontFamily="OpenSans-SemiBold.ttf"/>
+            <Frame Margin="5" Grid.Row="2" Padding="0" HeightRequest="200" BackgroundColor="Gray"  >
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                </Frame.GestureRecognizers>
+                <VerticalStackLayout>
+                    <Image Source="dog1.jpg" Aspect="AspectFill" HeightRequest="160"/>
+                    <HorizontalStackLayout Spacing="2">
+                        <Label Text="Cloud" TextColor="White"  FontSize="Large" FontAttributes="Bold" Margin="4" FontFamily="OpenSans-SemiBold.ttf"/>
+                        <Label Text="|" TextColor="White" FontSize="Large" VerticalTextAlignment="Center" FontFamily="OpenSans-SemiBold.ttf"/>
+                        <Label Text="Anthony D'Antonio" TextColor="White"  VerticalTextAlignment="Center" FontSize="Medium" FontFamily="OpenSans-SemiBold.ttf"/>
+                    </HorizontalStackLayout>
+
+                </VerticalStackLayout>
+            </Frame>
+
+            <Frame Margin="5" Grid.Row="3">
+                <TableView>
+                    <TableRoot>
+                        <TableSection>
+                            <ImageCell Text="Champ"
+                                       Detail="Bob Ross"
+                                       ImageSource="dog2.jpg"
+                                       Tapped="ImageCell_Tapped"/>
+                            <ImageCell Text="Bravo"
+                                       Detail="John Smith"
+                                       ImageSource="dog3.jpg"
+                                       Tapped="ImageCell_Tapped"/>
+                            <ImageCell Text="Peanut"
+                                       Detail="Bob Ross"
+                                       ImageSource="dog4.jpg"
+                                       Tapped="ImageCell_Tapped"/>
+                            <ImageCell Text="Lily"
+                                       Detail="John Cena"
+                                       ImageSource="dog5.jpg"
+                                       Tapped="ImageCell_Tapped"/>
+
+                        </TableSection>
+                    </TableRoot>
+                </TableView>
+            </Frame>
+
+
+        </Grid>
     </VerticalStackLayout>
 </ContentPage>
