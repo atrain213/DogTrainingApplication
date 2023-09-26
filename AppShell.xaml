@@ -31,8 +31,13 @@
 
         </Tab>
         <Tab
-            Title = "Main Page">
-            <ShellContent ContentTemplate="{DataTemplate local:TestPage}" />
+            Title = "General">
+            <ShellContent ContentTemplate="{DataTemplate local:General}" />
+
+        </Tab>
+        <Tab
+     Title = "Testing Page">
+            <ShellContent ContentTemplate="{DataTemplate local:TrainerSearch}" />
 
         </Tab>
     </TabBar>
