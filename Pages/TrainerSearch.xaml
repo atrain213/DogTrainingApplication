@@ -13,20 +13,16 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
-            <HorizontalStackLayout Spacing="5" Margin="15" Grid.Row="0">
-                <SearchBar Placeholder="Search..." WidthRequest="250" />
-                <ImageButton HeightRequest="40"
-                     WidthRequest="40"
-                     Source="filter.png"
-                     BackgroundColor="Blue"
-                     CornerRadius="10"
-                     Padding="5"
-                     Scale="1.00"/>
-            </HorizontalStackLayout>
+           
             <Label 
-               Text="Find a Trainer"
+               Text="Find a Trainer!"
                VerticalOptions="Center" 
                HorizontalOptions="Center" />
+                
+            <HorizontalStackLayout Spacing="5" Margin="15" Grid.Row="0">
+                <SearchBar Placeholder="Search..." WidthRequest="250" />
+
+            </HorizontalStackLayout>
         </Grid>
     </VerticalStackLayout>
 </ContentPage>
