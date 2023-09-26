@@ -1,12 +1,94 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:listview="clr-namespace:Syncfusion.Maui.ListView;assembly=Syncfusion.Maui.ListView"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiApp1.DogProfilePage"
-             Title="DogProfile">
+             xmlns:local="clr-namespace:MauiApp1"
+             Shell.NavBarIsVisible="false">
+    <ContentPage.BindingContext>
+        <local:BookViewModel></local:BookViewModel>
+    </ContentPage.BindingContext>
+
     <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+        <Grid>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height=".5*"/>
+                <RowDefinition Height=".5*"/>
+                <RowDefinition Height=".2*"/>
+                <RowDefinition Height=".5*"/>
+                <RowDefinition Height=".2*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width=".5*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Frame Margin="5" Grid.Row="1" Grid.Column="1"  Padding="0" HeightRequest="200" BackgroundColor="Gray">
+                <Image Source="dog1.jpg" Aspect="AspectFill" />
+            </Frame>
+            <Frame Margin="5" Grid.Row="1" Grid.Column="0"  Padding="5" HeightRequest="200" BackgroundColor="Gray">
+                <VerticalStackLayout Padding="5">
+                    <Label Text="Cloud" FontAttributes="Bold" FontFamily="OpenSans-SemiBold.ttf"  FontSize="Large" HorizontalOptions="Center"/>
+                    <HorizontalStackLayout>
+                        <Label Text="Owner:"  Padding="2" FontAttributes="Bold" FontFamily="OpenSans-SemiBold.ttf"  FontSize="Small" HorizontalOptions="Center"/>
+                        <Label Text="Anthony D'Antonio" Padding="2" FontAttributes="Bold" FontFamily="OpenSans-SemiBold.ttf"  FontSize="Small" HorizontalOptions="Center"/>
+                    </HorizontalStackLayout>
+                    <HorizontalStackLayout>
+                        <Label Text="Breed:"  Padding="2" FontAttributes="Bold" FontFamily="OpenSans-SemiBold.ttf"  FontSize="Small" HorizontalOptions="Center"/>
+                        <Label Text="Samoyed" Padding="2" FontAttributes="Bold" FontFamily="OpenSans-SemiBold.ttf"  FontSize="Small" HorizontalOptions="Center"/>
+                    </HorizontalStackLayout>
+                    <HorizontalStackLayout>
+                        <Label Text="Sex:"  Padding="2" FontAttributes="Bold" FontFamily="OpenSans-SemiBold.ttf"  FontSize="Small" HorizontalOptions="Center"/>
+                        <Label Text="Male" Padding="2" FontAttributes="Bold" FontFamily="OpenSans-SemiBold.ttf"  FontSize="Small" HorizontalOptions="Center"/>
+                    </HorizontalStackLayout>
+                    <HorizontalStackLayout>
+                        <Label Text="Age:"  Padding="2" FontAttributes="Bold" FontFamily="OpenSans-SemiBold.ttf"  FontSize="Small" HorizontalOptions="Center"/>
+                        <Label Text="5" Padding="2" FontAttributes="Bold" FontFamily="OpenSans-SemiBold.ttf"  FontSize="Small" HorizontalOptions="Center"/>
+                    </HorizontalStackLayout>
+                    <HorizontalStackLayout>
+                        <Label Text="Trainer(s):"  Padding="2" FontAttributes="Bold" FontFamily="OpenSans-SemiBold.ttf"  FontSize="Small" HorizontalOptions="Center"/>
+                        <Label Text="John Smith" Padding="2" FontAttributes="Bold" FontFamily="OpenSans-SemiBold.ttf"  FontSize="Small" HorizontalOptions="Center"/>
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+            </Frame>
+            <Label Text="Behaviors: " Grid.Row="3" FontAttributes="Bold" Margin="4" FontFamily="OpenSans-SemiBold.ttf"/>
+            <Frame Margin="5" Grid.Row="4" Grid.ColumnSpan="2" BackgroundColor="Gray" HeightRequest="200" Padding="5">
+                <listview:SfListView x:Name="listView"  ItemsSource="{Binding BookDetails}" ItemSize="140" IsScrollingEnabled="False" ScrollBarVisibility="Never" SelectionMode="None" SelectionGesture="Tap" TapCommandParameter="TapGestureRecognizer_Tapped" SelectionBackground="Red" >
+                    <listview:SfListView.ItemsLayout>
+                        <listview:GridLayout SpanCount="2"/>
+                    </listview:SfListView.ItemsLayout>
+                    <listview:SfListView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame Padding="0" Margin="1" CornerRadius="15">
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                                </Frame.GestureRecognizers>
+                                <Grid Padding="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height=".3*"/>
+                                        <RowDefinition Height=".2*"/>
+                                        <RowDefinition Height=".1*"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    
+                                    
+                                </Grid>
+                            </Frame>
+
+                        </DataTemplate>
+                    </listview:SfListView.ItemTemplate>
+                </listview:SfListView>
+            </Frame>
+            
+            <Label Text="Training History: " Grid.Row="5" FontAttributes="Bold" Margin="4" FontFamily="OpenSans-SemiBold.ttf"/>
+            <Frame Margin="5" Grid.Row="6" Grid.ColumnSpan="2" BackgroundColor="Gray" HeightRequest="200" Padding="5">
+            </Frame>
+
+
+        </Grid>
     </VerticalStackLayout>
 </ContentPage>
