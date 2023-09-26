@@ -1,12 +1,28 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MauiApp1.Pages.NewPage1"
-             Title="NewPage1">
+             x:Class="MauiApp1.TrainerSearch"
+             Title="TrainerSearch">
     <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+        <Grid>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+           
+            <Label 
+               Text="Find a Trainer!"
+               VerticalOptions="Center" 
+               HorizontalOptions="Center" />
+                
+            <HorizontalStackLayout Spacing="5" Margin="15" Grid.Row="0">
+                <SearchBar Placeholder="Search..." WidthRequest="250" />
+
+            </HorizontalStackLayout>
+        </Grid>
     </VerticalStackLayout>
 </ContentPage>

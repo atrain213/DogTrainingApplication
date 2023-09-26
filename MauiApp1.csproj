@@ -62,6 +62,9 @@
 	  <Compile Update="Pages\DogProfilePage.xaml.cs">
 	    <DependentUpon>DogProfilePage.xaml</DependentUpon>
 	  </Compile>
+	  <Compile Update="Pages\General.xaml.cs">
+	    <DependentUpon>General.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="Pages\TrainerSearch.xaml.cs">
 	    <DependentUpon>TrainerSearch.xaml</DependentUpon>
 	  </Compile>
@@ -78,6 +81,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\HomePage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\General.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\SettingsPage.xaml">

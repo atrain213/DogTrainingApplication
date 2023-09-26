@@ -1,8 +1,8 @@
-namespace MauiApp1.Pages;
+namespace MauiApp1;
 
-public partial class NewPage1 : ContentPage
+public partial class TrainerSearch : ContentPage
 {
-	public NewPage1()
+	public TrainerSearch()
 	{
 		InitializeComponent();
 	}

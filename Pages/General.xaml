@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.General"
+           >
+    <VerticalStackLayout>
+        <Label 
+      Text="Account"
+      VerticalOptions="Start" 
+      HorizontalOptions="Start" />
+            <Button 
+     Text="Account"
+     VerticalOptions="Fill" 
+     HorizontalOptions="Fill" />
+            <Label 
+      Text="Find a Trainer"
+      VerticalOptions="Center" 
+      HorizontalOptions="Center" />
+            <Button 
+        Text="Trainer Search"
+        VerticalOptions="Fill" 
+        HorizontalOptions="Fill" />
+        <Label 
+        Text="Settings"
+        VerticalOptions="Center" 
+        HorizontalOptions="Center" />
+        <Button 
+        Text="Adjust Settings"
+        VerticalOptions="Fill" 
+        HorizontalOptions="Fill" />
+        <Label 
+        Text="Data"
+        VerticalOptions="Center" 
+        HorizontalOptions="Center" />
+        <Button 
+        Text="Print/Export"
+        VerticalOptions="Fill" 
+        HorizontalOptions="Fill" />
+
+    </VerticalStackLayout>
+</ContentPage>
