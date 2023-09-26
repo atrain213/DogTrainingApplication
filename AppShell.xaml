@@ -4,7 +4,7 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:MauiApp1"
-    xmlns:pages="clr-namespace:MauiApp1.Pages" >
+  
 
     <TabBar>
         <Tab
@@ -42,5 +42,7 @@
         </Tab>
     </TabBar>
     <ShellContent ContentTemplate="{DataTemplate local:DogProfilePage}"/>
-
+    <ShellContent ContentTemplate="{DataTemplate local:TrainerSearch}"/>
+    <ShellContent ContentTemplate="{DataTemplate local:AccountPage}"/>
+    <ShellContent ContentTemplate="{DataTemplate local:SettingsPage}"/>
 </Shell>

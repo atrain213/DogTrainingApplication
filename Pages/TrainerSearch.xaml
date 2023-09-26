@@ -32,5 +32,7 @@
     Text="Didn't find what you were looking for? Browse all trainers nearby:"
     VerticalOptions="Center" FontSize="20" FontAttributes="Bold"
     HorizontalOptions="CenterAndExpand" />
+        
+      
     </VerticalStackLayout>
 </ContentPage>
