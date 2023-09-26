@@ -8,3 +8,5 @@ public partial class AppShell : Shell
         Routing.RegisterRoute("DogProfilePage", typeof(DogProfilePage));
     }
 }
+
+
