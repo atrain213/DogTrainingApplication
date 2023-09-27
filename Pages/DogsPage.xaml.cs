@@ -15,7 +15,6 @@ public partial class DogsPage : ContentPage
 
     }
 
-    int count = 0;
 
     private async void TapGestureRecognizer_Tapped(object sender, TappedEventArgs e)
     {
