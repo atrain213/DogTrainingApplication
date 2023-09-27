@@ -17,13 +17,10 @@
        VerticalOptions="Center" 
        HorizontalOptions="Center" />
         <Label 
-        Text="Deactivate Account"
+        Text="Deactivate/Delete Account"
         VerticalOptions="Center" 
         HorizontalOptions="Center" />
-        <Label 
-        Text="Delete Account"
-        VerticalOptions="Center" 
-        HorizontalOptions="Center" />
+     
       
     </VerticalStackLayout>
 </ContentPage>
