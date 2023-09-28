@@ -5,8 +5,22 @@
              Title="SettingsPage">
     <VerticalStackLayout>
         <Label 
-        Text="Welcome to .NET MAUI!"
+        Text="Settings" FontSize="24"
         VerticalOptions="Center" 
         HorizontalOptions="Center" />
+        <Label 
+        Text="Notifications"
+        VerticalOptions="Center" 
+        HorizontalOptions="Center" />
+        <Label 
+       Text="Privacy"
+       VerticalOptions="Center" 
+       HorizontalOptions="Center" />
+        <Label 
+        Text="Deactivate/Delete Account"
+        VerticalOptions="Center" 
+        HorizontalOptions="Center" />
+     
+      
     </VerticalStackLayout>
 </ContentPage>

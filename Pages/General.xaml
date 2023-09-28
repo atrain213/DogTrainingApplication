@@ -5,37 +5,42 @@
            >
     <VerticalStackLayout>
         <Label 
-      Text="Account"
-      VerticalOptions="Start" 
-      HorizontalOptions="Start" />
-            <Button 
-     Text="Account"
-     VerticalOptions="Fill" 
-     HorizontalOptions="Fill" />
-            <Label 
-      Text="Find a Trainer"
+    Text="General"   Margin="5" FontAttributes="Bold" FontSize="25"
+    VerticalOptions="Center" 
+    HorizontalOptions="Center" />
+        
+        <Label 
+      Text="Account"   Margin="5"
       VerticalOptions="Center" 
       HorizontalOptions="Center" />
             <Button 
-        Text="Trainer Search"
-        VerticalOptions="Fill" 
-        HorizontalOptions="Fill" />
+     Text="Account"
+     VerticalOptions="Center"  Margin="5" Clicked="AccountPage_Clicked"
+     HorizontalOptions="CenterAndExpand" /> 
+            <Label 
+      Text="Find a Trainer"   Margin="5"
+      VerticalOptions="Center" 
+      HorizontalOptions="Center" />
+            <Button 
+        Text="Trainer Search" Clicked="TrainerSearch_Clicked"
+        VerticalOptions="Center"  Margin="5"
+        HorizontalOptions="CenterAndExpand" />
         <Label 
-        Text="Settings"
+        Text="Settings" Margin="5"
         VerticalOptions="Center" 
         HorizontalOptions="Center" />
         <Button 
-        Text="Adjust Settings"
-        VerticalOptions="Fill" 
-        HorizontalOptions="Fill" />
+        Text="Adjust Settings"  Margin="5"  Clicked="SettingsPage_Clicked"
+        VerticalOptions="Center"  
+        HorizontalOptions="CenterAndExpand" />
         <Label 
-        Text="Data"
+        Text="Data"  Margin="5"
         VerticalOptions="Center" 
         HorizontalOptions="Center" />
         <Button 
-        Text="Print/Export"
-        VerticalOptions="Fill" 
-        HorizontalOptions="Fill" />
+        Text="Print/Export"  Margin="5" Clicked="DataExportPage_Clicked"
+        VerticalOptions="Center" 
+        HorizontalOptions="CenterAndExpand" />
 
     </VerticalStackLayout>
 </ContentPage>

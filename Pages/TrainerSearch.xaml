@@ -4,25 +4,35 @@
              x:Class="MauiApp1.TrainerSearch"
              Title="TrainerSearch">
     <VerticalStackLayout>
-        <Grid>
-
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-            </Grid.RowDefinitions>
-
+      
            
             <Label 
                Text="Find a Trainer!"
-               VerticalOptions="Center" 
+                Margin="2" FontAttributes="Bold" FontSize="Large" FontFamily="OpenSans-SemiBold.ttf"
+               VerticalOptions="Start" 
                HorizontalOptions="Center" />
-                
-            <HorizontalStackLayout Spacing="5" Margin="15" Grid.Row="0">
-                <SearchBar Placeholder="Search..." WidthRequest="250" />
 
-            </HorizontalStackLayout>
-        </Grid>
+        <HorizontalStackLayout Spacing="15" Margin="28" HorizontalOptions="Center" >
+            <SearchBar Placeholder="Search..." WidthRequest="350"/>
+
+        </HorizontalStackLayout>
+        
+        <Label 
+        Text="Enter a specfic skill, general area of training interest, or the name of a specific trainer or training organization."
+        VerticalOptions="Start" FontSize="12"
+        HorizontalOptions="Center" />
+
+        <Label
+            Text="(placeholder: search results should appear here when entered)"
+         VerticalOptions="Start" FontSize="10" Margin="30" FontAttributes="Italic"
+        HorizontalOptions="Center" /> 
+        
+        <Label 
+            Margin="35" 
+    Text="Didn't find what you were looking for? Browse all trainers nearby:"
+    VerticalOptions="Center" FontSize="20" FontAttributes="Bold"
+    HorizontalOptions="CenterAndExpand" />
+        
+      
     </VerticalStackLayout>
 </ContentPage>
