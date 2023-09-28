@@ -31,8 +31,8 @@
 
         </Tab>
         <Tab
-            Title = "Main Page">
-            <ShellContent ContentTemplate="{DataTemplate local:TestPage}" />
+            Title = "Specific Behavior Info Page">
+            <ShellContent ContentTemplate="{DataTemplate local:SpecificBehaviorInfoPage}" />
 
         </Tab>
     </TabBar>
