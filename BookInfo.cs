@@ -13,5 +13,7 @@ namespace MauiApp1
 
         public string BookImage { get; set; }
 
+        public string BookSkill { get; set; }
+
     }
 }

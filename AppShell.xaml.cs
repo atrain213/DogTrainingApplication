@@ -6,6 +6,7 @@ public partial class AppShell : Shell
 	{
 		InitializeComponent();
         Routing.RegisterRoute("DogProfilePage", typeof(DogProfilePage));
+		Routing.RegisterRoute("BehaviorPage", typeof(SpecificBehaviorInfoPage));
     }
 }
 
