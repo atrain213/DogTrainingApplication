@@ -8,12 +8,14 @@ namespace MauiApp1
 {
     public class BookInfo
     {
-        public string BookName { get; set; }
-        public string BookDescription { get; set; }
+        public string BookName { get; set; } = string.Empty;
+        public string BookDescription { get; set; } = string.Empty;
 
-        public string BookImage { get; set; }
+        public string BookImage { get; set; } = string.Empty;
 
-        public string BookSkill { get; set; }
+        public string BookSkill { get; set; } = string.Empty;
+
+        public int ID { get; set; }
 
     }
 }

@@ -8,10 +8,10 @@ namespace MauiApp1
 {
     public class BehaviorInfo
     {
-        public string SkillName { get; set; }
-        public string SkillLevel { get; set; }
-        public string SkillDate { get; set; }
-        public string SkillTrainer { get; set; }
+        public string SkillName { get; set; } = string.Empty;
+        public string SkillLevel { get; set; } = string.Empty;
+        public string SkillDate { get; set; } = string.Empty;
+        public string SkillTrainer { get; set; } = string.Empty;
 
 
     }

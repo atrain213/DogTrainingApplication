@@ -18,7 +18,15 @@ public partial class DogsPage : ContentPage
 
     private async void TapGestureRecognizer_Tapped(object sender, TappedEventArgs e)
     {
-        await Shell.Current.GoToAsync($"/DogProfilePage");
+        Frame frm = (Frame)sender;
+        BookInfo book = new();
+        if (frm.BindingContext != null)
+        {
+            book = frm.BindingContext as BookInfo;
+        }
+        var parm = new Dictionary<string, object> { { "ID", book.ID } };
+
+        await Shell.Current.GoToAsync($"/DogProfilePage", parm);
     }
 
     private async void ImageCell_Tapped(object sender, EventArgs e)

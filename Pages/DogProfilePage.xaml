@@ -11,7 +11,7 @@
     </ContentPage.BindingContext>
 
     <VerticalStackLayout>
-        <Grid Padding="0" Margin="0">
+        <Grid Padding="0" Margin="0" HeightRequest="900">
 
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
@@ -31,22 +31,22 @@
             </Frame>
             <Frame Margin="5" Grid.Row="1" Grid.Column="0"  Padding="5" HeightRequest="150" BackgroundColor="Gray">
                 <VerticalStackLayout Padding="2" Spacing="0">
-                    <Label Text="Cloud" FontAttributes="Bold" FontFamily="OpenSans-SemiBold.ttf"  FontSize="Large" HorizontalOptions="Center"/>
+                    <Label Text="{Binding Dog.Name}" FontAttributes="Bold" FontFamily="OpenSans-SemiBold.ttf"  FontSize="Large" HorizontalOptions="Center"/>
                     <HorizontalStackLayout Spacing="4">
                         <Label Text="Owner:"  Padding="0" FontAttributes="Bold" FontFamily="OpenSans-SemiBold.ttf"  FontSize="Small" HorizontalOptions="Center"/>
-                        <Label Text="Anthony D'Antonio" Padding="0" FontAttributes="Bold" FontFamily="OpenSans-SemiBold.ttf"  FontSize="Small" HorizontalOptions="Center"/>
+                        <Label Text="{Binding Dog.Owner}" Padding="0" FontAttributes="Bold" FontFamily="OpenSans-SemiBold.ttf"  FontSize="Small" HorizontalOptions="Center"/>
                     </HorizontalStackLayout>
                     <HorizontalStackLayout Spacing="4">
                         <Label Text="Breed:"  Padding="0" FontAttributes="Bold" FontFamily="OpenSans-SemiBold.ttf"  FontSize="Small" HorizontalOptions="Center"/>
-                        <Label Text="Samoyed" Padding="0" FontAttributes="Bold" FontFamily="OpenSans-SemiBold.ttf"  FontSize="Small" HorizontalOptions="Center"/>
+                        <Label Text="{Binding Dog.Breed}" Padding="0" FontAttributes="Bold" FontFamily="OpenSans-SemiBold.ttf"  FontSize="Small" HorizontalOptions="Center"/>
                     </HorizontalStackLayout>
                     <HorizontalStackLayout Spacing="4">
                         <Label Text="Sex:"  Padding="0" FontAttributes="Bold" FontFamily="OpenSans-SemiBold.ttf"  FontSize="Small" HorizontalOptions="Center"/>
-                        <Label Text="Male" Padding="0" FontAttributes="Bold" FontFamily="OpenSans-SemiBold.ttf"  FontSize="Small" HorizontalOptions="Center"/>
+                        <Label Text="{Binding Dog.Sex}" Padding="0" FontAttributes="Bold" FontFamily="OpenSans-SemiBold.ttf"  FontSize="Small" HorizontalOptions="Center"/>
                     </HorizontalStackLayout>
                     <HorizontalStackLayout Spacing="4">
                         <Label Text="Age:"  Padding="0" FontAttributes="Bold" FontFamily="OpenSans-SemiBold.ttf"  FontSize="Small" HorizontalOptions="Center"/>
-                        <Label Text="5" Padding="0" FontAttributes="Bold" FontFamily="OpenSans-SemiBold.ttf"  FontSize="Small" HorizontalOptions="Center"/>
+                        <Label Text="{Binding Dog.Age}" Padding="0" FontAttributes="Bold" FontFamily="OpenSans-SemiBold.ttf"  FontSize="Small" HorizontalOptions="Center"/>
                     </HorizontalStackLayout>
                     <HorizontalStackLayout Spacing="4">
                         <Label Text="Trainer(s):"  Padding="0" FontAttributes="Bold" FontFamily="OpenSans-SemiBold.ttf"  FontSize="Small" HorizontalOptions="Center"/>

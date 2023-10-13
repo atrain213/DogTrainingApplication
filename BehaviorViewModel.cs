@@ -7,12 +7,25 @@ using System.Threading.Tasks;
 
 namespace MauiApp1
 {
-    public class BehaviorViewModel
+    public class BehaviorViewModel : BaseView
     {
         public ObservableCollection<string> Behaviors { get; set; }
 
         public ObservableCollection<BehaviorInfo> BehaviorDetails { get; set; }
 
+        private ViewDogDetail _dog = new();
+        public ViewDogDetail Dog
+        {
+            get { return _dog; }
+            set
+            {
+                if (_dog != value)
+                {
+                    _dog = value;
+                    NotifyPropertyChanged();
+                }
+            }
+        }
         public BehaviorViewModel() {
 
             BehaviorDetails = new ObservableCollection<BehaviorInfo>
@@ -34,6 +47,12 @@ namespace MauiApp1
                 "Test 7",
                 "Test 8"
             };
+            
+        }
+        public async Task Refresh(int id)
+        {
+            await Dog.loadAPI(id);
+            if (Dog.ID > 0) { }
         }
     }
 }
