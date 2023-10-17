@@ -68,6 +68,9 @@
 	  <Compile Update="Pages\DataExportPage.xaml.cs">
 	    <DependentUpon>DataExportPage.xaml</DependentUpon>
 	  </Compile>
+	  <Compile Update="Pages\ReportPage.xaml.cs">
+	    <DependentUpon>ReportPage.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="Pages\TrainerSearch.xaml.cs">
 	    <DependentUpon>TrainerSearch.xaml</DependentUpon>
 	  </Compile>
@@ -90,6 +93,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\DataExportPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\ReportPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\SettingsPage.xaml">
