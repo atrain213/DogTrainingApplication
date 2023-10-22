@@ -14,7 +14,7 @@
         </Frame>
         <Frame Margin="5">
             <VerticalStackLayout>
-                <Label Text="Trainings:" FontSize="Large" FontAttributes="Bold"  FontFamily="OpenSans-SemiBold.ttf"/>
+                <Label Text="Trainings:" FontSize="Large" FontAttributes="Bold" BackgroundColor="White" FontFamily="OpenSans-SemiBold.ttf"/>
                 <Grid Padding="10">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"/>
@@ -48,7 +48,7 @@
 
         <Frame Margin="5">
             <VerticalStackLayout>
-                <Label Text="Updates:" FontSize="Large" FontAttributes="Bold"  FontFamily="OpenSans-SemiBold.ttf"/>
+                <Label Text="Updates:" FontSize="Large" FontAttributes="Bold" BackgroundColor="White" FontFamily="OpenSans-SemiBold.ttf"/>
                 <Grid Padding="10" RowSpacing="10">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"/>
@@ -60,7 +60,7 @@
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width=".15*"/>
-                        <ColumnDefinition Width=".5*"/>
+                        <ColumnDefinition Width=".6*"/>
                         <ColumnDefinition Width=".3*"/>
                     </Grid.ColumnDefinitions>
                     
