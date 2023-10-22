@@ -18,7 +18,7 @@ xmlns:gauge="clr-namespace:Syncfusion.Maui.Gauges;assembly=Syncfusion.Maui.Gauge
                     FontAttributes="Bold, Italic"
                     TextColor="Red" >
             </Label>
-            <Entry WidthRequest="125" HeightRequest="40" ></Entry>
+            <Entry WidthRequest="300" HeightRequest="40" ></Entry>
             <Label Text="Enter Cue Details" TextColor="Black" 
                    FontAttributes="Italic">
             </Label>
@@ -26,10 +26,10 @@ xmlns:gauge="clr-namespace:Syncfusion.Maui.Gauges;assembly=Syncfusion.Maui.Gauge
 
         <HorizontalStackLayout Spacing="10" VerticalOptions="Start" >
             <Label Text="Verbal Cue: " 
-                    FontAttributes="Italic"
+                    FontAttributes="Bold, Italic" 
                     TextColor="Blue" >
             </Label>
-            <Entry WidthRequest="125" HeightRequest="40" ></Entry>
+            <Entry WidthRequest="300" HeightRequest="40" ></Entry>
             <Label Text="Enter Cue Details" TextColor="Black" 
                    FontAttributes="Italic">
             </Label>
@@ -37,10 +37,10 @@ xmlns:gauge="clr-namespace:Syncfusion.Maui.Gauges;assembly=Syncfusion.Maui.Gauge
 
         <HorizontalStackLayout Spacing="10" VerticalOptions="Start" >
             <Label Text="Release: " 
-                    FontAttributes="Italic"
+                    FontAttributes="Bold, Italic" 
                    TextColor="Green">
             </Label>
-            <Entry WidthRequest="125" HeightRequest="40" ></Entry>
+            <Entry WidthRequest="175" HeightRequest="40" ></Entry>
             <Label Text="Enter Release Details" TextColor="Black" 
                     FontAttributes="Italic" >
             </Label>
@@ -65,6 +65,5 @@ xmlns:gauge="clr-namespace:Syncfusion.Maui.Gauges;assembly=Syncfusion.Maui.Gauge
                     Fill="Black"/>
             </gauge:SfLinearGauge.MarkerPointers>
         </gauge:SfLinearGauge>
-
     </VerticalStackLayout>
 </ContentPage>
