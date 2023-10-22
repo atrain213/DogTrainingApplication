@@ -33,7 +33,7 @@
 
 	<ItemGroup>
 		<!-- App Icon -->
-    <MauiIcon Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'anroid'" BaseSize="128,128" Color ="#FFFFFF" Include="Resources\AppIcon\appicon.svg" />
+    <MauiIcon Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'anroid'" BaseSize="128,128" Color="#FFFFFF" Include="Resources\AppIcon\appicon.svg" />
     <MauiIcon Include="Resources\AppIcon\appicon.svg" />
 		<!-- Splash Screen -->
     <MauiSplashScreen Include="Resources\Splash\splash.svg" BaseSize="128,128" />
@@ -65,7 +65,7 @@
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
 		<PackageReference Include="Syncfusion.Maui.Gauges" Version="23.1.38" />
 		<PackageReference Include="Syncfusion.Maui.ImageEditor" Version="23.1.38" />
-		<PackageReference Include="Syncfusion.Maui.ListView" Version="23.1.36" />
+		<PackageReference Include="Syncfusion.Maui.ListView" Version="23.1.41" />
 	</ItemGroup>
 
 	<ItemGroup>
