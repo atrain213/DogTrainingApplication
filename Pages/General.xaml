@@ -8,7 +8,20 @@
         <local:GeneralModel> </local:GeneralModel>
     </ContentPage.BindingContext>
 
-    <listview:SfListView ItemsSource="{Binding GenSettings}"></listview:SfListView>
+    <listview:SfListView ItemsSource="{Binding GenDetails}" ItemSize="94">
+        <listview:SfListView.ItemTemplate>
+            <DataTemplate>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.4"></RowDefinition>
+                        <RowDefinition Height="0.6"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Label Text="{Binding GenName}" FontAttributes="Bold" TextColor="MediumPurple" FontSize="21"></Label>
+                    <Label Text="{Binding GenDescription}" Grid.Row="1" FontSize="15"></Label>
+                </Grid>
+            </DataTemplate>
+        </listview:SfListView.ItemTemplate>
+    </listview:SfListView>
 <!--<VerticalStackLayout>
         <Label 
     Text="General"   Margin="5" FontAttributes="Bold" FontSize="25"
