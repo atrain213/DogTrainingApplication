@@ -17,5 +17,10 @@ namespace MauiApp1
 
         public int ID { get; set; }
 
+        public Color Color { get; set; }
+
+        public Point Scale { get; set; }
+
+
     }
 }
