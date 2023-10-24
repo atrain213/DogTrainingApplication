@@ -1,12 +1,82 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MauiApp1.Pages.NewPage1"
-             Title="NewPage1">
+             x:Class="MauiApp1.ReportPage"
+             Title="Report Page">
     <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+        <HorizontalStackLayout VerticalOptions="Start" >
+            <Label Text="Current Session" 
+                FontAttributes="Bold"
+                TextColor="Purple"
+                TextDecorations="Underline">
+            </Label>
+        </HorizontalStackLayout>
+        <HorizontalStackLayout Spacing="30" VerticalOptions="Start" >
+            <Label Text="Behavior: Sit"
+                   TextColor="Black">
+            </Label>
+            <Label Text="# of Successes: 10" 
+                FontAttributes="Italic"
+                TextColor="Green">
+            </Label>
+            <Label Text="# of Failures: 4" 
+                FontAttributes="Italic"
+                TextColor="Red">
+            </Label>
+        </HorizontalStackLayout>
+        <HorizontalStackLayout Spacing="30" VerticalOptions="Start" >
+            <Label Text="Behavior: Stay"
+                   TextColor="Black">
+            </Label>
+            <Label Text="# of Successes: 8" 
+                FontAttributes="Italic"
+                TextColor="Green">
+            </Label>
+            <Label Text="# of Failures: 3" 
+                FontAttributes="Italic"
+                TextColor="Red">
+            </Label>
+        </HorizontalStackLayout>
+        <HorizontalStackLayout Spacing="30" VerticalOptions="Start" >
+            <Label Text="Behavior: Scent Discrimination"
+                   TextColor="Black">
+            </Label>
+            <Label Text="# of Successes: 5" 
+                FontAttributes="Italic"
+                TextColor="Green">
+            </Label>
+            <Label Text="# of Failures: 7" 
+                FontAttributes="Italic"
+                TextColor="Red">
+            </Label>
+        </HorizontalStackLayout>
+
+        <HorizontalStackLayout VerticalOptions="Start" >
+            <Label Text="Next Session" 
+                FontAttributes="Bold"
+                TextColor="Green"
+                TextDecorations="Underline">
+            </Label>
+        </HorizontalStackLayout>
+        <Label Text="Behavior: Scent Discrimination"
+                       TextColor="Black">
+        </Label>
+        <Label Text="Behavior: Broad Jump"
+               TextColor="Black">
+        </Label>
+        <Label Text="Behavior: Waiting Treat"
+                   TextColor="Black">
+        </Label>
+        <Label Text="Custom Notes" 
+                FontAttributes="Bold"
+                TextColor="Blue"
+                TextDecorations="Underline">
+        </Label>
+        <Editor WidthRequest="750" 
+               HeightRequest="275" 
+               VerticalOptions="Start"
+               HorizontalOptions="Start"
+               Placeholder="Enter text">
+        </Editor>
     </VerticalStackLayout>
 </ContentPage>
