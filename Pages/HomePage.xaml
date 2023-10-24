@@ -1,40 +1,96 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MauiApp1.HomePage"
-             Title="HomePage">
+             x:Class="MauiApp1.HomePage">
+    <VerticalStackLayout>
+        <Label Text="Cloud" FontSize="Large" FontAttributes="Bold" Padding="5" FontFamily="OpenSans-SemiBold.ttf"/>
+       
+         <Frame Margin="5"  Padding="0" HeightRequest="200" BackgroundColor="Gray">
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+            </Frame.GestureRecognizers>
+            <!-- Add Carosel View so That if an owner has multiple dogs-->
+            <Image Source="dog1.jpg" Aspect="AspectFill" />
+        </Frame>
+        <Frame Margin="5">
+            <VerticalStackLayout>
+                <Label Text="Trainings:" FontSize="Large" FontAttributes="Bold" BackgroundColor="White" FontFamily="OpenSans-SemiBold.ttf"/>
+                <Grid Padding="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
 
-    <VerticalStackLayout Margin="10" HorizontalOptions="Start" >
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width=".3*"/>
+                        <ColumnDefinition Width=".3*"/>
+                        <ColumnDefinition Width=".2*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="General" Grid.Row="0" Grid.Column="0" FontSize="Medium" FontFamily="OpenSans-SemiBold.ttf"/>
+                    <Label Text="Tues, 10/2 at" Grid.Row="0" Grid.Column="1" FontSize="Medium" FontFamily="OpenSans-SemiBold.ttf"/>
+                    <Label Text="4:30pm" Grid.Row="0" Grid.Column="2" FontSize="Medium" FontFamily="OpenSans-SemiBold.ttf"/>
 
-        <HorizontalStackLayout Spacing="10" VerticalOptions="Start" >
-            <Label Text="Human Name" 
-                    FontAttributes="Bold">
-            </Label>
-            <Entry WidthRequest="125" HeightRequest="40" ></Entry>
-            <Label Text="please enter the name" TextColor="Blue" 
-                   FontAttributes="Italic">
-            </Label>
-        </HorizontalStackLayout>
+                    <Label Text="Obediance" Grid.Row="1" Grid.Column="0" FontSize="Medium" FontFamily="OpenSans-SemiBold.ttf"/>
+                    <Label Text="Mon, 10/5 at" Grid.Row="1" Grid.Column="1" FontSize="Medium" FontFamily="OpenSans-SemiBold.ttf"/>
+                    <Label Text="11:15am" Grid.Row="1" Grid.Column="2" FontSize="Medium" FontFamily="OpenSans-SemiBold.ttf"/>
 
-        <HorizontalStackLayout Spacing="10" VerticalOptions="Start" >
-            <Label Text="Dog Name" 
-                    FontAttributes="Bold">
-            </Label>
-            <Entry WidthRequest="125" HeightRequest="40" ></Entry>
-            <Label Text="please enter the name" TextColor="Blue" 
-                    FontAttributes="Italic" >
-            </Label>
-        </HorizontalStackLayout>
 
-        <Image 
-            Source="cocoa_test_image.JPG"
-            HeightRequest="250"
-            WidthRequest="250"
-            HorizontalOptions="Start"
-        />
+                    <Label Text="Sniff" Grid.Row="2" Grid.Column="0" FontSize="Medium" FontFamily="OpenSans-SemiBold.ttf"/>
+                    <Label Text="Sat, 10/16 at" Grid.Row="2" Grid.Column="1" FontSize="Medium" FontFamily="OpenSans-SemiBold.ttf"/>
+                    <Label Text="1:30pm" Grid.Row="2" Grid.Column="2" FontSize="Medium" FontFamily="OpenSans-SemiBold.ttf"/>
+
+
+
+                </Grid>
+            </VerticalStackLayout>
+        </Frame>
+
+        <Frame Margin="5">
+            <VerticalStackLayout>
+                <Label Text="Updates:" FontSize="Large" FontAttributes="Bold" BackgroundColor="White" FontFamily="OpenSans-SemiBold.ttf"/>
+                <Grid Padding="10" RowSpacing="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width=".15*"/>
+                        <ColumnDefinition Width=".6*"/>
+                        <ColumnDefinition Width=".3*"/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <Image Source="skill_level_bar_3.png" Grid.Row="0"/>
+                    <Label Text="Cloud's skill Sit increased" Grid.Row="0" Grid.Column="1" FontSize="Medium" FontFamily="OpenSans-SemiBold.ttf" HorizontalTextAlignment="Center"/>
+                    <Label Text="1 day ago" Grid.Row="0" Grid.Column="2" FontSize="Medium" FontFamily="OpenSans-SemiBold.ttf"/>
+
+                    <Image Source="calendar.png" Grid.Row="1"/>
+                    <Label Text="A new training was Added" Grid.Row="1" Grid.Column="1" FontSize="Medium" FontFamily="OpenSans-SemiBold.ttf" HorizontalTextAlignment="Center"/>
+                    <Label Text="2 days ago" Grid.Row="1" Grid.Column="2" FontSize="Medium" FontFamily="OpenSans-SemiBold.ttf"/>
+
+                    <Image Source="cake.png" Grid.Row="2"/>
+                    <Label Text="Happy Birthday Cloud!!!" Grid.Row="2" Grid.Column="1" FontSize="Medium" FontFamily="OpenSans-SemiBold.ttf" HorizontalTextAlignment="Center"/>
+                    <Label Text="4 days ago" Grid.Row="2" Grid.Column="2" FontSize="Medium" FontFamily="OpenSans-SemiBold.ttf"/>
+
+                    <Image Source="skill_level_bar_2.png" Grid.Row="3"/>
+                    <Label Text="Cloud's skill Sit increased" Grid.Row="3" Grid.Column="1" FontSize="Medium" FontFamily="OpenSans-SemiBold.ttf" HorizontalTextAlignment="Center"/>
+                    <Label Text="3 weeks ago" Grid.Row="3" Grid.Column="2" FontSize="Medium" FontFamily="OpenSans-SemiBold.ttf"/>
+
+                    <Image Source="skill_level_bar_0.png" Grid.Row="4"/>
+                    <Label Text="Play Dead was added for Cloud" Grid.Row="4" Grid.Column="1" FontSize="Medium" FontFamily="OpenSans-SemiBold.ttf" HorizontalTextAlignment="Center"/>
+                    <Label Text="1 month ago" Grid.Row="4" Grid.Column="2" FontSize="Medium" FontFamily="OpenSans-SemiBold.ttf"/>
+                    
+
+
+                </Grid>
+            </VerticalStackLayout>
+        </Frame>
 
     </VerticalStackLayout>
-
 
 
 </ContentPage>

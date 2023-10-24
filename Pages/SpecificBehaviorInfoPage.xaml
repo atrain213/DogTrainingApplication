@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+xmlns:gauge="clr-namespace:Syncfusion.Maui.Gauges;assembly=Syncfusion.Maui.Gauges"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.SpecificBehaviorInfoPage"
+             Title="SpecificBehaviorInfoPage">
+    <VerticalStackLayout Margin="10" HorizontalOptions="Start" >
+
+        <HorizontalStackLayout Spacing="10" VerticalOptions="Start" >
+            <Label Text="Behavior: Sit" 
+                FontAttributes="Bold"
+                TextColor="Purple">
+            </Label>
+        </HorizontalStackLayout>
+
+        <HorizontalStackLayout Spacing="10" VerticalOptions="Start" >
+            <Label Text="Physical Cue: " 
+                    FontAttributes="Bold, Italic"
+                    TextColor="Red" >
+            </Label>
+            <Entry WidthRequest="300" HeightRequest="40" ></Entry>
+            <Label Text="Enter Cue Details" TextColor="Black" 
+                   FontAttributes="Italic">
+            </Label>
+        </HorizontalStackLayout>
+
+        <HorizontalStackLayout Spacing="10" VerticalOptions="Start" >
+            <Label Text="Verbal Cue: " 
+                    FontAttributes="Bold, Italic" 
+                    TextColor="Blue" >
+            </Label>
+            <Entry WidthRequest="300" HeightRequest="40" ></Entry>
+            <Label Text="Enter Cue Details" TextColor="Black" 
+                   FontAttributes="Italic">
+            </Label>
+        </HorizontalStackLayout>
+
+        <HorizontalStackLayout Spacing="10" VerticalOptions="Start" >
+            <Label Text="Release: " 
+                    FontAttributes="Bold, Italic" 
+                   TextColor="Green">
+            </Label>
+            <Entry WidthRequest="175" HeightRequest="40" ></Entry>
+            <Label Text="Enter Release Details" TextColor="Black" 
+                    FontAttributes="Italic" >
+            </Label>
+        </HorizontalStackLayout>
+
+        <gauge:SfLinearGauge
+            Minimum="0" 
+            Maximum="5"
+            Interval ="1">
+            <gauge:SfLinearGauge.Ranges>
+                <gauge:LinearRange StartValue="0" EndValue="2" 
+                                       Fill="#ffF45656"/>
+                <gauge:LinearRange StartValue="2" EndValue="3.5" 
+                                       Fill="#ffFFC93E"/>
+                <gauge:LinearRange StartValue="3.5" EndValue="5" 
+                                       Fill="#ff0DC9AB"/>
+            </gauge:SfLinearGauge.Ranges>
+            <gauge:SfLinearGauge.MarkerPointers>
+                <gauge:LinearShapePointer 
+                    Value="3" 
+                    IsInteractive="True" 
+                    Fill="Black"/>
+            </gauge:SfLinearGauge.MarkerPointers>
+        </gauge:SfLinearGauge>
+    </VerticalStackLayout>
+</ContentPage>

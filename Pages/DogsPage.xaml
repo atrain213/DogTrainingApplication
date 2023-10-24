@@ -24,7 +24,7 @@
                 <SearchBar Placeholder="Search..." WidthRequest="250" />
                 <ImageButton HeightRequest="40"
                              WidthRequest="40"
-                             Source="filter.png"
+                             Source="filter.PNG"
                              BackgroundColor="Blue"
                              CornerRadius="10"
                              Padding="5"
@@ -32,7 +32,7 @@
 
                 <ImageButton HeightRequest="40"
                              WidthRequest="40"
-                             Source="descend.png"
+                             Source="descend.PNG"
                              BackgroundColor="Blue"
                              CornerRadius="10"
                              Padding="5"

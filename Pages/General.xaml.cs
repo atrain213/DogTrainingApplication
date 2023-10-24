@@ -1,5 +1,5 @@
 namespace MauiApp1;
-
+//using Syncfusion.Maui.Core.Hosting;
 public partial class General : ContentPage
 {
 	public General()
