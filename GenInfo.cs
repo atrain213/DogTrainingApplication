@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MauiApp1.Pages
+namespace MauiApp1
 {
-    public class GenInfo
+     public class GenInfo
     {
         public string GenName { get; set; }
 
         public string GenDescription { get; set; }
+
     }
 }
