@@ -37,7 +37,7 @@ xmlns:listview="clr-namespace:Syncfusion.Maui.ListView;assembly=Syncfusion.Maui.
                                     </LinearGradientBrush>
                                 </ImageButton.Background>
                             </ImageButton>
-                            <Label Text="Sit"/>
+                            <Label Text="Sit" TextColor="Black"/>
                         </VerticalStackLayout>
                     </DataTemplate>
                 </listview:SfListView.ItemTemplate>
