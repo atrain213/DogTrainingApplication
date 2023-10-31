@@ -35,7 +35,7 @@ namespace MauiApp1
                 "Notifications > ",
                 "Settings > ",
                 "Data > ",
-                "Logout > "
+                "Logout X "
             };
         }
     }

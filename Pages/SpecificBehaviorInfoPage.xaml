@@ -66,4 +66,5 @@ xmlns:gauge="clr-namespace:Syncfusion.Maui.Gauges;assembly=Syncfusion.Maui.Gauge
             </gauge:SfLinearGauge.MarkerPointers>
         </gauge:SfLinearGauge>
     </VerticalStackLayout>
+
 </ContentPage>

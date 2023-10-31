@@ -4,60 +4,90 @@
               xmlns:listview="clr-namespace:Syncfusion.Maui.ListView;assembly=Syncfusion.Maui.ListView"
              x:Class="MauiApp1.General"
               xmlns:local="clr-namespace:MauiApp1">
-    <ContentPage.BindingContext>
+    <!--<ContentPage.BindingContext>
         <local:GeneralModel> </local:GeneralModel>
-    </ContentPage.BindingContext>
-
-    <listview:SfListView ItemsSource="{Binding GenDetails}" ItemSize="94">
-        <listview:SfListView.ItemTemplate>
-            <DataTemplate>
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="0.4"></RowDefinition>
-                        <RowDefinition Height="0.6"></RowDefinition>
-                    </Grid.RowDefinitions>
-                    <Label Text="{Binding GenName}" FontAttributes="Bold" TextColor="MediumPurple" FontSize="21"></Label>
-                    <Label Text="{Binding GenDescription}" Grid.Row="1" FontSize="15"></Label>
-                </Grid>
-            </DataTemplate>
-        </listview:SfListView.ItemTemplate>
-    </listview:SfListView>
-<!--<VerticalStackLayout>
+     </ContentPage.BindingContext>
+      <listview:SfListView ItemsSource="{Binding GenDetails}" ItemSize="94">
+       <listview:SfListView.ItemTemplate>
+          <DataTemplate>
+               <Grid>
+                   <Grid.RowDefinitions>
+                       <RowDefinition Height="0.4"></RowDefinition>
+                       <RowDefinition Height="0.6"></RowDefinition>
+                   </Grid.RowDefinitions>
+                   <Label Text="{Binding GenName}" FontAttributes="Bold" TextColor="MediumPurple" FontSize="21"></Label>
+                   <Label Text="{Binding GenDescription}" Grid.Row="1" FontSize="15"></Label>
+               </Grid>
+           </DataTemplate>
+       </listview:SfListView.ItemTemplate>
+   </listview:SfListView> -->
+<VerticalStackLayout>
         <Label 
-    Text="General"   Margin="5" FontAttributes="Bold" FontSize="25"
-    VerticalOptions="Center" 
-    HorizontalOptions="Start" />
-       <Button 
-    Text="Account >"
-    VerticalOptions="Center"  Margin="5" Clicked="AccountPage_Clicked"
+Text="General"   Margin="5" FontAttributes="Bold" FontSize="25"
+ VerticalOptions="Center" 
+ HorizontalOptions="Start" />
+    
+        <Grid Margin="30">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width=".4*"></ColumnDefinition>
+                <ColumnDefinition Width=".4*"></ColumnDefinition>
+                <ColumnDefinition Width=".4*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Image Source="defaultpfp.png" />
+            
+                <Label Grid.Column="1"
+                        Grid.ColumnSpan="2"
+                  Text="John Smith"     
+               HorizontalOptions="Start"
+               VerticalOptions="Start" />
+            
+                <Label Grid.Column="1"
+                        Grid.ColumnSpan="2"
+             Text="johnsmith123" FontAttributes="Italic" 
+             HorizontalOptions="Start"
+             VerticalOptions="Center" />
+     
+            <Label Grid.Column="1"
+                    Grid.ColumnSpan="2"
+             Text="Number of Dogs: X"
+         HorizontalOptions="Start"
+         VerticalOptions="End" />
+
+            <Label Grid.Column="1"
+           Grid.ColumnSpan="2"
+            Text="Account Type: Trainer"
+            HorizontalOptions="End"
+            VerticalOptions="End" />
+
+        </Grid>
+    
+        <Button 
+     Text="Edit Account >"
+     VerticalOptions="Start"  Margin="5" Clicked="AccountPage_Clicked"
     HorizontalOptions="CenterAndExpand" />
-       <Label 
-   Text="Account >"   Margin="5"
-    VerticalOptions="Center" 
-   HorizontalOptions="CenterAndExpand" />
-       <Label 
-     Text="Find a Trainer"   Margin="5"
-     VerticalOptions="Center" 
-     HorizontalOptions="Center" />
-           <Button 
-       Text="Trainer Search" Clicked="TrainerSearch_Clicked"
-       VerticalOptions="Center"  Margin="5"
-       HorizontalOptions="CenterAndExpand" />
-       <Label 
-       Text="Settings" Margin="5"
-       VerticalOptions="Center" 
-       HorizontalOptions="Center" />
-       <Button 
-       Text="Adjust Settings"  Margin="5"  Clicked="SettingsPage_Clicked"
-       VerticalOptions="Center"  
-       HorizontalOptions="CenterAndExpand" />
-       <Label 
-       Text="Data"  Margin="5"
-       VerticalOptions="Center" 
-       HorizontalOptions="Center" />
-       <Button 
-       Text="Print/Export"  Margin="5" Clicked="DataExportPage_Clicked"
-       VerticalOptions="Center" 
-       HorizontalOptions="CenterAndExpand" />
-      </VerticalStackLayout>-->
+     
+            <Button 
+        Text="Trainer Search >" Clicked="TrainerSearch_Clicked"
+        VerticalOptions="End"  Margin="5"
+        HorizontalOptions="CenterAndExpand" />
+      
+        <Button 
+        Text="Adjust Settings >"  Margin="5"  Clicked="SettingsPage_Clicked"
+        VerticalOptions="End"  
+        HorizontalOptions="CenterAndExpand" />
+      
+            <Button 
+        Text="Print/Export Data >"  Margin="5" Clicked="DataExportPage_Clicked"
+        VerticalOptions="End" 
+        HorizontalOptions="CenterAndExpand" />
+
+            <Button 
+        Text="Logout X"  Margin="5" Clicked="DataExportPage_Clicked"
+        VerticalOptions="End" 
+        HorizontalOptions="CenterAndExpand" />
+
+    </VerticalStackLayout>
 </ContentPage>
