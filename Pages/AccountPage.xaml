@@ -29,6 +29,8 @@
             Text="Profile Picture:" Margin="10"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
+        <Image Source="defaultpfp.png" />
+        <Button Text="Change/Remove Profile Picture"/>
         <Label 
             Text="First Name: John"
             VerticalOptions="Center" Margin="10"
