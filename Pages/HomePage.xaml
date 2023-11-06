@@ -12,9 +12,9 @@
             <!-- Add Carosel View so That if an owner has multiple dogs-->
             <Image Source="dog1.jpg" Aspect="AspectFill" />
         </Frame>
-        <Frame Margin="5">
+        <Frame Margin="5" BackgroundColor="White">
             <VerticalStackLayout>
-                <Label Text="Trainings:" FontSize="Large" FontAttributes="Bold" BackgroundColor="White" FontFamily="OpenSans-SemiBold.ttf"/>
+                <Label Text="Trainings:" FontSize="Large" FontAttributes="Bold"  FontFamily="OpenSans-SemiBold.ttf"/>
                 <Grid Padding="10">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"/>
@@ -46,9 +46,9 @@
             </VerticalStackLayout>
         </Frame>
 
-        <Frame Margin="5">
+        <Frame Margin="5" BackgroundColor="White">
             <VerticalStackLayout>
-                <Label Text="Updates:" FontSize="Large" FontAttributes="Bold" BackgroundColor="White" FontFamily="OpenSans-SemiBold.ttf"/>
+                <Label Text="Updates:" FontSize="Large" FontAttributes="Bold"  FontFamily="OpenSans-SemiBold.ttf"/>
                 <Grid Padding="10" RowSpacing="10">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"/>

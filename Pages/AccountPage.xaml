@@ -18,6 +18,8 @@
      Text="Edit Profile"
      VerticalOptions="Center"
      HorizontalOptions="End"/>
+
+            <Button Text="Add Dog" Clicked="AddDog_Button_Clicked"/>
         </HorizontalStackLayout>
         <Label 
             Text="Username: JohnSmith123"

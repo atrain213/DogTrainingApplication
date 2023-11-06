@@ -9,6 +9,7 @@
         Text="Settings" FontSize="24"
         VerticalOptions="Center" 
         HorizontalOptions="Center" />
+        
         <Label 
         Text="Notifications"
         VerticalOptions="Center" 

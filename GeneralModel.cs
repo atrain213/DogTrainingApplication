@@ -1,5 +1,10 @@
 ﻿//using Android.Database;
+<<<<<<< HEAD
 // using MauiApp1.Pages;
+=======
+//using MauiApp1.Pages;
+using MauiApp1;
+>>>>>>> b1e8977987c7892a313bc2c68677997315b26f01
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;

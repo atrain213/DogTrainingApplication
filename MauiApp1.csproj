@@ -68,9 +68,11 @@
 
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
+		<PackageReference Include="Syncfusion.Maui.Calendar" Version="23.1.42" />
 		<PackageReference Include="Syncfusion.Maui.Gauges" Version="23.1.38" />
 		<PackageReference Include="Syncfusion.Maui.ImageEditor" Version="23.1.38" />
-		<PackageReference Include="Syncfusion.Maui.ListView" Version="23.1.41" />
+		<PackageReference Include="Syncfusion.Maui.Inputs" Version="23.1.42" />
+		<PackageReference Include="Syncfusion.Maui.Picker" Version="23.1.42" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -95,7 +97,13 @@
 	  <MauiXaml Update="Pages\AccountPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Pages\AddDogPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Pages\BehaviorPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\CalenderPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\DogProfilePage.xaml">

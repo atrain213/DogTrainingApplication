@@ -1,4 +1,6 @@
-﻿namespace MauiApp1;
+﻿using MauiApp1.Pages;
+
+namespace MauiApp1;
 
 public partial class AppShell : Shell
 {
@@ -7,6 +9,7 @@ public partial class AppShell : Shell
 		InitializeComponent();
         Routing.RegisterRoute("DogProfilePage", typeof(DogProfilePage));
 		Routing.RegisterRoute("BehaviorPage", typeof(SpecificBehaviorInfoPage));
+		Routing.RegisterRoute("AddDogPage", typeof(AddDogPage));
     }
 }
 
