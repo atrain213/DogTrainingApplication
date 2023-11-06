@@ -5,8 +5,36 @@
              Title="DataExportPage">
     <VerticalStackLayout>
         <Label 
-            Text="Welcome to .NET MAUI!"
+            Text="Export data:"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
+
+        <Label 
+    Text="Select the dog(s) you would like to get data of:"
+    VerticalOptions="Center" 
+    HorizontalOptions="Center" />
+        <Label 
+        Text="Bella
+              Lucky
+              Luna
+              Max
+              ..."
+        VerticalOptions="Center" 
+        HorizontalOptions="Center" />
+
+        <Button 
+          Text="Export Dog(s) Data >"  Margin="5"
+          VerticalOptions="End" 
+          HorizontalOptions="CenterAndExpand" />
+
+        <Button 
+             Text="Export Session >"  Margin="5"
+              VerticalOptions="End" 
+             HorizontalOptions="CenterAndExpand" />
+        
+        <Button 
+            Text="Printable Version >"  Margin="5"
+            VerticalOptions="End" 
+            HorizontalOptions="CenterAndExpand" />
     </VerticalStackLayout>
 </ContentPage>
