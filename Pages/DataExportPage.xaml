@@ -28,7 +28,7 @@
           HorizontalOptions="CenterAndExpand" />
 
         <Button 
-             Text="Export Session >"  Margin="5"
+             Text="Export Past Session >"  Margin="5"
               VerticalOptions="End" 
              HorizontalOptions="CenterAndExpand" />
         
