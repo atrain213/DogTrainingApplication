@@ -19,7 +19,7 @@
               Luna
               Max
               ..."
-        VerticalOptions="Center" 
+        VerticalOptions="Center" FontSize="10"
         HorizontalOptions="Center" />
 
         <Button 
