@@ -42,7 +42,7 @@
         VerticalOptions="End"  Margin="5"
         HorizontalOptions="CenterAndExpand" />
             <Button 
-        Text="Email >" Clicked="TrainerSearch_Clicked"
+        Text="Email >" 
         VerticalOptions="End"  Margin="5"
         HorizontalOptions="CenterAndExpand" />
         </HorizontalStackLayout>
