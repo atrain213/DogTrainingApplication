@@ -5,44 +5,47 @@
              Title="TrainerBioPage">
     <VerticalStackLayout>
        
-        <HorizontalStackLayout Spacing="15" Margin="28" HorizontalOptions="Center" >
+        <HorizontalStackLayout Spacing="15" Margin="25" HorizontalOptions="Center" >
             <Label 
-            Text="Find a Trainer!"
+            Text="Find a Trainer!" FontAttributes="Bold"
             Margin="2" FontFamily="OpenSans-SemiBold.ttf"
-            VerticalOptions="Start" 
+            VerticalOptions="Start"  FontSize="20"
             HorizontalOptions="Center" />
             <SearchBar Placeholder="Search..." WidthRequest="350"/>
             </HorizontalStackLayout>
         
-            <Image Source="defaultpfp.png" />
+            <Image Source="defaultpfp.png" HorizontalOptions="Start" HeightRequest="200" Margin="10"/>
+        <HorizontalStackLayout>
         <Label 
             Text="John Smith" FontSize="20" FontAttributes="Bold"
-            VerticalOptions="Center" 
+            VerticalOptions="Center" Margin="10"
             HorizontalOptions="Start" />
 
         <Label 
      Text="Dog Training Inc. - Hometown, USA" FontSize="14" FontAttributes="Italic"
-     VerticalOptions="Center" 
-     HorizontalOptions="Start" />
+     VerticalOptions="Center"  HorizontalOptions="Start" />
+        </HorizontalStackLayout>
         <Label 
-    Text="John Smith has been training dogs for 16 years, and has been with Dog Training Inc for 10 years. He specializes in obedience and disc sport training. 
-          His goal of training is to ensure both you and your dog have an optimal understanding of each other to create the strongest bond between the two.
-          This is what a biography might look like for a trainer, as it has been custom written by the trainer themselves." FontSize="14"
+    Text="John Smith has been training dogs for 16 years, and has been with Dog Training Inc for 10 years. He specializes in obedience and disc sport training. His goal of training is to ensure both you and your dog have an optimal understanding of each other to create the strongest bond between the two. This is what a biography might look like for a trainer, as it has been custom written by the trainer themselves." FontSize="14"
     VerticalOptions="Center" 
-    HorizontalOptions="StartAndExpand" />
+    HorizontalOptions="StartAndExpand" Margin="10"/>
 
         <Label 
-        Text="Book a session!" FontSize="14" FontAttributes="Italic"
+        Text="Book a training session!" FontSize="18" FontAttributes="Italic"
         VerticalOptions="Center" 
-        HorizontalOptions="Start" />
+        HorizontalOptions="Center" />
 
         <HorizontalStackLayout>
             <Button 
-        Text="Call >" 
+        Text="Phone" 
         VerticalOptions="End"  Margin="5"
         HorizontalOptions="CenterAndExpand" />
             <Button 
-        Text="Email >" 
+        Text="Email" 
+        VerticalOptions="End"  Margin="5"
+        HorizontalOptions="CenterAndExpand" />
+            <Button 
+        Text="Website" 
         VerticalOptions="End"  Margin="5"
         HorizontalOptions="CenterAndExpand" />
         </HorizontalStackLayout>
