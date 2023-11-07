@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+xmlns:picker="clr-namespace:Syncfusion.Maui.Picker;assembly=Syncfusion.Maui.Picker"
+xmlns:inputs="clr-namespace:Syncfusion.Maui.Inputs;assembly=Syncfusion.Maui.Inputs"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.Pages.AddDogPage"
+             Title="AddDogPage">
+    <ScrollView>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height=".2*"/>
+                <RowDefinition Height=".2*"/>
+                <RowDefinition Height=".2*"/>
+                <RowDefinition Height=".2*"/>
+                <RowDefinition Height=".2*"/>
+                <RowDefinition Height=".2*"/>
+                <RowDefinition Height=".2*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width=".5*"/>
+            </Grid.ColumnDefinitions>
+
+            <Frame Grid.Row="0"  BackgroundColor="White">
+                <HorizontalStackLayout>
+                    <Label Text="Name: "  VerticalOptions="Center"/>
+                    <Entry/>
+                </HorizontalStackLayout>
+            </Frame>
+
+
+            <Label Text="Breed: " Grid.Row="1" Grid.Column="0"/>
+            <inputs:SfComboBox WidthRequest="200" HeightRequest="50" Grid.Row="1" Grid.Column="1" IsEditable="True">
+                <inputs:SfComboBox.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Item 1</x:String>
+                        <x:String>Item 2</x:String>
+                        <x:String>Item 3</x:String>
+                    </x:Array>
+                </inputs:SfComboBox.ItemsSource>
+            </inputs:SfComboBox>
+
+            <Frame BackgroundColor="White" Grid.Row="2">
+                <HorizontalStackLayout>
+                    <Label Text="Birthday: " Grid.Row="2" Grid.Column="0"/>
+                    <Button Command="DatePick"/>
+                    <picker:SfDatePicker x:Name="datePicker" picker:Mode="RelativeDialog" Grid.Row="2" Grid.Column="1"/>
+                </HorizontalStackLayout>
+            </Frame>
+
+
+            <Frame Grid.Row="3" BackgroundColor="White">
+                <HorizontalStackLayout>
+                    <Label Text="Sex: "/>
+                    <inputs:SfComboBox WidthRequest="200" HeightRequest="50" Grid.Row="1" Grid.Column="1" IsEditable="True">
+                        <inputs:SfComboBox.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Male</x:String>
+                                <x:String>Female</x:String>
+                            </x:Array>
+                        </inputs:SfComboBox.ItemsSource>
+                    </inputs:SfComboBox>
+                </HorizontalStackLayout>
+            </Frame>
+
+            <Frame Grid.Row="4" BackgroundColor="White">
+                <HorizontalStackLayout>
+                    <Label Text="Weight: " VerticalTextAlignment="Center"/>
+                    <inputs:SfNumericEntry x:Name="numericEntry" UpDownPlacementMode="Hidden"/>
+                </HorizontalStackLayout>
+            </Frame>
+
+
+            <Label Text="Bio:" Grid.Row="5" Grid.Column="0"/>
+            <Editor Text="Enter a short bio about you dog..." MaxLength="500" Grid.Row="5" Grid.Column="1"/>
+
+            <Button Text="Upload a picture of your pup" Grid.Row="6" Grid.ColumnSpan="2"/>
+        </Grid>
+    </ScrollView>
+</ContentPage>

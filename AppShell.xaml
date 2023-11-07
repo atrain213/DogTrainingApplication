@@ -28,7 +28,7 @@
 
         <Tab
             Title = "Main Page">
-            <ShellContent ContentTemplate="{DataTemplate local:MainPage}" />
+            <ShellContent ContentTemplate="{DataTemplate local:BehaviorPage}" />
 
         </Tab>
         <Tab
@@ -41,8 +41,22 @@
             <ShellContent ContentTemplate="{DataTemplate local:TrainerSearch}" />
 
         </Tab>
+
+    <Tab
+        Title = "Report Page">
+            <ShellContent ContentTemplate="{DataTemplate local:ReportPage}" />
+
+        </Tab>
+
+    <Tab
+        Title = "Specific Behavior Page">
+            <ShellContent ContentTemplate="{DataTemplate local:SpecificBehaviorInfoPage}" />
+
+        </Tab>
     </TabBar>
     <ShellContent Shell.TabBarIsVisible="False" Shell.TabBarForegroundColor="Red" ContentTemplate="{DataTemplate local:DogProfilePage}"/>
+    <ShellContent ContentTemplate="{DataTemplate local:SpecificBehaviorInfoPage}"/>
+    <ShellContent ContentTemplate="{DataTemplate local:ReportPage}"/>
     <ShellContent ContentTemplate="{DataTemplate local:TrainerSearch}"/>
     <ShellContent ContentTemplate="{DataTemplate local:AccountPage}"/>
     <ShellContent ContentTemplate="{DataTemplate local:SettingsPage}"/>

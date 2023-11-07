@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+xmlns:listview="clr-namespace:Syncfusion.Maui.ListView;assembly=Syncfusion.Maui.ListView"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.BehaviorPage"
+             Title="Cloud's Behaviors"
+             xmlns:local="clr-namespace:MauiApp1">
+
+    <ContentPage.BindingContext>
+        <local:BookViewModel></local:BookViewModel>
+    </ContentPage.BindingContext>
+
+    <Grid  RowSpacing="20" ColumnSpacing="5" Padding="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".6*"/>
+            <RowDefinition Height=".1*"/>
+            <RowDefinition Height=".1*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width=".5*"/>
+            <ColumnDefinition Width=".5*"/>
+        </Grid.ColumnDefinitions>
+
+        <Frame   Grid.Row="0"  Grid.Column="0" Grid.ColumnSpan="3">
+            <listview:SfListView x:Name="listView" ItemsSource="{Binding BookDetails}" SelectionMode="None" SelectionGesture="Tap" TapCommandParameter="TapGestureRecognizer_Tapped" SelectionBackground="Red" ItemSpacing="5" ItemSize="70">
+                <listview:SfListView.ItemsLayout>
+                    <listview:GridLayout SpanCount="4" />
+                </listview:SfListView.ItemsLayout>
+                <listview:SfListView.ItemTemplate>
+                    <DataTemplate>
+                        <VerticalStackLayout>
+                            <ImageButton Source="cake.png" HeightRequest="75" WidthRequest="75"  CornerRadius="15" Padding="6" BorderColor="{Binding Color}" BorderWidth="2">
+                                <ImageButton.Background>
+                                    <LinearGradientBrush StartPoint="{Binding Scale}" EndPoint="0,0">
+                                        <GradientStop Color="{Binding Color}" Offset="0"/>
+                                        <GradientStop Color="White" Offset="1.0"/>
+                                    </LinearGradientBrush>
+                                </ImageButton.Background>
+                            </ImageButton>
+                            <Label Text="Sit" TextColor="Black"/>
+                        </VerticalStackLayout>
+                    </DataTemplate>
+                </listview:SfListView.ItemTemplate>
+            </listview:SfListView>
+        </Frame>
+        <Frame  Grid.Row="1"  Grid.Column="0" HorizontalOptions="Center">
+            <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+                <Image Source="cake.png"/>
+                <Label Text="Training Locations" LineBreakMode="WordWrap" WidthRequest="90" HorizontalTextAlignment="Center"/>
+            </HorizontalStackLayout>
+        </Frame>
+        <Frame  Grid.Row="1"  Grid.Column="1">
+            <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+                <Image Source="cake.png"/>
+                <Label Text="Usual Distractions" LineBreakMode="WordWrap" WidthRequest="90" HorizontalTextAlignment="Center"/>
+            </HorizontalStackLayout>
+        </Frame>
+        <Frame  Grid.Row="2"  Grid.Column="0" Grid.ColumnSpan="2">
+            <Label Text="New Training" HorizontalTextAlignment="Center" FontSize="Large" LineBreakMode="NoWrap" VerticalTextAlignment="Center"/>
+        </Frame>
+
+        
+    </Grid>
+</ContentPage>

@@ -18,6 +18,8 @@
      Text="Edit Profile"
      VerticalOptions="Center"
      HorizontalOptions="End"/>
+
+            <Button Text="Add Dog" Clicked="AddDog_Button_Clicked"/>
         </HorizontalStackLayout>
         <Label 
             Text="Username: JohnSmith123"
@@ -27,6 +29,8 @@
             Text="Profile Picture:" Margin="10"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
+        <Image Source="defaultpfp.png" />
+        <Button Text="Change/Remove Profile Picture"/>
         <Label 
             Text="First Name: John"
             VerticalOptions="Center" Margin="10"

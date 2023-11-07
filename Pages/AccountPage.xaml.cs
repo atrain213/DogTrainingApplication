@@ -10,4 +10,9 @@ public partial class AccountPage : ContentPage
     {
         await Shell.Current.GoToAsync($"/HomePage");
     }
+
+    private async void AddDog_Button_Clicked(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync($"/AddDogPage");
+    }
 }

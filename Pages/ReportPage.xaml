@@ -1,12 +1,171 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MauiApp1.Pages.NewPage1"
-             Title="NewPage1">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             x:Class="MauiApp1.ReportPage"
+             Title="Report Page"
+             BackgroundColor="Black">
+
+   
+
+        <Grid
+            RowSpacing="2">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" /> <!-- Current Session-->
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="75" /> <!--Separation between Current and New Sessions-->
+            <RowDefinition Height="50" />  <!-- New Session-->
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="75" /> <!--Separation between New Session and Custom Notes-->
+            <RowDefinition Height="50" />
+            <RowDefinition Height="90" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition />
+            <ColumnDefinition />
+
+        </Grid.ColumnDefinitions>
+
+        <BoxView Color="MediumPurple" />
+        <Label Text="Current Session"
+               TextColor="White"
+               FontSize="20"
+               FontAttributes="Bold"
+               TextDecorations="Underline"
+               HorizontalOptions="Center"
+               VerticalOptions="Center" />
+        <BoxView Grid.Column="1"
+                 Color="MediumPurple" />
+        <BoxView Grid.Column="2"
+                 Color="MediumPurple" />
+        <BoxView Grid.Row="1"
+                 Color="MediumPurple" />
+        <Label Grid.Row="1"
+               Text="Behavior: Sit"
+               HorizontalOptions="End"
+               VerticalOptions="Center" />
+        <BoxView Grid.Row="1"
+                 Grid.Column="1"
+                 Color="MediumPurple" />
+        <Label Grid.Row="1"
+               Grid.Column="1"
+               Text=" # of Successes: 10"
+               BackgroundColor="LightGreen"
+               HorizontalOptions="Center"
+               VerticalOptions="Center" />
+        <BoxView Grid.Row="1"
+                 Grid.Column="2"
+                 Color="MediumPurple" />
+        <Label Grid.Row="1"
+               Grid.Column="2"
+               Text="# of Failures: 3"
+               BackgroundColor="#C41E3A"
+               HorizontalOptions="Center"
+               VerticalOptions="Center" />
+        <BoxView Grid.Row="2"
+                 Color="MediumPurple" />
+        <Label Grid.Row="2"
+               Text="Behavior: Stay"
+               HorizontalOptions="End"
+               VerticalOptions="End" />
+        <BoxView Grid.Row="2"
+                 Grid.Column="1"
+                 Color="MediumPurple" />
+        <Label Grid.Row="2"
+               Grid.Column="1"
+               Text="# of Successes: 8"
+               BackgroundColor="LightGreen"
+               HorizontalOptions="Center"
+               VerticalOptions="End" />
+        <BoxView Grid.Row="2"
+                 Grid.Column="2"
+                 Color="MediumPurple" />
+        <Label Grid.Row="2"
+               Grid.Column="2"
+               Text="# of Failures: 4"
+               BackgroundColor="#C41E3A"
+               HorizontalOptions="Center"
+               VerticalOptions="Center" />
+        <BoxView Grid.Row="4"
+                 Grid.Column="0"
+                 Color="LightGreen"/>
+        <Label Grid.Row="4"
+               Grid.Column="0"
+               Text="Next Session"
+               TextColor="LightSlateGray"
+               FontSize="20"
+               FontAttributes="Bold"
+               TextDecorations="Underline"
+               HorizontalOptions="Center"
+               VerticalOptions="Center" />
+        <BoxView Grid.Row="4"
+                Grid.Column="1"
+                Color="LightGreen" />
+        <BoxView Grid.Row="4"
+                 Grid.Column="2"
+                 Color="LightGreen" />
+        <BoxView Grid.Row="5"
+                 Grid.Column="0"
+                 Color="LightGreen" />
+        <Label   Text="*   Scent Discrimination"
+                  TextColor="Black"
+                 Grid.Row="5"
+                 Grid.Column="0"
+                 HorizontalTextAlignment="Start"
+                 VerticalTextAlignment="Center"/>
+        <BoxView Grid.Row="5"
+                 Grid.Column="1"
+                 Color="LightGreen" />
+        <BoxView Grid.Row="5"
+                 Grid.Column="2"
+                 Color="LightGreen" />
+        <BoxView Grid.Row="6"
+                 Grid.Column="0"
+                 Color="LightGreen" />
+        <Label   Text="*   Roll Over"
+                  TextColor="Black"
+                 Grid.Row="6"
+                 Grid.Column="0"
+                 HorizontalTextAlignment="Start"
+                 VerticalTextAlignment="Center"/>
+        <BoxView Grid.Row="6"
+                 Grid.Column="1"
+                 Color="LightGreen" />
+        <BoxView Grid.Row="6"
+                 Grid.Column="2"
+                 Color="LightGreen" />
+        <BoxView Grid.Row="8"
+                 Grid.Column="0"
+                 Color="LightSeaGreen"/>
+        <Label   Text="Custom Notes"
+                 TextColor="White"
+                 TextDecorations="Underline"
+                 FontSize="20"
+                 FontAttributes="Bold"
+                 HorizontalOptions="Center"
+                 VerticalOptions="Center"
+                 Grid.Row="8"
+                 Grid.Column="0"/>
+        <BoxView Grid.Row="8"
+                 Grid.Column="1"
+                 Color="LightSeaGreen"/>
+        <BoxView Grid.Row="8"
+                 Grid.Column="2"
+                 Color="LightSeaGreen"/>
+        <BoxView Grid.Row="9"
+                 Grid.ColumnSpan="3"
+                 Color="LightSeaGreen"/>
+        <Editor  Placeholder="Enter Notes Here"
+                 HeightRequest="75"
+                 Grid.Row="9"
+                 Grid.ColumnSpan="3"/>
+
+
+
+
+    </Grid>
+
+
 </ContentPage>

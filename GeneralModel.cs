@@ -1,5 +1,4 @@
 ﻿//using Android.Database;
-using MauiApp1.Pages;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -35,7 +34,7 @@ namespace MauiApp1
                 "Notifications > ",
                 "Settings > ",
                 "Data > ",
-                "Logout > "
+                "Logout X "
             };
         }
     }
