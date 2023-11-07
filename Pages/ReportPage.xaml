@@ -19,7 +19,7 @@
             <RowDefinition Height="50" />
             <RowDefinition Height="75" /> <!--Separation between New Session and Custom Notes-->
             <RowDefinition Height="50" />
-            <RowDefinition Height="75" />
+            <RowDefinition Height="90" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="250"/>
@@ -158,7 +158,7 @@
                  Grid.ColumnSpan="3"
                  Color="LightSeaGreen"/>
         <Editor  Placeholder="Enter Notes Here"
-                 HeightRequest="80"
+                 HeightRequest="75"
                  Grid.Row="9"
                  Grid.ColumnSpan="3"/>
 
