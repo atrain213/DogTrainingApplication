@@ -4,45 +4,61 @@
              x:Class="MauiApp1.AccountPage"
              Title="AccountPage">
     <VerticalStackLayout>
-        <Label 
-     Text="Account Profile" FontSize="24"
-     VerticalOptions="Center" 
-     HorizontalOptions="Center" />
+        
         <HorizontalStackLayout>
 
 
             <Button Text="Home Page"  Clicked="HomePage_Clicked"
                 VerticalOptions="Center"
                 HorizontalOptions="StartAndExpand"/>
-        <Button 
-     Text="Edit Profile"
-     VerticalOptions="Center"
-     HorizontalOptions="End"/>
 
-            <Button Text="Add Dog" Clicked="AddDog_Button_Clicked"/>
+
+            <Button Text="Add Dog" Clicked="AddDog_Button_Clicked" HorizontalOptions="End"/>
         </HorizontalStackLayout>
         <Label 
-            Text="Username: JohnSmith123"
-            VerticalOptions="Center" Margin="10"
-            HorizontalOptions="Center" />
+Text="Your Account" FontSize="26" FontAttributes="Bold" FontFamily="OpenSans-SemiBold.ttf" Margin="10"
+VerticalOptions="Center" 
+HorizontalOptions="Start" />
+        <HorizontalStackLayout>
+          
+            <Image Source="defaultpfp.png" Aspect="AspectFit" Margin="10" HeightRequest="160"/>
+            <VerticalStackLayout>
         <Label 
-            Text="Profile Picture:" Margin="10"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-        <Image Source="defaultpfp.png" />
-        <Button Text="Change/Remove Profile Picture"/>
+     Text="Username: JohnSmith123" Margin="5"
+     VerticalOptions="Center" 
+     HorizontalOptions="Start" />
+                <Label 
+     Text="First Name: John" Margin="5"
+     VerticalOptions="Center"
+     HorizontalOptions="Start" />
+                <Label 
+     Text="Last Name: Smith"  Margin="5"
+     VerticalOptions="Center" 
+     HorizontalOptions="Start" />
+                <Label 
+     Text="Account Type: Trainer"  Margin="5"
+     VerticalOptions="Center" 
+     HorizontalOptions="Start" />
+                <Label 
+Text="Number of Dogs: X"  Margin="5"
+VerticalOptions="Center" 
+HorizontalOptions="Start" />
+                <Label 
+Text="Created on: XX-XX-20XX" Margin="5"
+VerticalOptions="Center" 
+HorizontalOptions="Start" />
+                
+            </VerticalStackLayout>
+        </HorizontalStackLayout>
+        
+        <Button Text="Edit Profile Picture"
+                  VerticalOptions="Center" 
+                  HorizontalOptions="Start" FontSize="13" WidthRequest="160" HeightRequest="25"/>
+          
         <Label 
-            Text="First Name: John"
-            VerticalOptions="Center" Margin="10"
-            HorizontalOptions="Center" />
-        <Label 
-            Text="Last Name: Smith" Margin="10"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-        <Label 
-            Text="Account Type: Trainer" Margin="10"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+     Text="Contact Information"
+     VerticalOptions="Center"  Margin="10" FontSize="18" FontAttributes="Bold" FontFamily="OpenSans-SemiBold.ttf"
+     HorizontalOptions="Start" />
         <Label 
             Text="Email: johnsmith123@dogtraininginc.com"
             VerticalOptions="Center"  Margin="10"
@@ -55,20 +71,31 @@
             Text="Training Organization/Business: Dog Training Inc."
             VerticalOptions="Center" Margin="10"
             HorizontalOptions="Center" />
+        <Label 
+     Text="Location: Enabled"
+     VerticalOptions="Center" Margin="15"
+     HorizontalOptions="Center" />
         <HorizontalStackLayout>
-        <Button 
-            Text="Location Services" Margin="25"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-        <Button 
-            Text="Change Password"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
             <Button 
-            Text="Deactivate/Delete Account"
+    Text="Edit Account Info"
+    VerticalOptions="Center"
+    HorizontalOptions="Center" WidthRequest="150" HeightRequest="25" />
+        <Button 
+    Text="Change Password"
+    VerticalOptions="Center" 
+    HorizontalOptions="Center" WidthRequest="150" HeightRequest="25"/>
+
+      
+        <Button 
+            Text="Location Services"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
         </HorizontalStackLayout>
+        <Button 
+            Text="Deactivate/Delete Account" Margin="15"
+            VerticalOptions="End" BackgroundColor="Red"
+            HorizontalOptions="Center" />
+       
 
 
     </VerticalStackLayout>
