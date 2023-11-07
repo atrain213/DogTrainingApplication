@@ -42,7 +42,7 @@ xmlns:inputs="clr-namespace:Syncfusion.Maui.Inputs;assembly=Syncfusion.Maui.Inpu
             <Frame BackgroundColor="White" Grid.Row="2">
                 <HorizontalStackLayout>
                     <Label Text="Birthday: " Grid.Row="2" Grid.Column="0"/>
-                    <Button Command="DatePick"/>
+                    <Button/>
                     <picker:SfDatePicker x:Name="datePicker" picker:Mode="RelativeDialog" Grid.Row="2" Grid.Column="1"/>
                 </HorizontalStackLayout>
             </Frame>

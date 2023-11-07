@@ -53,6 +53,13 @@
             <ShellContent ContentTemplate="{DataTemplate local:SpecificBehaviorInfoPage}" />
 
         </Tab>
+
+
+     <Tab
+        Title = "Training Page">
+            <ShellContent ContentTemplate="{DataTemplate local:TrainingPage}" />
+
+        </Tab>
     </TabBar>
     <ShellContent Shell.TabBarIsVisible="False" Shell.TabBarForegroundColor="Red" ContentTemplate="{DataTemplate local:DogProfilePage}"/>
     <ShellContent ContentTemplate="{DataTemplate local:SpecificBehaviorInfoPage}"/>

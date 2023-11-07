@@ -1,4 +1,4 @@
-namespace MauiApp1.Pages;
+namespace MauiApp1;
 
 public partial class TrainingPage : ContentPage
 {
@@ -10,7 +10,7 @@ public partial class TrainingPage : ContentPage
 
     {
 
-        await Navigation.PushAsync(new NewSession());
+        await Shell.Current.GoToAsync($"/NewSession");
 
     }
 }
