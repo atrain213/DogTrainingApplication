@@ -4,9 +4,48 @@
              x:Class="MauiApp1.TrainerBioPage"
              Title="TrainerBioPage">
     <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
+       
+        <HorizontalStackLayout Spacing="15" Margin="28" HorizontalOptions="Center" >
+            <Label 
+            Text="Find a Trainer!"
+            Margin="2" FontFamily="OpenSans-SemiBold.ttf"
+            VerticalOptions="Start" 
             HorizontalOptions="Center" />
+            <SearchBar Placeholder="Search..." WidthRequest="350"/>
+            </HorizontalStackLayout>
+        
+            <Image Source="defaultpfp.png" />
+        <Label 
+            Text="John Smith" FontSize="20" FontAttributes="Bold"
+            VerticalOptions="Center" 
+            HorizontalOptions="Start" />
+
+        <Label 
+     Text="Dog Training Inc. - Hometown, USA" FontSize="14" FontAttributes="Italic"
+     VerticalOptions="Center" 
+     HorizontalOptions="Start" />
+        <Label 
+    Text="John Smith has been training dogs for 16 years, and has been with Dog Training Inc for 10 years. He specializes in obedience and disc sport training. 
+          His goal of training is to ensure both you and your dog have an optimal understanding of each other to create the strongest bond between the two.
+          This is what a biography might look like for a trainer, as it has been custom written by the trainer themselves." FontSize="14"
+    VerticalOptions="Center" 
+    HorizontalOptions="StartAndExpand" />
+
+        <Label 
+        Text="Book a session!" FontSize="14" FontAttributes="Italic"
+        VerticalOptions="Center" 
+        HorizontalOptions="Start" />
+
+        <HorizontalStackLayout>
+            <Button 
+        Text="Call >" 
+        VerticalOptions="End"  Margin="5"
+        HorizontalOptions="CenterAndExpand" />
+            <Button 
+        Text="Email >" 
+        VerticalOptions="End"  Margin="5"
+        HorizontalOptions="CenterAndExpand" />
+        </HorizontalStackLayout>
+            
     </VerticalStackLayout>
 </ContentPage>
