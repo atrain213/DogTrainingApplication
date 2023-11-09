@@ -23,4 +23,8 @@ public partial class General : ContentPage
     {
         await Shell.Current.GoToAsync($"/DataExportPage");
     }
+    private async void AddNewDog_Clicked(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync($"/AddDogPage");
+    }
 }

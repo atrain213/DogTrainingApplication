@@ -73,7 +73,12 @@ Text="General"   Margin="5" FontAttributes="Bold" FontSize="25"
         Text="Trainer Search >" Clicked="TrainerSearch_Clicked"
         VerticalOptions="End"  Margin="5"
         HorizontalOptions="CenterAndExpand" />
-      
+
+        <Button 
+        Text="Add New Dog"  Margin="5" Clicked="AddNewDog_Clicked"
+        VerticalOptions="End" 
+        HorizontalOptions="CenterAndExpand" />
+
         <Button 
         Text="Adjust Settings >"  Margin="5"  Clicked="SettingsPage_Clicked"
         VerticalOptions="End"  
