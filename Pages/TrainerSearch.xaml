@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiApp1.TrainerSearch"
              Title="TrainerSearch">
-    <VerticalStackLayout>
+    <VerticalStackLayout Padding="5">
       
            
             <Label 
@@ -19,20 +19,28 @@
         
         <Label 
         Text="Enter a specfic skill, general area of training interest, or the name of a specific trainer or training organization."
-        VerticalOptions="Start" FontSize="12"
+        VerticalOptions="Center" FontSize="12" HorizontalTextAlignment="Center"
         HorizontalOptions="Center" />
 
         <Label
-            Text="(placeholder: search results should appear here when entered)"
-         VerticalOptions="Start" FontSize="10" Margin="30" FontAttributes="Italic"
+            Text="(search results will appear here when entered)"
+         VerticalOptions="Start" FontSize="10" Margin="35" FontAttributes="Italic"
         HorizontalOptions="Center" /> 
         
         <Label 
-            Margin="35" 
-    Text="Didn't find what you were looking for? Browse all trainers nearby:"
+            Margin="3" 
+    Text="Didn't find what you were looking for? "
     VerticalOptions="Center" FontSize="20" FontAttributes="Bold"
     HorizontalOptions="CenterAndExpand" />
-        
-      
+        <Label 
+
+Text="Browse all trainers nearby:"
+VerticalOptions="Center" FontSize="20" FontAttributes="Bold"
+HorizontalOptions="CenterAndExpand" />
+
+        <Label
+     Text="(local results will appear here)"
+  VerticalOptions="Start" FontSize="10" Margin="35" FontAttributes="Italic"
+ HorizontalOptions="Center" />
     </VerticalStackLayout>
 </ContentPage>

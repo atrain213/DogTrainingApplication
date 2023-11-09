@@ -21,22 +21,22 @@ Text="General"   Margin="5" FontAttributes="Bold" FontSize="25"
                 <HorizontalStackLayout>
                 <Label 
                   Text="John Smith" FontSize="16"    
-               HorizontalOptions="Start" Margin="5"
+               HorizontalOptions="Start" Margin="3"
                VerticalOptions="Start" />
             
                 <Label 
-             Text="johnsmith123" FontAttributes="Italic"  
+             Text="johnsmith123" FontAttributes="Italic"  FontSize="13"
              HorizontalOptions="Start" Margin="5"
              VerticalOptions="Center" />
                 </HorizontalStackLayout>
                 <Label 
-             Text="Number of Dogs: X"
-         HorizontalOptions="Start" Margin="5"
+             Text="Dogs: #"
+         HorizontalOptions="Start" Margin="3"
          VerticalOptions="End" />
                
-            <Label 
-            Text="Trainer         " FontAttributes="Bold"
-            HorizontalOptions="Start"  Margin="5"
+            <Label
+            Text="Trainer" FontAttributes="Bold"
+            HorizontalOptions="Start"  Margin="3"
             VerticalOptions="End" />
                 <HorizontalStackLayout>
                     <Button 
@@ -46,7 +46,7 @@ Text="General"   Margin="5" FontAttributes="Bold" FontSize="25"
 
                     <Button 
         Text="Add a Dog >"  Margin="5" Clicked="AddNewDog_Clicked"
-        VerticalOptions="End" FontSize="13"
+        VerticalOptions="End"
         HorizontalOptions="CenterAndExpand" />
                 </HorizontalStackLayout>
             </VerticalStackLayout>
