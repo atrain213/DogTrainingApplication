@@ -3,17 +3,15 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiApp1.AccountPage"
              Title="AccountPage">
-    <VerticalStackLayout>
+    <VerticalStackLayout Padding="5">
         
         <HorizontalStackLayout>
 
 
-            <Button Text="Home Page"  Clicked="HomePage_Clicked"
+            <Button Text="Home"  Clicked="HomePage_Clicked"
                 VerticalOptions="Center"
                 HorizontalOptions="StartAndExpand"/>
-
-
-            <Button Text="Add Dog" Clicked="AddDog_Button_Clicked" HorizontalOptions="End"/>
+    
         </HorizontalStackLayout>
         <Label 
 Text="Your Account" FontSize="26" FontAttributes="Bold" FontFamily="OpenSans-SemiBold.ttf" Margin="10"
@@ -21,7 +19,7 @@ VerticalOptions="Center"
 HorizontalOptions="Start" />
         <HorizontalStackLayout>
           
-            <Image Source="defaultpfp.png" Aspect="AspectFit" Margin="10" HeightRequest="160"/>
+            <Image Source="defaultpfp.png" Aspect="AspectFit" HeightRequest="160"/>
             <VerticalStackLayout>
         <Label 
      Text="Username: JohnSmith123" Margin="5"
@@ -50,11 +48,13 @@ HorizontalOptions="Start" />
                 
             </VerticalStackLayout>
         </HorizontalStackLayout>
-        
+        <HorizontalStackLayout>
         <Button Text="Edit Profile Picture"
-                  VerticalOptions="Center" 
-                  HorizontalOptions="Start" FontSize="13" WidthRequest="160" HeightRequest="25"/>
-          
+                  VerticalOptions="Center" Margin="5"
+                  HorizontalOptions="Start" FontSize="13"/>
+           
+           
+        </HorizontalStackLayout>
         <Label 
      Text="Contact Information"
      VerticalOptions="Center"  Margin="10" FontSize="18" FontAttributes="Bold" FontFamily="OpenSans-SemiBold.ttf"
@@ -78,16 +78,16 @@ HorizontalOptions="Start" />
         <HorizontalStackLayout>
             <Button 
     Text="Edit Account Info"
-    VerticalOptions="Center"
-    HorizontalOptions="Center" WidthRequest="150" HeightRequest="25" />
-        <Button 
-    Text="Change Password"
+    VerticalOptions="Center" Margin="5"
+    HorizontalOptions="Center"  />
+            <Button 
+    Text="Change Password" Margin="4"
     VerticalOptions="Center" 
-    HorizontalOptions="Center" WidthRequest="150" HeightRequest="25"/>
+    HorizontalOptions="Center"/>
 
-      
-        <Button 
-            Text="Location Services"
+
+            <Button 
+            Text="Location Services" Margin="4"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
         </HorizontalStackLayout>

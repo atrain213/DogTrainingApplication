@@ -3,25 +3,39 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiApp1.DataExportPage"
              Title="DataExportPage">
-    <VerticalStackLayout>
+    <VerticalStackLayout Padding="5">
         <Label 
-            Text="Export data:"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+            Text="Data Export" Margin="5" FontAttributes="Bold" FontSize="25"
+ VerticalOptions="Center" 
+ HorizontalOptions="Start" />
 
         <Label 
-    Text="Select the dog(s) you would like to get data of:"
+    Text="Select the dog(s) you would like to get data of:" FontSize="20"
     VerticalOptions="Center" 
     HorizontalOptions="Center" />
+        
         <Label 
-        Text="Bella
-              Lucky
-              Luna
-              Max
-              ..."
-        VerticalOptions="Center" FontSize="10"
+        Text="Bella"
+        VerticalOptions="Center" 
         HorizontalOptions="Center" />
+        <Label 
+ Text="Lucky"
+ VerticalOptions="Center" 
+ HorizontalOptions="Center" />
+        <Label 
+ Text="Luna"
+ VerticalOptions="Center" 
+ HorizontalOptions="Center" />
+        <Label 
+ Text="Max"
+ VerticalOptions="Center" 
+ HorizontalOptions="Center" />
+        <Label 
+Text=". . ."
+VerticalOptions="Center" 
+HorizontalOptions="Center" />
 
+        <HorizontalStackLayout>
         <Button 
           Text="Export Dog(s) Data >"  Margin="5"
           VerticalOptions="End" 
@@ -32,9 +46,10 @@
               VerticalOptions="End" 
              HorizontalOptions="CenterAndExpand" />
         
+        </HorizontalStackLayout>
         <Button 
-            Text="Printable Version >"  Margin="5"
-            VerticalOptions="End" 
-            HorizontalOptions="CenterAndExpand" />
+    Text="Printable Version >"  Margin="5"
+    VerticalOptions="End" 
+    HorizontalOptions="CenterAndExpand" />
     </VerticalStackLayout>
 </ContentPage>
