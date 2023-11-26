@@ -201,4 +201,21 @@ namespace MauiApp1
         
 
     }
+
+    public class ViewDogEdit : BaseView
+    {
+        private ObservableCollection<BaseView> _breedList = new();
+
+        public ObservableCollection<BaseView> BreedList
+        {
+            get { return _breedList; }
+            set { if (_breedList != value)
+                    {
+                    _breedList = value;
+                    NotifyPropertyChanged();
+                    }      
+                }
+        }
+
+    }
 }

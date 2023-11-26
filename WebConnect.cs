@@ -10,7 +10,7 @@ namespace MauiApp1
 {
     public static class WebConnect
     {
-        private static readonly string _endpoint = "http://localhost:5112/api/";
+        private static readonly string _endpoint = "https://dogapi.azurewebsites.net/api/";
         private static readonly HttpClient _client = new();
         private static bool _firstrun = true;
 
