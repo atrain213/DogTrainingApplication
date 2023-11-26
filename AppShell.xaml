@@ -27,7 +27,7 @@
         </Tab>
 
         <Tab
-            Title = "Main Page">
+            Title = "Behavior Page">
             <ShellContent ContentTemplate="{DataTemplate local:BehaviorPage}" />
 
         </Tab>
@@ -58,6 +58,11 @@
      <Tab
         Title = "Training Page">
             <ShellContent ContentTemplate="{DataTemplate local:TrainingPage}" />
+
+        </Tab>
+    <Tab
+        Title = "Main Page">
+            <ShellContent ContentTemplate="{DataTemplate local:MainPage}" />
 
         </Tab>
     </TabBar>

@@ -55,6 +55,35 @@ namespace MauiApp1
         }
     }
 
+    public class ViewBreeds:BaseView
+    {
+        private ObservableCollection<ViewBreeds> _breeds = new();
+        public ObservableCollection<ViewBreeds> Breeds
+        {
+            get { return _breeds; }
+            set
+            {
+                if (_breeds != value)
+                {
+                    _breeds = value;
+                    NotifyPropertyChanged();
+                }
+            }
+        }
+
+        public async Task loadAPI()
+        {
+            Breeds.Clear();
+            List<APIDogBreeds> api = await WebConnect.BreedListAsync();
+            foreach (APIDogBreeds apiItem in api)
+            {
+                Breeds.Add(new ViewBreeds {Name = apiItem.Name });
+            }
+        }
+    }
+
+    
+
     public class ViewDog:BaseView
     {
 
@@ -168,6 +197,8 @@ namespace MauiApp1
                 Dogs.Add(new ViewDog { ID = apiItem.ID, Name = apiItem.Name });
             }
         }
+
+        
 
     }
 }

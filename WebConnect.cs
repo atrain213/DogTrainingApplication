@@ -77,5 +77,32 @@ namespace MauiApp1
             return api;
         }
 
+        public static async Task<List<APIDogBreeds>> BreedListAsync()
+        {
+            if (_firstrun) { Init(); }
+            string url = _endpoint + "Dog/breeds";
+
+            HttpResponseMessage? response;
+
+            List<APIDogBreeds> api = new();
+            response = await _client.GetAsync(url);
+            if (response != null)
+            {
+                if (response.IsSuccessStatusCode)
+                {
+                    string? msg = await response.Content.ReadAsStringAsync();
+                    if (!string.IsNullOrWhiteSpace(msg))
+                    {
+                        List<APIDogBreeds>? des = JsonSerializer.Deserialize<List<APIDogBreeds>>(msg);
+                        if (des != null)
+                        {
+                            api = des;
+                        }
+                    }
+                }
+            }
+            return api;
+        }
+
     }
 }

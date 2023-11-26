@@ -27,4 +27,11 @@
         public List<APIContact> Owners { get; set; } = new();
         public List<APIContact> Trainers { get; set; } = new();
     }
+
+    public class APIDogBreeds
+    {
+        public int ID { get; set; }
+        public string Name { get; set; } = string.Empty;
+    }
+
 }

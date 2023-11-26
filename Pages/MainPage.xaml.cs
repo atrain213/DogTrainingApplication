@@ -2,7 +2,7 @@
 
 public partial class MainPage : ContentPage
 {
-	public ViewDogList View { get; set; } = new();
+	public ViewBreeds View { get; set; } = new();
 
 	public MainPage()
 	{

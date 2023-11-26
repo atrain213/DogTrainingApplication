@@ -5,10 +5,10 @@
              xmlns:View ="clr-namespace:MauiApp1">
 
     <ContentPage.BindingContext>
-        <View:ViewDogList/>
+        <View:ViewBreeds/>
     </ContentPage.BindingContext>
 
-    <CollectionView ItemsSource="{Binding Dogs}">
+    <CollectionView ItemsSource="{Binding Breeds}">
         <CollectionView.ItemTemplate>
             <DataTemplate>
                 <VerticalStackLayout>

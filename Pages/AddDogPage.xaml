@@ -4,7 +4,13 @@ xmlns:picker="clr-namespace:Syncfusion.Maui.Picker;assembly=Syncfusion.Maui.Pick
 xmlns:inputs="clr-namespace:Syncfusion.Maui.Inputs;assembly=Syncfusion.Maui.Inputs"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiApp1.AddDogPage"
-             Title="AddDogPage">
+             Title="Add Dog"
+             xmlns:View ="clr-namespace:MauiApp1">
+    
+    <ContentPage.BindingContext>
+        <View:ViewBreeds/>
+    </ContentPage.BindingContext>
+
     <ScrollView>
         <Grid>
             <Grid.RowDefinitions>
@@ -32,14 +38,7 @@ xmlns:inputs="clr-namespace:Syncfusion.Maui.Inputs;assembly=Syncfusion.Maui.Inpu
             <Frame Grid.Row="1"   BackgroundColor="White">
                 <HorizontalStackLayout>
                     <Label Text="Breed: " VerticalTextAlignment="Center"/>
-                    <inputs:SfComboBox WidthRequest="200" HeightRequest="50" IsEditable="True" Placeholder="Select Dog Breed">
-                        <inputs:SfComboBox.ItemsSource>
-                            <x:Array Type="{x:Type x:String}">
-                                <x:String>Item 1</x:String>
-                                <x:String>Item 2</x:String>
-                                <x:String>Item 3</x:String>
-                            </x:Array>
-                        </inputs:SfComboBox.ItemsSource>
+                    <inputs:SfComboBox WidthRequest="200" HeightRequest="50" IsEditable="True" Placeholder="Select Dog Breed" ItemsSource="{Binding Name}">
                     </inputs:SfComboBox>
                 </HorizontalStackLayout>
             </Frame>
