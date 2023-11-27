@@ -7,11 +7,11 @@
         
         <HorizontalStackLayout>
 
+            <Button 
+Text="Edit Info"
+VerticalOptions="Center" Margin="2"
+HorizontalOptions="Center"  />
 
-            <Button Text="Home"  Clicked="HomePage_Clicked"
-                VerticalOptions="Center"
-                HorizontalOptions="StartAndExpand"/>
-    
         </HorizontalStackLayout>
         <Label 
 Text="Your Account" FontSize="26" FontAttributes="Bold" FontFamily="OpenSans-SemiBold.ttf" Margin="10"
@@ -26,13 +26,10 @@ HorizontalOptions="Start" />
      VerticalOptions="Center" 
      HorizontalOptions="Start" />
                 <Label 
-     Text="First Name: John" Margin="5"
+     Text="Name: John Smith" Margin="5"
      VerticalOptions="Center"
      HorizontalOptions="Start" />
-                <Label 
-     Text="Last Name: Smith"  Margin="5"
-     VerticalOptions="Center" 
-     HorizontalOptions="Start" />
+      
                 <Label 
      Text="Account Type: Trainer"  Margin="5"
      VerticalOptions="Center" 
@@ -52,51 +49,52 @@ HorizontalOptions="Start" />
         <Button Text="Edit Profile Picture"
                   VerticalOptions="Center" Margin="5"
                   HorizontalOptions="Start" FontSize="13"/>
-           
-           
+          
+
         </HorizontalStackLayout>
         <Label 
      Text="Contact Information"
      VerticalOptions="Center"  Margin="10" FontSize="18" FontAttributes="Bold" FontFamily="OpenSans-SemiBold.ttf"
      HorizontalOptions="Start" />
         <Label 
-            Text="Email: johnsmith123@dogtraininginc.com"
-            VerticalOptions="Center"  Margin="10"
-            HorizontalOptions="Center" />
-        <Label 
-            Text="Phone Number: 555-123-4567"
+            Text="Training Affiliation: Dog Training Inc."
             VerticalOptions="Center" Margin="10"
             HorizontalOptions="Center" />
         <Label 
-            Text="Training Organization/Business: Dog Training Inc."
-            VerticalOptions="Center" Margin="10"
-            HorizontalOptions="Center" />
-        <Label 
-     Text="Location: Enabled"
-     VerticalOptions="Center" Margin="15"
+     Text="Website: DogTrainingInc.com"
+     VerticalOptions="Center" Margin="10"
      HorizontalOptions="Center" />
-        <HorizontalStackLayout>
-            <Button 
-    Text="Edit Account Info"
-    VerticalOptions="Center" Margin="5"
-    HorizontalOptions="Center"  />
-            <Button 
-    Text="Change Password" Margin="4"
-    VerticalOptions="Center" 
-    HorizontalOptions="Center"/>
+        <Label 
+     Text="Email: johnsmith123@dogtraininginc.com"
+     VerticalOptions="Center"  Margin="10"
+     HorizontalOptions="Center" />
+        <Label 
+     Text="Phone Number: 555-123-4567"
+     VerticalOptions="Center" Margin="10"
+     HorizontalOptions="Center" />
+      
+        <Button 
+Text="Location: ENABLED" Margin="7" BackgroundColor="ForestGreen"
+VerticalOptions="Center" 
+HorizontalOptions="Center" />
 
-
+        <HorizontalStackLayout HorizontalOptions="Center">
+       
             <Button 
-            Text="Location Services" Margin="4"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+Text="Change Password" Margin="2"
+VerticalOptions="Center" 
+HorizontalOptions="Center"/>
+        <Button 
+Text="Log Out" Margin="2"
+VerticalOptions="Center" 
+HorizontalOptions="Center"/>
+
+       
         </HorizontalStackLayout>
         <Button 
-            Text="Deactivate/Delete Account" Margin="15"
-            VerticalOptions="End" BackgroundColor="Red"
-            HorizontalOptions="Center" />
-       
-
+     Text="Deactivate/Delete Account" Margin="7"
+     VerticalOptions="End" BackgroundColor="Red"
+     HorizontalOptions="Center" />
 
     </VerticalStackLayout>
 </ContentPage>
