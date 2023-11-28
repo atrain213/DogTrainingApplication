@@ -33,7 +33,7 @@
 
         <Button
             Text="Detail Sessions"
-            Clicked="DetailSessions_Clicked"
+           
             HorizontalOptions="Center" />
 
     </VerticalStackLayout>

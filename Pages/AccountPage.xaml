@@ -56,6 +56,16 @@ HorizontalOptions="Start" />
      Text="Contact Information"
      VerticalOptions="Center"  Margin="10" FontSize="18" FontAttributes="Bold" FontFamily="OpenSans-SemiBold.ttf"
      HorizontalOptions="Start" />
+        <HorizontalStackLayout HorizontalOptions="Center">
+            <Label 
+Text="Bio: John Smith has been training dogs for 16 years. . ." FontSize="14"
+VerticalOptions="Center" 
+HorizontalOptions="StartAndExpand"/>
+            <Button 
+Text="Edit Bio >"  Scale=".75" Clicked="Bio_Clicked"
+VerticalOptions="Center" 
+HorizontalOptions="Center" />
+        </HorizontalStackLayout>
         <Label 
             Text="Training Affiliation: Dog Training Inc."
             VerticalOptions="Center" Margin="10"
@@ -72,7 +82,7 @@ HorizontalOptions="Start" />
      Text="Phone Number: 555-123-4567"
      VerticalOptions="Center" Margin="10"
      HorizontalOptions="Center" />
-      
+       
         <Button 
 Text="Location: ENABLED" Margin="7" BackgroundColor="ForestGreen"
 VerticalOptions="Center" 

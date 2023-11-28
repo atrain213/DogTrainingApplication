@@ -15,4 +15,8 @@ public partial class AccountPage : ContentPage
     {
         await Shell.Current.GoToAsync($"/AddDogPage");
     }
+    private async void Bio_Clicked(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync($"/TrainerBioPage");
+    }
 }
