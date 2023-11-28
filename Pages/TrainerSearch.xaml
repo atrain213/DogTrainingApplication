@@ -4,17 +4,21 @@
              x:Class="MauiApp1.TrainerSearch"
              Title="TrainerSearch">
     <VerticalStackLayout Padding="5">
-      
-           
+
+        <HorizontalStackLayout HorizontalOptions="Center">
             <Label 
                Text="Find a Trainer!"
                 Margin="2" FontAttributes="Bold" FontSize="Large" FontFamily="OpenSans-SemiBold.ttf"
                VerticalOptions="Start" 
                HorizontalOptions="Center" />
-
+        <Button 
+Text="View My Bio"  Scale=".75" Clicked="Bio_Clicked"
+VerticalOptions="Center" 
+HorizontalOptions="End" />
+        </HorizontalStackLayout>
         <HorizontalStackLayout Spacing="15" Margin="28" HorizontalOptions="Center" >
             <SearchBar Placeholder="Search..." WidthRequest="350"/>
-
+       
         </HorizontalStackLayout>
         
         <Label 
