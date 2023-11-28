@@ -9,31 +9,31 @@
             Text="Dog Training Session Tracker" 
             FontSize="20"
             VerticalOptions="Center" 
-            HorizontalOptions="CenterAndExpand" />
+            HorizontalOptions="CenterAndExpand"/>
 
         <Button
             Text="Start Session"
-            
+            Clicked="StartSession_Clicked"
             HorizontalOptions="Center" />
         
         <Button
             Text="Create New Session"
-            
+            Clicked="NewSession_Clicked"
             HorizontalOptions="Center" />
 
         <Button
             Text="Plan Session"
-            
+            Clicked="PlanSession_Clicked"
             HorizontalOptions="Center" />
 
         <Button
             Text="Tricks"
-            
+            Clicked="Tricks_Clicked"
             HorizontalOptions="Center" />
 
         <Button
             Text="Detail Sessions"
-            
+            Clicked="DetailSessions_Clicked"
             HorizontalOptions="Center" />
 
     </VerticalStackLayout>
