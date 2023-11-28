@@ -13,10 +13,7 @@
             HorizontalOptions="Center" />
             <SearchBar Placeholder="Search..." WidthRequest="275"/>
             </HorizontalStackLayout>
-        <Button 
-Text="Edit Info"  Scale=".8"
-VerticalOptions="Center" 
-HorizontalOptions="Start" />
+       
         <Image Source="defaultpfp.png" HorizontalOptions="Start" HeightRequest="200" Margin="10"/>
         <HorizontalStackLayout>
         <Label 
