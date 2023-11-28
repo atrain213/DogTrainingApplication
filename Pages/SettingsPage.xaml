@@ -4,25 +4,47 @@
              x:Class="MauiApp1.SettingsPage"
              Title="SettingsPage">
 
-    <VerticalStackLayout>
+    <VerticalStackLayout Padding="4">
         <Label 
-        Text="Settings" FontSize="24"
+        Text="Settings" FontSize="24" Margin="16" FontAttributes="Bold"
         VerticalOptions="Center" 
-        HorizontalOptions="Center" />
-        
-        <Label 
+        HorizontalOptions="Start" />
+
+        <Button 
+ Text="Sound Effects: ON" BackgroundColor="ForestGreen"
+ VerticalOptions="End"  Margin="4"
+ HorizontalOptions="Fill" />
+        <Button 
+Text="Location Services: ON" BackgroundColor="ForestGreen"
+VerticalOptions="End"  Margin="4"
+HorizontalOptions="Fill" />
+        <Button 
         Text="Notifications"
-        VerticalOptions="Center" 
-        HorizontalOptions="Center" />
-        <Label 
+        VerticalOptions="End"  Margin="4"
+        HorizontalOptions="Fill" />
+        <Button 
        Text="Privacy"
-       VerticalOptions="Center" 
-       HorizontalOptions="Center" />
-        <Label 
-        Text="Deactivate/Delete Account"
-        VerticalOptions="Center" 
-        HorizontalOptions="Center" />
+       VerticalOptions="End"   Margin="4"
+       HorizontalOptions="Fill" />
+        <Button 
+ Text="Export Connections"
+ VerticalOptions="End"  Margin="4"
+ HorizontalOptions="Fill" />
+        <Button 
+ Text="Support"
+ VerticalOptions="End"  Margin="4"
+ HorizontalOptions="Fill" />
+        
+        <Button
+ Text="Log Out" BackgroundColor="Red"
+ VerticalOptions="End"   Margin="4"
+  HorizontalOptions="Fill" />
+
+       <Button
+        Text="Deactivate/Delete Account" BackgroundColor="Red"
+        VerticalOptions="End"   Margin="4"
+         HorizontalOptions="Fill" />
      
       
-    </VerticalStackLayout>
+        </VerticalStackLayout>
 </ContentPage>
