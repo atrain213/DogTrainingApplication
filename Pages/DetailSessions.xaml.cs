@@ -1,4 +1,4 @@
-namespace MauiApp1.Pages;
+namespace MauiApp1;
 
 public partial class DetailSessions : ContentPage
 {
@@ -6,4 +6,10 @@ public partial class DetailSessions : ContentPage
 	{
 		InitializeComponent();
 	}
+
+	private void SaveButton_Clicked(object sender, EventArgs e)
+	{
+		string CurrentSessionNotes = CurrentSessionNotesEntry.Text;
+		string NextSessionNotes = NextSessionNotesEntry.Text;
+		string CustomNotes = CustomNotesEntry;
 }
