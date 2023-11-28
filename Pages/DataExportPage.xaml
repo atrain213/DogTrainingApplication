@@ -35,7 +35,7 @@ Text=". . ."
 VerticalOptions="Center" 
 HorizontalOptions="Center" />
 
-        <HorizontalStackLayout>
+        <HorizontalStackLayout HorizontalOptions="Center">
         <Button 
           Text="Export Dog(s) Data >"  Margin="5"
           VerticalOptions="End" 

@@ -35,7 +35,7 @@
         VerticalOptions="Center" 
         HorizontalOptions="Center" />
 
-        <HorizontalStackLayout>
+        <HorizontalStackLayout HorizontalOptions="Center">
             <Button 
         Text="Phone" 
         VerticalOptions="End"  Margin="5"

@@ -73,5 +73,6 @@
     <ShellContent ContentTemplate="{DataTemplate local:AccountPage}"/>
     <ShellContent ContentTemplate="{DataTemplate local:SettingsPage}"/>
     <ShellContent ContentTemplate="{DataTemplate local:HomePage}"/>
+    <ShellContent ContentTemplate="{DataTemplate local:TrainerBioPage}"/>
 
 </Shell>
