@@ -8,37 +8,27 @@ xmlns:inputs="clr-namespace:Syncfusion.Maui.Inputs;assembly=Syncfusion.Maui.Inpu
              xmlns:View ="clr-namespace:MauiApp1">
     
     <ContentPage.BindingContext>
-        <View:ViewBreeds/>
+        <View:ViewDogEdits/>
     </ContentPage.BindingContext>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+    <ScrollView Grid.Row="0">
+        <VerticalStackLayout>
 
-    <ScrollView>
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height=".2*"/>
-                <RowDefinition Height=".2*"/>
-                <RowDefinition Height=".2*"/>
-                <RowDefinition Height=".2*"/>
-                <RowDefinition Height=".2*"/>
-                <RowDefinition Height=".2*"/>
-                <RowDefinition Height=".1*"/>
-                <RowDefinition Height=".1*"/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-
-            </Grid.ColumnDefinitions>
-
-            <Frame Grid.Row="0"   BackgroundColor="White">
+            <Frame  BackgroundColor="White">
                 <HorizontalStackLayout>
                     <Label Text="Name: "  VerticalOptions="Center" />
-                    <Entry VerticalOptions="CenterAndExpand" MinimumWidthRequest="100" MaxLength="50" Placeholder="Enter Dog's Name"/>
+                    <Entry VerticalOptions="CenterAndExpand" MinimumWidthRequest="100" MaxLength="50" Placeholder="Enter Dog's Name" Text="{Binding Name}"/>
                 </HorizontalStackLayout>
             </Frame>
 
-            <Frame Grid.Row="1"   BackgroundColor="White">
+            <Frame   BackgroundColor="White">
                 <HorizontalStackLayout>
                     <Label Text="Breed: " VerticalTextAlignment="Center"/>
-                    <inputs:SfComboBox WidthRequest="200" HeightRequest="50" IsEditable="True" Placeholder="Select Dog Breed" ItemsSource="{Binding Name}">
+                    <inputs:SfComboBox WidthRequest="200" HeightRequest="50" IsEditable="True" Placeholder="Select Dog Breed" ItemsSource="{Binding Breeds}" SelectedItem="{Binding Breed}">
                     </inputs:SfComboBox>
                 </HorizontalStackLayout>
             </Frame>
@@ -48,7 +38,7 @@ xmlns:inputs="clr-namespace:Syncfusion.Maui.Inputs;assembly=Syncfusion.Maui.Inpu
                 <HorizontalStackLayout>
                     <Label Text="Birthday: " VerticalTextAlignment="Center"/>
                     <Button x:Name="dateButton" Text="Select a birthday" HeightRequest="40" Clicked="DatePick"/> 
-                    <picker:SfDatePicker x:Name="datePicker" picker:Mode="RelativeDialog" Grid.Row="2" Grid.Column="1" RelativePosition="AlignBottom" Closed="datePicker_Closed" Format="MM_dd_yyyy"/>
+                    <picker:SfDatePicker x:Name="datePicker" picker:Mode="RelativeDialog" Grid.Row="2" Grid.Column="1" RelativePosition="AlignBottom" Closed="datePicker_Closed" Format="MM_dd_yyyy" SelectedDate="{Binding DateofBirth}"/>
                 </HorizontalStackLayout>
             </Frame>
 
@@ -56,13 +46,14 @@ xmlns:inputs="clr-namespace:Syncfusion.Maui.Inputs;assembly=Syncfusion.Maui.Inpu
             <Frame Grid.Row="3"   BackgroundColor="White">
                 <HorizontalStackLayout>
                     <Label Text="Sex: " VerticalOptions="Center"/>
-                    <inputs:SfComboBox WidthRequest="200" HeightRequest="50" IsEditable="True" VerticalOptions="Center">
+                    <inputs:SfComboBox WidthRequest="200" HeightRequest="50" IsEditable="True" VerticalOptions="Center" SelectedItem="{Binding Sex}">
                         <inputs:SfComboBox.ItemsSource>
                             <x:Array Type="{x:Type x:String}">
                                 <x:String>Male</x:String>
                                 <x:String>Female</x:String>
                             </x:Array>
                         </inputs:SfComboBox.ItemsSource>
+                        
                     </inputs:SfComboBox>
                 </HorizontalStackLayout>
             </Frame>
@@ -70,20 +61,36 @@ xmlns:inputs="clr-namespace:Syncfusion.Maui.Inputs;assembly=Syncfusion.Maui.Inpu
             <Frame Grid.Row="4"   BackgroundColor="White">
                 <HorizontalStackLayout>
                     <Label Text="Weight: " VerticalTextAlignment="Center"/>
-                    <inputs:SfNumericEntry x:Name="numericEntry" UpDownPlacementMode="Hidden"/>
+                    <inputs:SfNumericEntry x:Name="numericEntry" UpDownPlacementMode="Hidden" Value="{Binding Weight}"/>
                 </HorizontalStackLayout>
             </Frame>
 
             <Frame Grid.Row="5"   BackgroundColor="White">
                 <VerticalStackLayout>
                     <Label Text="Bio:"/>
-                    <Editor Placeholder="Enter a short bio about you dog..." MaxLength="500"/>
+                    <Editor Placeholder="Enter a short bio about you dog..." Text="{Binding Bio}" MaxLength="500"/>
                 </VerticalStackLayout>
             </Frame>
 
+            <Frame IsVisible="false" x:Name="PhotoFrame" Grid.Row="6" >
+                <VerticalStackLayout Margin="5">
+                    <Label Text="Preview"/>
+                    <Image x:Name="PhotoPreview" Source="dog1.jpg" />
+                </VerticalStackLayout>
+ 
+            </Frame>
 
-            <Button Text="Upload a picture of your pup" Grid.Row="6" />
-            <Button Text="Submit" Grid.Row="7"  />
-        </Grid>
+
+        </VerticalStackLayout>
     </ScrollView>
+        <VerticalStackLayout Grid.Row="1">
+            <HorizontalStackLayout Grid.Row="7" HorizontalOptions="CenterAndExpand" Spacing="5" Margin="5">
+                <Button Text="Upload a photo" Clicked="Upload_Button_Clicked" />
+                <Button Text="Take a photo"  Clicked="Take_Photo_Button_Clicked"/>
+            </HorizontalStackLayout>
+
+            <Button Text="Submit" Grid.Row="8"  Clicked="Submit_Button_Clicked" />
+        </VerticalStackLayout>
+
+    </Grid>
 </ContentPage>

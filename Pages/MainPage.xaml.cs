@@ -2,7 +2,7 @@
 
 public partial class MainPage : ContentPage
 {
-	public ViewBreeds View { get; set; } = new();
+	public ViewDogEdits View { get; set; } = new();
 
 	public MainPage()
 	{
@@ -13,7 +13,7 @@ public partial class MainPage : ContentPage
 
 public async void Refresh()
 	{
-		await View.loadAPI();
+		await View.loadAPI(0);
 	}	
 }
 

@@ -5,32 +5,43 @@ namespace MauiApp1;
 
 public partial class DogsPage : ContentPage
 {
+    private ViewTrainer _trainer = new();
     public DogsPage()
     {
        
 
         InitializeComponent();
+        BindingContext = _trainer;
+        Refresh();
         //SfListView listView = new SfListView();
         //this.Content = listView;
 
     }
 
+    private async void Refresh()
+    {
+        await _trainer.loadAPI(1);
+        int x = _trainer.Dogs.Count;
+    }
 
     private async void TapGestureRecognizer_Tapped(object sender, TappedEventArgs e)
     {
         Frame frm = (Frame)sender;
-        BookInfo book = new();
         if (frm.BindingContext != null)
         {
-            book = frm.BindingContext as BookInfo;
+            ViewDog? vd = frm.BindingContext as ViewDog;
+            if (vd != null) 
+            {
+                var parm = new Dictionary<string, object> { { "ID", vd.ID } };
+
+                await Shell.Current.GoToAsync($"/DogProfilePage", parm);
+            }
         }
-        var parm = new Dictionary<string, object> { { "ID", book.ID } };
 
-        await Shell.Current.GoToAsync($"/DogProfilePage", parm);
     }
 
-    private async void ImageCell_Tapped(object sender, EventArgs e)
-    {
-        await Shell.Current.GoToAsync($"/DogProfilePage");
-    }
+    //private async void ImageCell_Tapped(object sender, EventArgs e)
+    //{
+    //    await Shell.Current.GoToAsync($"/DogProfilePage");
+    //}
 }

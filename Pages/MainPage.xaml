@@ -5,7 +5,7 @@
              xmlns:View ="clr-namespace:MauiApp1">
 
     <ContentPage.BindingContext>
-        <View:ViewBreeds/>
+        <View:ViewDogEdits/>
     </ContentPage.BindingContext>
 
     <CollectionView ItemsSource="{Binding Breeds}">

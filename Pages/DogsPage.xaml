@@ -5,88 +5,92 @@
              x:Class="MauiApp1.DogsPage"
              xmlns:local="clr-namespace:MauiApp1">
     <ContentPage.BindingContext>
-        <local:BookViewModel></local:BookViewModel>
+        <local:ViewTrainer/>
     </ContentPage.BindingContext>
-    
-    
-    <VerticalStackLayout>
-        <Grid>
-
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height=".5*"/>
-                <RowDefinition Height=".5*"/>
-                <RowDefinition Height=".2*"/>
-            </Grid.RowDefinitions>
-
-            <HorizontalStackLayout Spacing="5" Margin="15" Grid.Row="0">
-                <SearchBar Placeholder="Search..." WidthRequest="250" />
-                <ImageButton HeightRequest="40"
-                             WidthRequest="40"
-                             Source="filter.PNG"
-                             BackgroundColor="Blue"
-                             CornerRadius="10"
-                             Padding="5"
-                             Scale="1.00"/>
-
-                <ImageButton HeightRequest="40"
-                             WidthRequest="40"
-                             Source="descend.PNG"
-                             BackgroundColor="Blue"
-                             CornerRadius="10"
-                             Padding="5"
-                             Scale="1.00"/>
-
-            </HorizontalStackLayout>
-            <Label Text="Recent: " Grid.Row="1" FontAttributes="Bold" Margin="4" FontFamily="OpenSans-SemiBold.ttf"/>
-            <Frame Margin="5" Grid.Row="2" Padding="0" HeightRequest="200" BackgroundColor="Gray">
-                <Frame.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
-                </Frame.GestureRecognizers>
-                <VerticalStackLayout>
-                    <Image Source="dog1.jpg" Aspect="AspectFill" HeightRequest="160"/>
-                    <HorizontalStackLayout Spacing="2">
-                        <Label Text="Cloud" TextColor="White"  FontSize="Large" FontAttributes="Bold" Margin="4" FontFamily="OpenSans-SemiBold.ttf"/>
-                        <Label Text="|" TextColor="White" FontSize="Large" VerticalTextAlignment="Center" FontFamily="OpenSans-SemiBold.ttf"/>
-                        <Label Text="Anthony D'Antonio" TextColor="White"  VerticalTextAlignment="Center" FontSize="Medium" FontFamily="OpenSans-SemiBold.ttf"/>
-                    </HorizontalStackLayout>
-
-                </VerticalStackLayout>
-            </Frame>
-            <Label Text="All Dogs: " Grid.Row="3" FontAttributes="Bold" Margin="4" FontFamily="OpenSans-SemiBold.ttf"/>
-            <Frame Margin="5" Grid.Row="4" BackgroundColor="Gray" HeightRequest="400" Padding="5">
-                <listview:SfListView x:Name="listView"  ItemsSource="{Binding BookDetails}" ItemSize="140" SelectionMode="None" SelectionGesture="Tap" TapCommandParameter="TapGestureRecognizer_Tapped" SelectionBackground="Red" >
-                    <listview:SfListView.ItemsLayout>
-                        <listview:GridLayout SpanCount="2"/>
-                    </listview:SfListView.ItemsLayout>
-                    <listview:SfListView.ItemTemplate>
-                        <DataTemplate>
-                            <Frame Padding="0" Margin="1" CornerRadius="15">
-                                <Frame.GestureRecognizers>
-                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
-                                </Frame.GestureRecognizers>
-                                <Grid Padding="0">
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height=".3*"/>
-                                        <RowDefinition Height=".2*"/>
-                                        <RowDefinition Height=".1*"/>
-                                    </Grid.RowDefinitions>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*"/>
-                                    </Grid.ColumnDefinitions>
-                                    <Image Source="{Binding BookImage}" Aspect="AspectFill" Grid.RowSpan="3" Grid.ColumnSpan="2"/>
-                                    <Label Text="{Binding BookName}" Padding="0" Margin="4" FontAttributes="Bold" TextColor="Blue" FontSize="21" Grid.ColumnSpan="2" Grid.Row="0" FontFamily="OpenSans-SemiBold.ttf"/>
-                                    <Label Text="{Binding BookDescription}" Padding="2" TextColor="White" Grid.Row="2" Grid.Column="0" FontSize="15" HorizontalOptions="Center"/>
-                                </Grid>
-                            </Frame>
-        
-                        </DataTemplate>
-                    </listview:SfListView.ItemTemplate>
-                </listview:SfListView>
-            </Frame>
 
 
-        </Grid>
-    </VerticalStackLayout>
+
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <HorizontalStackLayout Spacing="5" Margin="15" Grid.Row="0">
+            <SearchBar Placeholder="Search..." WidthRequest="250" HeightRequest="50" />
+            <ImageButton HeightRequest="40"
+                            WidthRequest="40"
+                            Source="filter.PNG"
+                            BackgroundColor="Blue"
+                            CornerRadius="10"
+                            Padding="5"
+                            Scale="1.00"/>
+
+            <ImageButton HeightRequest="40"
+                            WidthRequest="40"
+                            Source="descend.PNG"
+                            BackgroundColor="Blue"
+                            CornerRadius="10"
+                            Padding="5"
+                            Scale="1.00"/>
+
+        </HorizontalStackLayout>
+        <Label Text="Recent: " Grid.Row="1" FontAttributes="Bold" Margin="4" FontFamily="OpenSans-SemiBold.ttf"/>
+        <Frame Margin="5" Grid.Row="2" Padding="0" HeightRequest="200" BackgroundColor="Gray" BindingContext="{Binding LastDog}">
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+            </Frame.GestureRecognizers>
+            <VerticalStackLayout >
+                <Image Source="{Binding Picture}" Aspect="AspectFill" HeightRequest="160"/>
+                <HorizontalStackLayout Spacing="2">
+                    <Label Text="{Binding Name}" TextColor="White"  FontSize="Large" FontAttributes="Bold" Margin="4" FontFamily="OpenSans-SemiBold.ttf"/>
+                    <Label Text="|" TextColor="White" FontSize="Large" VerticalTextAlignment="Center" FontFamily="OpenSans-SemiBold.ttf"/>
+                    <Label Text="{Binding Owner}" TextColor="White"  VerticalTextAlignment="Center" FontSize="Medium" FontFamily="OpenSans-SemiBold.ttf"/>
+                </HorizontalStackLayout>
+
+            </VerticalStackLayout>
+        </Frame>
+        <Label Text="All Dogs: " Grid.Row="3" FontAttributes="Bold" Margin="4" FontFamily="OpenSans-SemiBold.ttf"/>
+        <Frame Margin="5" Grid.Row="4" BackgroundColor="Gray" HeightRequest="400" Padding="5">
+            <listview:SfListView x:Name="listView"  ItemsSource="{Binding Dogs}" ItemSize="140" SelectionMode="None" SelectionGesture="Tap" TapCommandParameter="TapGestureRecognizer_Tapped" SelectionBackground="Red" >
+                <listview:SfListView.ItemsLayout>
+                    <listview:GridLayout SpanCount="2"/>
+                </listview:SfListView.ItemsLayout>
+                <listview:SfListView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame Padding="0" Margin="1" CornerRadius="15">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                            </Frame.GestureRecognizers>
+                            <Grid Padding="0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height=".3*"/>
+                                    <RowDefinition Height=".2*"/>
+                                    <RowDefinition Height=".1*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Image  Aspect="AspectFill" Grid.RowSpan="3" Grid.ColumnSpan="2">
+                                    <Image.Source>
+                                        <UriImageSource Uri="{Binding Picture}"/>
+                                    </Image.Source>
+                                </Image>
+                                <Label Text="{Binding Name}" Padding="0" Margin="4" FontAttributes="Bold" TextColor="Blue" FontSize="21" Grid.ColumnSpan="2" Grid.Row="0" FontFamily="OpenSans-SemiBold.ttf"/>
+                                <Label Text="{Binding Owner}" Padding="2" TextColor="White" Grid.Row="2" Grid.Column="0" FontSize="15" HorizontalOptions="Center"/>
+                            </Grid>
+                        </Frame>
+
+                    </DataTemplate>
+                </listview:SfListView.ItemTemplate>
+            </listview:SfListView>
+        </Frame>
+
+
+    </Grid>
+
 </ContentPage>
