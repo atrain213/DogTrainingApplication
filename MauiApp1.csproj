@@ -59,6 +59,7 @@
 	  <None Remove="Resources\Images\general.png" />
 	  <None Remove="Resources\Images\home.png" />
 	  <None Remove="Resources\Images\pug_test_image.jpg" />
+	  <None Remove="Resources\Images\refresh.png" />
 	  <None Remove="Resources\Images\skill_level_bar_0.svg" />
 	  <None Remove="Resources\Images\skill_level_bar_1.svg" />
 	  <None Remove="Resources\Images\skill_level_bar_2.svg" />

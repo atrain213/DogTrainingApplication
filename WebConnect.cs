@@ -208,6 +208,60 @@ namespace MauiApp1
             return api;
         }
 
+        public static async Task<List<APITrick>> TricksAsync()
+        {
+            if (_firstrun) { Init(); }
+            string url = _endpoint + "Dog/trick";
+
+            HttpResponseMessage? response;
+
+            List<APITrick> api = new();
+            response = await _client.GetAsync(url);
+            if (response != null)
+            {
+                if (response.IsSuccessStatusCode)
+                {
+                    string? msg = await response.Content.ReadAsStringAsync();
+                    if (!string.IsNullOrWhiteSpace(msg))
+                    {
+                        List<APITrick>? des = JsonSerializer.Deserialize<List<APITrick>>(msg);
+                        if (des != null)
+                        {
+                            api = des;
+                        }
+                    }
+                }
+            }
+            return api;
+        }
+
+        public static async Task<List<APITrick>> TricksByDogAsync(int id)
+        {
+            if (_firstrun) { Init(); }
+            string url = _endpoint + "Dog/dogtrick/"+ id.ToString();
+
+            HttpResponseMessage? response;
+
+            List<APITrick> api = new();
+            response = await _client.GetAsync(url);
+            if (response != null)
+            {
+                if (response.IsSuccessStatusCode)
+                {
+                    string? msg = await response.Content.ReadAsStringAsync();
+                    if (!string.IsNullOrWhiteSpace(msg))
+                    {
+                        List<APITrick>? des = JsonSerializer.Deserialize<List<APITrick>>(msg);
+                        if (des != null)
+                        {
+                            api = des;
+                        }
+                    }
+                }
+            }
+            return api;
+        }
+
         public static async Task<int> SaveDog(DTODog dto)
         {
             if (_firstrun) { Init(); }

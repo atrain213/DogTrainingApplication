@@ -10,6 +10,7 @@ namespace MauiApp1
 {
     public static class MyBlob
     {
+        public readonly static Uri NoPicture = new Uri("https://dogblobstorage.blob.core.windows.net/images/00000000-0000-0000-0000-000000000000.png");
         private readonly static string _endpoint = "https://dogblobstorage.blob.core.windows.net/images/";
         private readonly static string _account = "dogblobstorage";
         private readonly static string _key = "20YQPpZ7idyP398qUlyle5yeoExcHRiIAE/7iGE91vpBBevaMK6MERXIlixfH1DbpFC325+EV6tv+AStAtpCPQ==";

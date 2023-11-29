@@ -20,15 +20,15 @@ public partial class AddDogPage : ContentPage
     }
 
 
-    private void DatePick(object sender, EventArgs e)
-        {
-            datePicker.IsOpen = true;
-        }
+    //private void DatePick(object sender, EventArgs e)
+    //{
+    //    datePicker.IsOpen = true;
+    //}
 
-    private void datePicker_Closed(object sender, EventArgs e)
-    {
-        dateButton.Text = datePicker.SelectedDate.ToString("MM/dd/yyyy");
-    }
+    //private void datePicker_Closed(object sender, EventArgs e)
+    //{
+    //    dateButton.Text = datePicker.SelectedDate.ToString("MM/dd/yyyy");
+    //}
 
     private async void Submit_Button_Clicked(object sender, EventArgs e)
     {

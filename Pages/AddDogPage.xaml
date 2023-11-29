@@ -37,9 +37,11 @@ xmlns:inputs="clr-namespace:Syncfusion.Maui.Inputs;assembly=Syncfusion.Maui.Inpu
             <Frame BackgroundColor="White" Grid.Row="2"  >
                 <HorizontalStackLayout>
                     <Label Text="Birthday: " VerticalTextAlignment="Center"/>
-                    <Button x:Name="dateButton" Text="Select a birthday" HeightRequest="40" Clicked="DatePick"/> 
-                    <picker:SfDatePicker x:Name="datePicker" picker:Mode="RelativeDialog" Grid.Row="2" Grid.Column="1" RelativePosition="AlignBottom" Closed="datePicker_Closed" Format="MM_dd_yyyy" SelectedDate="{Binding DateofBirth}"/>
-                </HorizontalStackLayout>
+                        <!--<Button x:Name="dateButton" Text="Select a birthday" HeightRequest="40" Clicked="DatePick"/>-->
+                        <!---->
+                        <!--<picker:SfDatePicker x:Name="datePicker" picker:Mode="RelativeDialog" Grid.Row="2" Grid.Column="1" RelativePosition="AlignBottom" Closed="datePicker_Closed" Format="MM_dd_yyyy" SelectedDate="{Binding DateofBirth}"/>-->
+                        <DatePicker Date="{Binding DateofBirth}"/>
+                    </HorizontalStackLayout>
             </Frame>
 
 

@@ -24,11 +24,12 @@
             <SearchBar Placeholder="Search..." WidthRequest="250" HeightRequest="50" />
             <ImageButton HeightRequest="40"
                             WidthRequest="40"
-                            Source="filter.PNG"
+                            Source="refresh.png"
                             BackgroundColor="Blue"
                             CornerRadius="10"
                             Padding="5"
-                            Scale="1.00"/>
+                            Scale="1.00"
+                            />
 
             <ImageButton HeightRequest="40"
                             WidthRequest="40"
@@ -75,11 +76,8 @@
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
-                                <Image  Aspect="AspectFill" Grid.RowSpan="3" Grid.ColumnSpan="2">
-                                    <Image.Source>
-                                        <UriImageSource Uri="{Binding Picture}"/>
-                                    </Image.Source>
-                                </Image>
+                                <Image  Aspect="AspectFill" Grid.RowSpan="3" Grid.ColumnSpan="2" Source="{Binding Picture}" />
+
                                 <Label Text="{Binding Name}" Padding="0" Margin="4" FontAttributes="Bold" TextColor="Blue" FontSize="21" Grid.ColumnSpan="2" Grid.Row="0" FontFamily="OpenSans-SemiBold.ttf"/>
                                 <Label Text="{Binding Owner}" Padding="2" TextColor="White" Grid.Row="2" Grid.Column="0" FontSize="15" HorizontalOptions="Center"/>
                             </Grid>

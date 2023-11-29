@@ -12,14 +12,19 @@ public partial class DogsPage : ContentPage
 
         InitializeComponent();
         BindingContext = _trainer;
-        Refresh();
+        //Refresh();
         //SfListView listView = new SfListView();
         //this.Content = listView;
 
     }
+    protected override void OnAppearing()
+    {
+        Refresh();
+    }
 
     private async void Refresh()
     {
+
         await _trainer.loadAPI(1);
         int x = _trainer.Dogs.Count;
     }

@@ -10,26 +10,10 @@
         <local:BehaviorViewModel></local:BehaviorViewModel>
     </ContentPage.BindingContext>
 
-    <VerticalStackLayout>
-        <Grid Padding="0" Margin="0" HeightRequest="900">
-
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height=".5*"/>
-                <RowDefinition Height=".5*"/>
-                <RowDefinition Height=".2*"/>
-                <RowDefinition Height=".5*"/>
-                <RowDefinition Height=".2*"/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width=".5*"/>
-                <ColumnDefinition Width=".5*"/>
-            </Grid.ColumnDefinitions>
-            <Frame Margin="0" Grid.Row="1" Grid.Column="1"  Padding="0" HeightRequest="150" WidthRequest="150" BackgroundColor="Gray">
-                <Image Source="dog1.jpg" Aspect="AspectFill" />
-            </Frame>
-            <Frame Margin="5" Grid.Row="1" Grid.Column="0"  Padding="5" HeightRequest="150" BackgroundColor="Gray">
+    <VerticalStackLayout Padding="10">
+        <HorizontalStackLayout>
+            
+            <Frame Margin="5" Padding="5" HeightRequest="175" BackgroundColor="Gray">
                 <VerticalStackLayout Padding="2" Spacing="0">
                     <Label Text="{Binding Dog.Name}" FontAttributes="Bold" FontFamily="OpenSans-SemiBold.ttf"  FontSize="Large" HorizontalOptions="Center"/>
                     <HorizontalStackLayout Spacing="4">
@@ -54,6 +38,11 @@
                     </HorizontalStackLayout>
                 </VerticalStackLayout>
             </Frame>
+            <Frame Margin="0"  Padding="0" HeightRequest="175" WidthRequest="150" BackgroundColor="Gray">
+                <Image Source="dog1.jpg" Aspect="AspectFill" />
+            </Frame>
+        </HorizontalStackLayout>
+        
             <Label Text="Behaviors: " Grid.Row="3" FontAttributes="Bold" Margin="4" FontFamily="OpenSans-SemiBold.ttf"/>
             <Frame Margin="5" Grid.Row="4" Grid.ColumnSpan="2" BackgroundColor="Gray" HeightRequest="330" Padding="5">
                 <Frame.GestureRecognizers>
@@ -66,7 +55,7 @@
                     </listview:SfListView.ItemsLayout>
                     <listview:SfListView.ItemTemplate>
                         <DataTemplate>
-                            <Frame Padding="2" Margin="2" CornerRadius="15" BackgroundColor="White">
+                            <Frame Padding="2" Margin="2" CornerRadius="15" BackgroundColor="White" >
                                 <Frame.GestureRecognizers>
                                     <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
                                 </Frame.GestureRecognizers>
@@ -101,10 +90,9 @@
             </Frame>
             
             <Label Text="Training History: " Grid.Row="5" FontAttributes="Bold" Margin="4" FontFamily="OpenSans-SemiBold.ttf"/>
-            <Frame Margin="5" Grid.Row="6" Grid.ColumnSpan="2" BackgroundColor="Gray" HeightRequest="250" Padding="5">
+            <Frame Margin="5" Grid.Row="6" Grid.ColumnSpan="2" BackgroundColor="Gray" HeightRequest="225" Padding="5">
             </Frame>
 
 
-        </Grid>
     </VerticalStackLayout>
 </ContentPage>
