@@ -20,7 +20,7 @@ namespace MauiApp1
 
         public string Breed { get; set; } = string.Empty;
 
-        public DateTime Birthday { get; set; } = new(2020,1,1);
+        public DateTime Birthday { get; set; } = new(2020, 1, 1);
 
         public string Sex { get; set; } = "Male";
 
@@ -60,6 +60,15 @@ namespace MauiApp1
 
     }
 
+    public class APITrick
+    {
+        public int ID { get; set; }
+        public string Name { get; set; } = string.Empty;
+        public string Category { get; set; } = string.Empty;
+        public string IconFileName { get; set; } = "11111111-1111-1111-1111-111111111111.png";
+        public string Color { get; set; } = "FFFFFFFF";
+        public double Proficiency { get; set; }
+    }
     public class DTOData
     {
         public int ID { get; set; }
@@ -101,5 +110,4 @@ namespace MauiApp1
             return JsonSerializer.Serialize(this);
         }
     }
-
 }

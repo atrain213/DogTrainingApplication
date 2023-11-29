@@ -54,6 +54,7 @@
 	  <None Remove="Resources\Images\calendar.png" />
 	  <None Remove="Resources\Images\cocoa_test_image.JPG" />
 	  <None Remove="Resources\Images\pug_test_image.jpg" />
+	  <None Remove="Resources\Images\refresh.png" />
 	  <None Remove="Resources\Images\skill_level_bar_0.svg" />
 	  <None Remove="Resources\Images\skill_level_bar_1.svg" />
 	  <None Remove="Resources\Images\skill_level_bar_2.svg" />

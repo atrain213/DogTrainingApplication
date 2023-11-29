@@ -7,7 +7,7 @@ xmlns:listview="clr-namespace:Syncfusion.Maui.ListView;assembly=Syncfusion.Maui.
              xmlns:local="clr-namespace:MauiApp1">
 
     <ContentPage.BindingContext>
-        <local:BookViewModel></local:BookViewModel>
+        <local:ViewDogTricks/>
     </ContentPage.BindingContext>
 
     <Grid  RowSpacing="20" ColumnSpacing="5" Padding="5">
@@ -22,22 +22,27 @@ xmlns:listview="clr-namespace:Syncfusion.Maui.ListView;assembly=Syncfusion.Maui.
         </Grid.ColumnDefinitions>
 
         <Frame   Grid.Row="0"  Grid.Column="0" Grid.ColumnSpan="3">
-            <listview:SfListView x:Name="listView" ItemsSource="{Binding BookDetails}" SelectionMode="None" SelectionGesture="Tap" TapCommandParameter="TapGestureRecognizer_Tapped" SelectionBackground="Red" ItemSpacing="5" ItemSize="70">
+            <listview:SfListView x:Name="listView" ItemsSource="{Binding Tricks}" SelectionMode="None" SelectionGesture="Tap" TapCommandParameter="TapGestureRecognizer_Tapped" SelectionBackground="Red" ItemSpacing="6" ItemSize="100">
                 <listview:SfListView.ItemsLayout>
                     <listview:GridLayout SpanCount="4" />
                 </listview:SfListView.ItemsLayout>
                 <listview:SfListView.ItemTemplate>
                     <DataTemplate>
                         <VerticalStackLayout>
-                            <ImageButton Source="cake.png" HeightRequest="75" WidthRequest="75"  CornerRadius="15" Padding="6" BorderColor="{Binding Color}" BorderWidth="2">
-                                <ImageButton.Background>
-                                    <LinearGradientBrush StartPoint="{Binding Scale}" EndPoint="0,0">
-                                        <GradientStop Color="{Binding Color}" Offset="0"/>
-                                        <GradientStop Color="White" Offset="1.0"/>
-                                    </LinearGradientBrush>
-                                </ImageButton.Background>
-                            </ImageButton>
-                            <Label Text="Sit" TextColor="Black"/>
+                            <Border Stroke="{Binding Color}" StrokeThickness="2" HeightRequest="75" WidthRequest="75" Padding="-5">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="6,6,6,6"/>
+                                </Border.StrokeShape>
+                                <ImageButton Source="{Binding Icon}" Padding="6" >
+                                    <ImageButton.Background>
+                                        <LinearGradientBrush StartPoint="{Binding Proficiency}" EndPoint="0,0">
+                                            <GradientStop Color="{Binding Color}" Offset="0"/>
+                                            <GradientStop Color="White" Offset="1.0"/>
+                                        </LinearGradientBrush>
+                                    </ImageButton.Background>
+                                </ImageButton>
+                            </Border>
+                            <Label Text="{Binding Name}" TextColor="Black" HorizontalOptions="Center"/>
                         </VerticalStackLayout>
                     </DataTemplate>
                 </listview:SfListView.ItemTemplate>
