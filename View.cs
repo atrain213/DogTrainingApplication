@@ -84,7 +84,7 @@ namespace MauiApp1
             }
         }
 
-        private DateTime _dateofbirth;
+        private DateTime _dateofbirth = new DateTime(2020,1,1);
         public DateTime DateofBirth
         {
             get { return _dateofbirth; }
@@ -153,7 +153,7 @@ namespace MauiApp1
             }
         }
 
-
+  
         public async Task loadAPI(int id)
         {
             APIDogDetail dog = await WebConnect.DogAsync(id);
@@ -167,6 +167,7 @@ namespace MauiApp1
             Sex = dog.Sex;
             Weight = (double)dog.Weight;
             Bio = dog.Bio;
+            DateofBirth = dog.Birthday;
             Breed = Breeds.FirstOrDefault(f => f.Name == dog.Breed);
         }
 
@@ -422,5 +423,115 @@ namespace MauiApp1
                 }
             }
         }
+    }
+
+    public class ViewTrick:BaseView
+    {
+        private Color _color = Colors.Magenta;
+        public Color Color
+        {
+            get { return _color; }
+            set
+            {
+                if (_color != value)
+                {
+                    _color = value;
+                    NotifyPropertyChanged();
+                }
+            }
+        }
+        private Brush _brush = new SolidColorBrush(Colors.Turquoise);
+        public Brush Brush
+        {
+            get { return _brush; }
+            set
+            {
+                if (_brush != value)
+                {
+                    _brush = value;
+                    NotifyPropertyChanged();
+                }
+            }
+        }
+
+        private Point _proficiency = new Point(0,1);
+        public Point Proficiency
+        {
+            get { return _proficiency; }
+            set
+            {
+                if (_proficiency != value)
+                {
+                    _proficiency = value;
+                    NotifyPropertyChanged();
+                }
+            }
+        }
+
+
+        private Uri _icon = MyBlob.NoPicture;
+        public Uri Icon
+        {
+            get { return _icon; }
+            set
+            {
+                if (_icon != value)
+                {
+                    _icon = value;
+                    NotifyPropertyChanged();
+                }
+            }
+        }
+
+
+
+    }
+
+    public class ViewDogTricks:BaseView
+    {
+        private ObservableCollection<ViewTrick> _tricks = new();
+        public ObservableCollection<ViewTrick> Tricks
+        {
+            get { return _tricks; }
+            set
+            {
+                if (_tricks != value)
+                {
+                    _tricks = value;
+                    NotifyPropertyChanged();
+                }
+            }
+        }
+        
+        public async Task LoadAllTricks()
+        {
+            List<APITrick> api = await WebConnect.TricksAsync();
+            ProcessApi(api);
+
+        }
+        public async Task LoadByDogTricks(int id)
+        {
+            List<APITrick> api = await WebConnect.TricksByDogAsync(id);
+            ProcessApi(api);
+
+        }
+
+        private void ProcessApi(List<APITrick> api)
+        {
+            Tricks.Clear();
+            foreach (APITrick trick in api)
+            {
+                Tricks.Add(new ViewTrick
+                {
+                    ID = trick.ID,
+                    Name = trick.Name,
+                    Color = Color.FromArgb("#" + trick.Color),
+                    Brush = new SolidColorBrush(Color.FromArgb("#"+trick.Color)),
+                    Icon = MyBlob.ImageFile(trick.IconFileName),
+                    Proficiency = new Point(0,(1.01-trick.Proficiency))
+                });;
+            }
+        }
+
     }
 }

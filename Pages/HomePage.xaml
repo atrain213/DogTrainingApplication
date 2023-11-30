@@ -1,17 +1,41 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MauiApp1.HomePage">
-    <VerticalStackLayout>
-        <Label Text="Cloud" FontSize="Large" FontAttributes="Bold" Padding="5" FontFamily="OpenSans-SemiBold.ttf"/>
-       
-         <Frame Margin="5"  Padding="0" HeightRequest="200" BackgroundColor="Gray">
-            <Frame.GestureRecognizers>
-                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
-            </Frame.GestureRecognizers>
-            <!-- Add Carosel View so That if an owner has multiple dogs-->
-            <Image Source="dog1.jpg" Aspect="AspectFill" />
+             x:Class="MauiApp1.HomePage"
+             xmlns:local="clr-namespace:MauiApp1">
+
+    <ContentPage.BindingContext>
+        <local:ViewTrainer/>
+    </ContentPage.BindingContext>
+    <VerticalStackLayout Padding="5">
+        
+        <Frame Padding="5" Margin="5" BorderColor="White" >
+            <Label Text="Welcome, Anthony" HorizontalOptions="Start" FontSize="Large" />
         </Frame>
+
+        <CarouselView ItemsSource="{Binding Dogs}" IndicatorView="indicatorView">
+            <CarouselView.ItemTemplate>
+                <DataTemplate>
+                    <VerticalStackLayout>
+                        <Label Text="{Binding Name}" FontSize="Large" FontAttributes="Bold" Padding="5" FontFamily="OpenSans-SemiBold.ttf"/>
+                        <Frame Margin="5"  Padding="0" HeightRequest="200" BackgroundColor="Gray">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                            </Frame.GestureRecognizers>
+                            <!-- Add Carosel View so That if an owner has multiple dogs-->
+                            <Image Source="{Binding Picture}" Aspect="AspectFill" />
+                        </Frame>
+                    </VerticalStackLayout>
+                </DataTemplate>
+            </CarouselView.ItemTemplate>
+        </CarouselView>
+        <IndicatorView x:Name="indicatorView"
+                   IndicatorColor="LightGray"
+                   SelectedIndicatorColor="Black"
+                   HorizontalOptions="Center" />
+        
+       
+
         <Frame Margin="5" BackgroundColor="White">
             <VerticalStackLayout>
                 <Label Text="Trainings:" FontSize="Large" FontAttributes="Bold"  FontFamily="OpenSans-SemiBold.ttf"/>

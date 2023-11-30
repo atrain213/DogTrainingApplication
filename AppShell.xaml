@@ -9,35 +9,29 @@
 
     <TabBar>
         <Tab
-            Title = "Home">
-            <ShellContent ContentTemplate="{DataTemplate local:HomePage}" />
+            Title = "Home" Icon="hometran.png" >
+        <ShellContent ContentTemplate="{DataTemplate local:HomePage}" />
             
         </Tab>
 
         <Tab
-            Title = "Dogs">
+            Title ="Dogs" Icon = "dogs.png">
             <ShellContent ContentTemplate="{DataTemplate local:DogsPage}" />
 
         </Tab>
 
         <Tab
-            Title = "Account">
-            <ShellContent ContentTemplate="{DataTemplate local:AccountPage}" />
-
-        </Tab>
-
-        <Tab
-            Title = "Behavior Page">
+            Title = "Training" Icon = "behaviors.png">
             <ShellContent ContentTemplate="{DataTemplate local:BehaviorPage}" />
 
         </Tab>
         <Tab
-            Title = "General">
+           Title="General" Icon = "general.png">
             <ShellContent ContentTemplate="{DataTemplate local:General}" />
 
         </Tab>
     <Tab
-        Title = "Testing Page">
+       Title="Testing Page" Icon = "calendaricon.png">
             <ShellContent ContentTemplate="{DataTemplate local:TrainerBioPage}" />
 
         </Tab>
