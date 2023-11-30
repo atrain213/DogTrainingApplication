@@ -37,8 +37,8 @@ public partial class TrainingPage : ContentPage
     private async void DetailSession_Clicked(object sender, EventArgs e)
 
     {
+        await Shell.Current.GoToAsync($"/DetailSessions");
 
-        await Shell.Current.GoToAsync($"/DetailSession");
 
     }
 }
