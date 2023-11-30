@@ -5,7 +5,8 @@
              x:Class="MauiApp1.DogProfilePage"
              xmlns:local="clr-namespace:MauiApp1"
              Shell.NavBarIsVisible="false"
-             Shell.TabBarIsVisible="false">
+             Shell.TabBarIsVisible="false"
+             BackgroundColor="{StaticResource Primary}">
     <ContentPage.BindingContext>
         <local:BehaviorViewModel></local:BehaviorViewModel>
     </ContentPage.BindingContext>
@@ -13,28 +14,28 @@
     <VerticalStackLayout Padding="10">
         <HorizontalStackLayout>
             
-            <Frame Margin="5" Padding="5" HeightRequest="175" BackgroundColor="Gray">
+            <Frame Margin="5" Padding="5" HeightRequest="175" BackgroundColor="{StaticResource Gray200}">
                 <VerticalStackLayout Padding="2" Spacing="0">
-                    <Label Text="{Binding Dog.Name}" FontAttributes="Bold" FontFamily="OpenSans-SemiBold.ttf"  FontSize="Large" HorizontalOptions="Center"/>
+                    <Label Text="{Binding Dog.Name}" FontAttributes="Bold"   FontSize="Large" HorizontalOptions="Center"/>
                     <HorizontalStackLayout Spacing="4">
-                        <Label Text="Owner:"  Padding="0" FontAttributes="Bold" FontFamily="OpenSans-SemiBold.ttf"  FontSize="Small" HorizontalOptions="Center"/>
-                        <Label Text="{Binding Dog.Owner}" Padding="0" FontAttributes="Bold" FontFamily="OpenSans-SemiBold.ttf"  FontSize="Small" HorizontalOptions="Center"/>
+                        <Label Text="Owner:"  Padding="0" FontAttributes="Bold"   FontSize="Small" HorizontalOptions="Center"/>
+                        <Label Text="{Binding Dog.Owner}" Padding="0" FontAttributes="Bold"   FontSize="Small" HorizontalOptions="Center"/>
                     </HorizontalStackLayout>
                     <HorizontalStackLayout Spacing="4">
-                        <Label Text="Breed:"  Padding="0" FontAttributes="Bold" FontFamily="OpenSans-SemiBold.ttf"  FontSize="Small" HorizontalOptions="Center"/>
-                        <Label Text="{Binding Dog.Breed}" Padding="0" FontAttributes="Bold" FontFamily="OpenSans-SemiBold.ttf"  FontSize="Small" HorizontalOptions="Center"/>
+                        <Label Text="Breed:"  Padding="0" FontAttributes="Bold"   FontSize="Small" HorizontalOptions="Center"/>
+                        <Label Text="{Binding Dog.Breed}" Padding="0" FontAttributes="Bold"   FontSize="Small" HorizontalOptions="Center"/>
                     </HorizontalStackLayout>
                     <HorizontalStackLayout Spacing="4">
-                        <Label Text="Sex:"  Padding="0" FontAttributes="Bold" FontFamily="OpenSans-SemiBold.ttf"  FontSize="Small" HorizontalOptions="Center"/>
-                        <Label Text="{Binding Dog.Sex}" Padding="0" FontAttributes="Bold" FontFamily="OpenSans-SemiBold.ttf"  FontSize="Small" HorizontalOptions="Center"/>
+                        <Label Text="Sex:"  Padding="0" FontAttributes="Bold"   FontSize="Small" HorizontalOptions="Center"/>
+                        <Label Text="{Binding Dog.Sex}" Padding="0" FontAttributes="Bold"   FontSize="Small" HorizontalOptions="Center"/>
                     </HorizontalStackLayout>
                     <HorizontalStackLayout Spacing="4">
-                        <Label Text="Age:"  Padding="0" FontAttributes="Bold" FontFamily="OpenSans-SemiBold.ttf"  FontSize="Small" HorizontalOptions="Center"/>
-                        <Label Text="{Binding Dog.Age}" Padding="0" FontAttributes="Bold" FontFamily="OpenSans-SemiBold.ttf"  FontSize="Small" HorizontalOptions="Center"/>
+                        <Label Text="Age:"  Padding="0" FontAttributes="Bold"   FontSize="Small" HorizontalOptions="Center"/>
+                        <Label Text="{Binding Dog.Age}" Padding="0" FontAttributes="Bold"   FontSize="Small" HorizontalOptions="Center"/>
                     </HorizontalStackLayout>
                     <HorizontalStackLayout Spacing="4">
-                        <Label Text="Trainer(s):"  Padding="0" FontAttributes="Bold" FontFamily="OpenSans-SemiBold.ttf"  FontSize="Small" HorizontalOptions="Center"/>
-                        <Label Text="John Smith" Padding="0" FontAttributes="Bold" FontFamily="OpenSans-SemiBold.ttf"  FontSize="Small" HorizontalOptions="Center"/>
+                        <Label Text="Trainer(s):"  Padding="0" FontAttributes="Bold"   FontSize="Small" HorizontalOptions="Center"/>
+                        <Label Text="John Smith" Padding="0" FontAttributes="Bold"   FontSize="Small" HorizontalOptions="Center"/>
                     </HorizontalStackLayout>
                 </VerticalStackLayout>
             </Frame>
@@ -43,8 +44,8 @@
             </Frame>
         </HorizontalStackLayout>
         
-            <Label Text="Behaviors: " Grid.Row="3" FontAttributes="Bold" Margin="4" FontFamily="OpenSans-SemiBold.ttf"/>
-            <Frame Margin="5" Grid.Row="4" Grid.ColumnSpan="2" BackgroundColor="Gray" HeightRequest="330" Padding="5">
+            <Label Text="Behaviors: " Grid.Row="3" FontAttributes="Bold" Margin="4"  TextColor="White"/>
+            <Frame Margin="5" Grid.Row="4" Grid.ColumnSpan="2" HeightRequest="330" Padding="5" BackgroundColor="{StaticResource Gray200}">
                 <Frame.GestureRecognizers>
                     <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
                 </Frame.GestureRecognizers>
@@ -89,8 +90,8 @@
                 </listview:SfListView>
             </Frame>
             
-            <Label Text="Training History: " Grid.Row="5" FontAttributes="Bold" Margin="4" FontFamily="OpenSans-SemiBold.ttf"/>
-            <Frame Margin="5" Grid.Row="6" Grid.ColumnSpan="2" BackgroundColor="Gray" HeightRequest="225" Padding="5">
+            <Label Text="Training History: " Grid.Row="5" FontAttributes="Bold" Margin="4" TextColor="White"/>
+            <Frame Margin="5" Grid.Row="6" Grid.ColumnSpan="2" BackgroundColor="{StaticResource Gray200}" HeightRequest="225" Padding="5">
             </Frame>
 
 
