@@ -5,7 +5,7 @@
              x:Class="MauiApp1.General"
               xmlns:local="clr-namespace:MauiApp1">
 
-<VerticalStackLayout>
+<VerticalStackLayout Padding="3">
         <Label 
 Text="General"   Margin="5" FontAttributes="Bold" FontSize="25"
  VerticalOptions="Center" 
@@ -40,10 +40,7 @@ HorizontalOptions="Start" Margin="2"
 VerticalOptions="End" />
 
                 <HorizontalStackLayout>
-                    <Button 
-    Text="Edit Profile >"
-    VerticalOptions="End"  Margin="5" Clicked="AccountPage_Clicked"
-    HorizontalOptions="End"  />
+                 
 
                     <Button 
         Text="Add a Dog >"  Margin="5" Clicked="AddNewDog_Clicked"
@@ -52,27 +49,89 @@ VerticalOptions="End" />
                 </HorizontalStackLayout>
             </VerticalStackLayout>
         </HorizontalStackLayout>
+       
+        <HorizontalStackLayout HorizontalOptions="Start">
 
+
+          
+
+            <Button 
+     Text="Website" Scale=".9"
+     VerticalOptions="Center"
+     HorizontalOptions="Center" />
         <Button 
- Text="Adjust Settings >"  Margin="5"  Clicked="SettingsPage_Clicked"
- VerticalOptions="End"  
- HorizontalOptions="Fill" />
+     Text="Email"   Scale=".9"
+     VerticalOptions="Center" 
+     HorizontalOptions="Center" />
+        <Button 
+     Text="Phone"  Scale=".9" 
+     VerticalOptions="Center"
+     HorizontalOptions="Center" />
+
+            <Button 
+Text="View Full Profile >"
+VerticalOptions="End"  Clicked="AccountPage_Clicked"
+HorizontalOptions="End"  />
+        </HorizontalStackLayout>
+
+     
+
+      
+            <Label 
+        Text="Settings" FontSize="24" Margin="16" FontAttributes="Bold"
+        VerticalOptions="Center" 
+        HorizontalOptions="Start" />
+       
+
 
         <Button 
         Text="Trainer Search >" Clicked="TrainerSearch_Clicked"
-        VerticalOptions="End"  Margin="5"
+        VerticalOptions="End"  Margin="2"
         HorizontalOptions="Fill" />
 
 
         <Button 
-        Text="Print/Export Data >"  Margin="5" Clicked="DataExportPage_Clicked"
+        Text="Print/Export Data >"  Margin="2" Clicked="DataExportPage_Clicked"
         VerticalOptions="End" 
         HorizontalOptions="Fill" />
 
+        <Button 
+Text="Location Services: ON" BackgroundColor="ForestGreen"
+VerticalOptions="End"  Margin="2"
+HorizontalOptions="Fill" />
+        <Button 
+ Text="Sound Effects: ON" BackgroundColor="ForestGreen"
+ VerticalOptions="End"  Margin="2"
+ HorizontalOptions="Fill" />
+           
             <Button 
-        Text="Logout X"  Margin="25"
-        VerticalOptions="End" BackgroundColor="Red"
-        HorizontalOptions="CenterAndExpand" />
+        Text="Notifications"
+        VerticalOptions="End"  Margin="2"
+        HorizontalOptions="Fill" />
+            <Button 
+       Text="Privacy"
+       VerticalOptions="End"   Margin="2"
+       HorizontalOptions="Fill" />
+            <Button 
+ Text="Export Connections"
+ VerticalOptions="End"  Margin="2"
+ HorizontalOptions="Fill" />
+            <Button 
+ Text="Support"
+ VerticalOptions="End"  Margin="2"
+ HorizontalOptions="Fill" />
+
+            <Button
+ Text="Log Out" BackgroundColor="Red"
+ VerticalOptions="End"   Margin="2"
+  HorizontalOptions="Fill" />
+
+            <Button
+        Text="Deactivate/Delete Account" BackgroundColor="Red"
+        VerticalOptions="End"   Margin="2"
+         HorizontalOptions="Fill" />
+
 
     </VerticalStackLayout>
+    
 </ContentPage>

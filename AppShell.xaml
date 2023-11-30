@@ -32,7 +32,7 @@
         </Tab>
     <Tab
        Title="Testing Page" Icon = "calendartran.png">
-            <ShellContent ContentTemplate="{DataTemplate local:TrainerBioPage}" />
+            <ShellContent ContentTemplate="{DataTemplate local:AccountPage}" />
 
         </Tab>
 
