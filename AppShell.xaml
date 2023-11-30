@@ -9,7 +9,7 @@
 
     <TabBar>
         <Tab
-            Icon="home.png" >
+            Icon="hometran.png" >
         <ShellContent ContentTemplate="{DataTemplate local:HomePage}" />
             
         </Tab>
