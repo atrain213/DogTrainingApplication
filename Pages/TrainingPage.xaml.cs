@@ -34,7 +34,7 @@ public partial class TrainingPage : ContentPage
         await Shell.Current.GoToAsync($"/Tricks");
 
     }
-    private async void DetailSession_Clicked(object sender, EventArgs e)
+    private async void DetailSessions_Clicked(object sender, EventArgs e)
 
     {
         await Shell.Current.GoToAsync($"/DetailSessions");
