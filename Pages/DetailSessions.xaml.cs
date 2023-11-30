@@ -11,6 +11,5 @@ public partial class DetailSessions : ContentPage
 	{
 		string CurrentSessionNotes = CurrentSessionNotesEntry.Text;
 		string NextSessionNotes = NextSessionNotesEntry.Text;
-	//string CustomNotes = CustomNotesEntry;
-	}
+		string CustomNotes = CustomNotesEntry;
 }
