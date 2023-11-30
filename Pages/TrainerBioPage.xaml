@@ -3,18 +3,18 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiApp1.TrainerBioPage"
              Title="TrainerBioPage">
-    <VerticalStackLayout>
+    <VerticalStackLayout Padding="5">
        
-        <HorizontalStackLayout Spacing="15" Margin="25" HorizontalOptions="Center" >
+        <HorizontalStackLayout Spacing="5" HorizontalOptions="Center" >
             <Label 
             Text="Find a Trainer!" FontAttributes="Bold"
             Margin="2" FontFamily="OpenSans-SemiBold.ttf"
-            VerticalOptions="Start"  FontSize="20"
+            VerticalOptions="Start"  FontSize="24"
             HorizontalOptions="Center" />
-            <SearchBar Placeholder="Search..." WidthRequest="350"/>
+            <SearchBar Placeholder="Search..." WidthRequest="275"/>
             </HorizontalStackLayout>
-        
-            <Image Source="defaultpfp.png" HorizontalOptions="Start" HeightRequest="200" Margin="10"/>
+       
+        <Image Source="defaultpfp.png" HorizontalOptions="Start" HeightRequest="200" Margin="10"/>
         <HorizontalStackLayout>
         <Label 
             Text="John Smith" FontSize="20" FontAttributes="Bold"

@@ -6,4 +6,8 @@ public partial class TrainerSearch : ContentPage
 	{
 		InitializeComponent();
 	}
+    private async void Bio_Clicked(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync($"/TrainerBioPage");
+    }
 }
