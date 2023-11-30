@@ -15,7 +15,7 @@
         </Tab>
 
         <Tab
-            Icon = "dogs.png">
+            Title ="Dogs" Icon = "dogs.png">
             <ShellContent ContentTemplate="{DataTemplate local:DogsPage}" />
 
         </Tab>
