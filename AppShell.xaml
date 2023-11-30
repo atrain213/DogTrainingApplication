@@ -15,13 +15,13 @@
         </Tab>
 
         <Tab
-            Title ="Dogs" Icon = "dogs.png">
+            Title ="Dogs" Icon = "dogstran.png">
             <ShellContent ContentTemplate="{DataTemplate local:DogsPage}" />
 
         </Tab>
 
         <Tab
-            Title = "Training" Icon = "behaviors.png">
+            Title = "Training" Icon = "behaviorstrans.png">
             <ShellContent ContentTemplate="{DataTemplate local:BehaviorPage}" />
 
         </Tab>
@@ -31,7 +31,7 @@
 
         </Tab>
     <Tab
-       Title="Testing Page" Icon = "calendaricon.png">
+       Title="Testing Page" Icon = "calendartran.png">
             <ShellContent ContentTemplate="{DataTemplate local:TrainerBioPage}" />
 
         </Tab>
