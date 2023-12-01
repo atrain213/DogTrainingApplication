@@ -34,7 +34,7 @@ xmlns:inputs="clr-namespace:Syncfusion.Maui.Inputs;assembly=Syncfusion.Maui.Inpu
             </Frame>
 
 
-            <Frame BackgroundColor="White" Grid.Row="2"  >
+            <Frame BackgroundColor="White"   >
                 <HorizontalStackLayout>
                     <Label Text="Birthday: " VerticalTextAlignment="Center"/>
                         <!--<Button x:Name="dateButton" Text="Select a birthday" HeightRequest="40" Clicked="DatePick"/>-->
@@ -45,7 +45,7 @@ xmlns:inputs="clr-namespace:Syncfusion.Maui.Inputs;assembly=Syncfusion.Maui.Inpu
             </Frame>
 
 
-            <Frame Grid.Row="3"   BackgroundColor="White">
+            <Frame   BackgroundColor="White">
                 <HorizontalStackLayout>
                     <Label Text="Sex: " VerticalOptions="Center"/>
                     <inputs:SfComboBox WidthRequest="200" HeightRequest="50" IsEditable="True" VerticalOptions="Center" SelectedItem="{Binding Sex}">
@@ -60,21 +60,28 @@ xmlns:inputs="clr-namespace:Syncfusion.Maui.Inputs;assembly=Syncfusion.Maui.Inpu
                 </HorizontalStackLayout>
             </Frame>
 
-            <Frame Grid.Row="4"   BackgroundColor="White">
+            <Frame   BackgroundColor="White">
                 <HorizontalStackLayout>
                     <Label Text="Weight: " VerticalTextAlignment="Center"/>
                     <inputs:SfNumericEntry x:Name="numericEntry" UpDownPlacementMode="Hidden" Value="{Binding Weight}"/>
                 </HorizontalStackLayout>
             </Frame>
 
-            <Frame Grid.Row="5"   BackgroundColor="White">
+            <Frame   BackgroundColor="White">
                 <VerticalStackLayout>
                     <Label Text="Bio:"/>
                     <Editor Placeholder="Enter a short bio about you dog..." Text="{Binding Bio}" MaxLength="500"/>
                 </VerticalStackLayout>
             </Frame>
 
-            <Frame IsVisible="false" x:Name="PhotoFrame" Grid.Row="6" >
+            <Frame   BackgroundColor="White">
+                <HorizontalStackLayout>
+                    <Label Text="Add Trainer:" VerticalOptions="Center"/>
+                    <inputs:SfComboBox WidthRequest="200" HeightRequest="50" IsEditable="True" Placeholder="Select Dog Breed" ItemsSource="{Binding Breeds}" SelectedItem="{Binding Breed}"></inputs:SfComboBox>
+                </HorizontalStackLayout>
+            </Frame>
+
+                <Frame IsVisible="false" x:Name="PhotoFrame" Grid.Row="6" >
                 <VerticalStackLayout Margin="5">
                     <Label Text="Preview"/>
                     <Image x:Name="PhotoPreview" Source="dog1.jpg" />

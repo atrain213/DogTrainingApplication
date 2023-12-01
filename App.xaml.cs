@@ -12,5 +12,10 @@ public partial class App : Application
 			Application.Current.UserAppTheme = AppTheme.Light;
 		}
         MainPage = new AppShell();
+		Setup();
+	}
+	public async void Setup()
+	{
+		await MyAccount.LoadContantAsync(1);
 	}
 }

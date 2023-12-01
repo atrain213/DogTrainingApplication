@@ -19,34 +19,11 @@ Text="General"   Margin="5" FontAttributes="Bold" FontSize="25"
             <Image Source="defaultpfp.png" Margin="10" HeightRequest="120"/>
             <VerticalStackLayout>
                 <HorizontalStackLayout>
-                <Label 
-                  Text="John Smith " FontSize="16"    
-               HorizontalOptions="Start" Margin="3"
-               VerticalOptions="Start" />
-            
-                <Label 
-             Text=" johnsmith123" FontAttributes="Italic"  FontSize="13"
-             HorizontalOptions="Start" Margin="5"
-             VerticalOptions="Center" />
+                    <Label Text="John Smith " FontSize="16" HorizontalOptions="Start" Margin="3" VerticalOptions="Start" />
+                    <Label Text=" johnsmith123" FontAttributes="Italic"  FontSize="13"  HorizontalOptions="Start" Margin="5" VerticalOptions="Center" />
                 </HorizontalStackLayout>
-              
-            <Label
-            Text="Trainer" FontAttributes="Bold" FontSize="14"
-            HorizontalOptions="Start"  Margin="2"
-            VerticalOptions="End" />
-                <Label 
-    Text="Total Dogs: #"
-HorizontalOptions="Start" Margin="2"
-VerticalOptions="End" />
-
-                <HorizontalStackLayout>
-                 
-
-                    <Button 
-        Text="Add a Dog >"  Margin="5" Clicked="AddNewDog_Clicked"
-        VerticalOptions="End"
-        HorizontalOptions="CenterAndExpand" />
-                </HorizontalStackLayout>
+                <Label  Text="Trainer" FontAttributes="Bold" FontSize="14" HorizontalOptions="Start"  Margin="2" VerticalOptions="End" />
+                <Label Text="Total Dogs: #"  HorizontalOptions="Start" Margin="2" VerticalOptions="End" />
             </VerticalStackLayout>
         </HorizontalStackLayout>
        
@@ -56,9 +33,10 @@ VerticalOptions="End" />
           
 
             <Button 
-     Text="Website" Scale=".9"
+     Text="Change Account" Scale=".9"
      VerticalOptions="Center"
-     HorizontalOptions="Center" />
+     HorizontalOptions="Center" 
+                Clicked="ChangeAccount_Clicked"/>
         <Button 
      Text="Email"   Scale=".9"
      VerticalOptions="Center" 

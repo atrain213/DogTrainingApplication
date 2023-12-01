@@ -25,7 +25,7 @@ public partial class DogsPage : ContentPage
     private async void Refresh()
     {
 
-        await _trainer.loadAPI(1);
+        await _trainer.loadAPI(MyAccount.Contact.TrainerID);
         int x = _trainer.Dogs.Count;
     }
 
@@ -43,6 +43,11 @@ public partial class DogsPage : ContentPage
             }
         }
 
+    }
+
+    private async void AddDogButton_Clicked(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync($"/AddDogPage");
     }
 
     //private async void ImageCell_Tapped(object sender, EventArgs e)

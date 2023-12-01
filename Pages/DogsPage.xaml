@@ -25,17 +25,18 @@
             <SearchBar Placeholder="Search..." WidthRequest="250" HeightRequest="50" BackgroundColor="Transparent" CancelButtonColor="White" PlaceholderColor="White" TextColor="White"/>
             <ImageButton HeightRequest="40"
                             WidthRequest="40"
-                            Source="refresh.png"
+                            Source="plusicon.png"
                             BackgroundColor="{StaticResource Secondary}"
                             CornerRadius="10"
                             Padding="5"
                             Scale="1.00"
+                            Clicked="AddDogButton_Clicked"
                             />
 
             <ImageButton HeightRequest="40"
                             WidthRequest="40"
                             Source="descend.PNG"
-                            BackgroundColor="{StaticResource Tertiary}"
+                            BackgroundColor="{StaticResource Secondary}"
                             CornerRadius="10"
                             Padding="5"
                             Scale="1.00"/>

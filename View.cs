@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Android.Hardware.Lights;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -6,6 +7,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using static Java.Interop.JniEnvironment;
 
 namespace MauiApp1
 {
@@ -54,6 +56,176 @@ namespace MauiApp1
             }
         }
     }
+
+
+    public class ViewContact:BaseView
+    {
+        private string _fname = string.Empty;
+        public string FName
+        {
+            get { return _fname; }
+            set
+            {
+                if (_fname != value)
+                {
+                    _fname = value;
+                    NotifyPropertyChanged();
+                }
+            }
+        }
+
+        private string _address1 = string.Empty;
+        public string Address1
+        {
+            get { return _address1; }
+            set
+            {
+                if (_address1 != value)
+                {
+                    _address1 = value;
+                    NotifyPropertyChanged();
+                }
+            }
+        }
+
+        private string _address2 = string.Empty;
+        public string Address2
+        {
+            get { return _address2; }
+            set
+            {
+                if (_address2 != value)
+                {
+                    _address2 = value;
+                    NotifyPropertyChanged();
+                    NotifyPropertyChanged(nameof(ShowAddress2));
+                }
+            }
+        }
+        public bool ShowAddress2 { get
+            {
+                return !string.IsNullOrEmpty(_address2);
+            } }
+
+        private string _csz = string.Empty;
+        public string CSZ
+        {
+            get { return _csz; }
+            set
+            {
+                if (_csz != value)
+                {
+                    _csz = value;
+                    NotifyPropertyChanged();
+                }
+            }
+        }
+
+        private string _email = string.Empty;
+        public string Email
+        {
+            get { return _email; }
+            set
+            {
+                if (_email != value)
+                {
+                    _email = value;
+                    NotifyPropertyChanged();
+                }
+            }
+        }
+
+        private string _phone = string.Empty;
+        public string Phone
+        {
+            get { return _phone; }
+            set
+            {
+                if (_phone != value)
+                {
+                    _phone = value;
+                    NotifyPropertyChanged();
+                }
+            }
+        }
+
+        private bool _isOwner;
+        public bool IsOwner
+        {
+            get { return _isOwner; }
+            set
+            {
+                if (_isOwner != value)
+                {
+                    _isOwner = value;
+                    NotifyPropertyChanged();
+                }
+            }
+        }
+
+        private bool _isTrainer;
+        public bool IsTrainer
+        {
+            get { return _isTrainer; }
+            set
+            {
+                if (_isTrainer != value)
+                {
+                    _isTrainer = value;
+                    NotifyPropertyChanged();
+                }
+            }
+        }
+
+        private int _ownerID;
+        public int OwnerID
+        {
+            get { return _ownerID; }
+            set
+            {
+                if (_ownerID != value)
+                {
+                    _ownerID = value;
+                    NotifyPropertyChanged();
+                }
+            }
+        }
+
+        private int _trainerID;
+        public int TrainerID
+        {
+            get { return _trainerID; }
+            set
+            {
+                if (_trainerID != value)
+                {
+                    _trainerID = value;
+                    NotifyPropertyChanged();
+                }
+            }
+        }
+
+        public async Task loadAPIAsync(int id)
+        {
+            APIContact contact = await WebConnect.ContactInfoAsync(id);
+            ID = contact.ID;
+            Name = contact.Name;
+            FName = contact.FName;
+            Address1 = contact.Address1;
+            Address2 = contact.Address2;
+            CSZ = contact.CSZ;
+            Email = contact.Email;
+            Phone = contact.Phone;
+            IsOwner = contact.OwnerID > 0;
+            IsTrainer = contact.TrainerID > 0;
+            OwnerID = contact.OwnerID;
+            TrainerID = contact.TrainerID;
+
+        }
+
+    }
+
+
 
     public class ViewDogEdits:BaseView
     {
@@ -356,6 +528,44 @@ namespace MauiApp1
         }
 
     }
+
+    public class ViewOwner : BaseView
+    {
+        private ObservableCollection<ViewDog> _dogs = new();
+        public ObservableCollection<ViewDog> Dogs
+        {
+            get { return _dogs; }
+            set
+            {
+                if (_dogs != value)
+                {
+                    _dogs = value;
+                    NotifyPropertyChanged();
+                }
+            }
+        }
+       
+      
+
+        public async Task loadAPI(int id)
+        {
+            Dogs.Clear();
+            List<APIDogDetail> api = await WebConnect.DogbyOwnerAsync(id);
+            
+            foreach (APIDogDetail apiItem in api)
+            {
+                
+                string? owners = apiItem.Owners.Select(s => s.Name).FirstOrDefault();
+                if (owners == null)
+                {
+                    owners = string.Empty;
+                }
+                Dogs.Add(new ViewDog { ID = apiItem.ID, Name = apiItem.Name, Owner = owners, Picture = MyBlob.ImageFile(apiItem.Photo) });
+                
+            }
+        }
+    }
+
 
     public class ViewTrainer: BaseView
     {

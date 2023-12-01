@@ -23,6 +23,114 @@ namespace MauiApp1
             }
             _firstrun = false;
         }
+
+
+
+        public static async Task<List<APIData>> ContactsAsync()
+        {
+            if (_firstrun) { Init(); }
+            string url = _endpoint + "Dog/contact";
+
+            HttpResponseMessage? response;
+
+            List<APIData> api = new();
+            response = await _client.GetAsync(url);
+            if (response != null)
+            {
+                if (response.IsSuccessStatusCode)
+                {
+                    string? msg = await response.Content.ReadAsStringAsync();
+                    if (!string.IsNullOrWhiteSpace(msg))
+                    {
+                        List<APIData>? des = JsonSerializer.Deserialize<List<APIData>>(msg);
+                        if (des != null)
+                        {
+                            api = des;
+                        }
+                    }
+                }
+            }
+            return api;
+        }
+        public static async Task<List<APIData>> OwnersAsync()
+        {
+            if (_firstrun) { Init(); }
+            string url = _endpoint + "Dog/contact/owner";
+
+            HttpResponseMessage? response;
+
+            List<APIData> api = new();
+            response = await _client.GetAsync(url);
+            if (response != null)
+            {
+                if (response.IsSuccessStatusCode)
+                {
+                    string? msg = await response.Content.ReadAsStringAsync();
+                    if (!string.IsNullOrWhiteSpace(msg))
+                    {
+                        List<APIData>? des = JsonSerializer.Deserialize<List<APIData>>(msg);
+                        if (des != null)
+                        {
+                            api = des;
+                        }
+                    }
+                }
+            }
+            return api;
+        }
+        public static async Task<List<APIData>> TrainersAsync()
+        {
+            if (_firstrun) { Init(); }
+            string url = _endpoint + "Dog/contact/trainer";
+
+            HttpResponseMessage? response;
+
+            List<APIData> api = new();
+            response = await _client.GetAsync(url);
+            if (response != null)
+            {
+                if (response.IsSuccessStatusCode)
+                {
+                    string? msg = await response.Content.ReadAsStringAsync();
+                    if (!string.IsNullOrWhiteSpace(msg))
+                    {
+                        List<APIData>? des = JsonSerializer.Deserialize<List<APIData>>(msg);
+                        if (des != null)
+                        {
+                            api = des;
+                        }
+                    }
+                }
+            }
+            return api;
+        }
+        public static async Task<APIContact> ContactInfoAsync(int id)
+        {
+            if (_firstrun) { Init(); }
+            string url = _endpoint + "Dog/contact/" + id.ToString();
+
+            HttpResponseMessage? response;
+
+            APIContact api = new();
+            response = await _client.GetAsync(url);
+            if (response != null)
+            {
+                if (response.IsSuccessStatusCode)
+                {
+                    string? msg = await response.Content.ReadAsStringAsync();
+                    if (!string.IsNullOrWhiteSpace(msg))
+                    {
+                        APIContact? des = JsonSerializer.Deserialize<APIContact>(msg);
+                        if (des != null)
+                        {
+                            api = des;
+                        }
+                    }
+                }
+            }
+            return api;
+        }
+
         public static async Task<List<APIDog>> DogListAsync()
         {
             if (_firstrun) { Init(); }

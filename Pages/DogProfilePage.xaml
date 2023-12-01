@@ -14,7 +14,7 @@
     <VerticalStackLayout Padding="10">
         <HorizontalStackLayout>
             
-            <Frame Margin="5" Padding="5" HeightRequest="175" BackgroundColor="{StaticResource Gray200}">
+            <Frame Margin="5" Padding="5" HeightRequest="175" WidthRequest="175" BackgroundColor="{StaticResource Gray200}">
                 <VerticalStackLayout Padding="2" Spacing="0">
                     <Label Text="{Binding Dog.Name}" FontAttributes="Bold"   FontSize="Large" HorizontalOptions="Center"/>
                     <HorizontalStackLayout Spacing="4">
@@ -35,64 +35,61 @@
                     </HorizontalStackLayout>
                     <HorizontalStackLayout Spacing="4">
                         <Label Text="Trainer(s):"  Padding="0" FontAttributes="Bold"   FontSize="Small" HorizontalOptions="Center"/>
-                        <Label Text="John Smith" Padding="0" FontAttributes="Bold"   FontSize="Small" HorizontalOptions="Center"/>
+                        <Label Text="{Binding Dog.Owner}" Padding="0" FontAttributes="Bold"   FontSize="Small" HorizontalOptions="Center"/>
                     </HorizontalStackLayout>
                 </VerticalStackLayout>
             </Frame>
-            <Frame Margin="0"  Padding="0" HeightRequest="175" WidthRequest="150" BackgroundColor="Gray">
-                <Image Source="dog1.jpg" Aspect="AspectFill" />
+            <Frame Margin="0"  Padding="0" HeightRequest="175" WidthRequest="175" BackgroundColor="Gray">
+                <Image Source="{Binding }" Aspect="AspectFill" />
             </Frame>
         </HorizontalStackLayout>
         
             <Label Text="Behaviors: " Grid.Row="3" FontAttributes="Bold" Margin="4"  TextColor="White"/>
-            <Frame Margin="5" Grid.Row="4" Grid.ColumnSpan="2" HeightRequest="330" Padding="5" BackgroundColor="{StaticResource Gray200}">
-                <Frame.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
-                </Frame.GestureRecognizers>
-
-                <listview:SfListView x:Name="listView"  ItemsSource="{Binding BehaviorDetails}" ItemSize="80" IsScrollingEnabled="False" ScrollBarVisibility="Never" SelectionMode="None" SelectionGesture="Tap" SelectionBackground="Red" >
+        <Frame Margin="5" Grid.Row="4" Grid.ColumnSpan="2" HeightRequest="225" Padding="5" BackgroundColor="{StaticResource Gray200}">
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+            </Frame.GestureRecognizers>
+            <listview:SfListView x:Name="listView"  ItemsSource="{Binding BehaviorDetails}" ItemSize="80" IsScrollingEnabled="True" ScrollBarVisibility="Default" SelectionMode="None" SelectionGesture="Tap" SelectionBackground="Red" >
                     <listview:SfListView.ItemsLayout>
                         <listview:GridLayout SpanCount="1"/>
                     </listview:SfListView.ItemsLayout>
                     <listview:SfListView.ItemTemplate>
                         <DataTemplate>
-                            <Frame Padding="2" Margin="2" CornerRadius="15" BackgroundColor="White" >
-                                <Frame.GestureRecognizers>
-                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
-                                </Frame.GestureRecognizers>
-                                <Grid Padding="0" Margin="0">
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height=".4*"/>
-                                        <RowDefinition Height=".3*"/>
-                                        <RowDefinition Height=".3*"/>
+                        <Frame Padding="2" Margin="2" CornerRadius="15" BackgroundColor="{StaticResource Secondary}" >
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                            </Frame.GestureRecognizers>
+                            <Grid Padding="0" Margin="0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width=".25*"/>
+                                    <ColumnDefinition Width=".8*"/>
+                                </Grid.ColumnDefinitions>
+                                
+                                <Image Grid.Column="0"  Grid.RowSpan ="2" Grid.Row="0" Source="{Binding SkillLevel}" HeightRequest="40" />
+                                <Label  Grid.Column="1" Grid.Row="0" Text="{Binding SkillName}" Margin="0" TextColor="Black" FontSize="Large" VerticalOptions="Center" HorizontalOptions="Start"/>
+                                <HorizontalStackLayout Spacing="5" Padding="0" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" HorizontalOptions="Start">
+                                    <Label TextColor="Black" FontAttributes="Italic" Text="Last Trained: "/>
+                                    <Label   TextColor="Black" FontAttributes="Italic" Text="{Binding SkillDate}"/>
+                                </HorizontalStackLayout>
 
-                                    </Grid.RowDefinitions>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width=".25*"/>
-                                        <ColumnDefinition Width=".8*"/>
-                                    </Grid.ColumnDefinitions>
-                                    <Image Grid.Column="0"  Grid.RowSpan ="2" Grid.Row="0" Source="{Binding SkillLevel}" />
-                                    <Label Grid.Column="1" Grid.Row="0" Text="{Binding SkillName}" Margin="0" TextColor="Black" FontSize="Large" VerticalOptions="Center"/>
-                                    <HorizontalStackLayout Grid.Column="1" Grid.Row="1" Spacing="5">
-                                        <Label  Text="Trained By: " Margin="0" TextColor="Black" FontSize="Small" VerticalOptions="Center"/>
-                                        <Label  Text="{Binding SkillTrainer}" Margin="0" TextColor="Black" FontSize="Small" VerticalOptions="Center"/>
-                                    </HorizontalStackLayout>
-                                    <HorizontalStackLayout Spacing="5" Padding="0" Grid.Row="2" Grid.ColumnSpan="2" HorizontalOptions="Center">
-                                        <Label TextColor="Black" FontAttributes="Italic" Text="Last Trained: "/>
-                                        <Label   TextColor="Black" FontAttributes="Italic" Text="{Binding SkillDate}"/>
-                                    </HorizontalStackLayout>
-
-                                </Grid>
-                            </Frame>
-
-                        </DataTemplate>
+                            </Grid>
+                        </Frame>
+                    </DataTemplate>
                     </listview:SfListView.ItemTemplate>
                 </listview:SfListView>
+                
+
             </Frame>
+        <Button BackgroundColor="{StaticResource Tertiary}" Text="View All" TextColor="Black"/>
             
             <Label Text="Training History: " Grid.Row="5" FontAttributes="Bold" Margin="4" TextColor="White"/>
             <Frame Margin="5" Grid.Row="6" Grid.ColumnSpan="2" BackgroundColor="{StaticResource Gray200}" HeightRequest="225" Padding="5">
             </Frame>
+            <Button BackgroundColor="{StaticResource Tertiary}" Text="View All" TextColor="Black"/>
 
 
     </VerticalStackLayout>

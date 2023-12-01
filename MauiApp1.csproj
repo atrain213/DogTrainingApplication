@@ -65,6 +65,7 @@
 	  <None Remove="Resources\Images\general.png" />
 	  <None Remove="Resources\Images\home.png" />
 	  <None Remove="Resources\Images\hometran.png" />
+	  <None Remove="Resources\Images\plusicon.png" />
 	  <None Remove="Resources\Images\pug_test_image.jpg" />
 	  <None Remove="Resources\Images\refresh.png" />
 	  <None Remove="Resources\Images\skill_level_bar_0.svg" />
@@ -130,6 +131,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\DataExportPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\LoginPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\NewSession.xaml">

@@ -10,7 +10,7 @@
     <VerticalStackLayout Padding="5">
         
         <Frame Padding="5" Margin="5" BorderColor="Transparent" BackgroundColor="Transparent" >
-            <Label Text="Welcome, Anthony" HorizontalOptions="Start" FontSize="Large"  FontAttributes="Italic" TextColor="White"/>
+            <Label x:Name="Greeting" Text="Welcome" HorizontalOptions="Start" FontSize="Large"  FontAttributes="Italic" TextColor="White"/>
         </Frame>
 
         <CarouselView ItemsSource="{Binding Dogs}" IndicatorView="indicatorView">
@@ -22,7 +22,6 @@
                             <Frame.GestureRecognizers>
                                 <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
                             </Frame.GestureRecognizers>
-                            <!-- Add Carosel View so That if an owner has multiple dogs-->
                             <Image Source="{Binding Picture}" Aspect="Center" />
                         </Frame>
                     </VerticalStackLayout>
@@ -31,7 +30,7 @@
         </CarouselView>
         <IndicatorView x:Name="indicatorView"
                    IndicatorColor="LightGray"
-                   SelectedIndicatorColor="{StaticResource Primary}"
+                   SelectedIndicatorColor="{StaticResource Secondary}"
                    HorizontalOptions="Center" />
         
        

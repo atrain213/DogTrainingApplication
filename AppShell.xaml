@@ -6,16 +6,19 @@
     xmlns:local="clr-namespace:MauiApp1"
     xmlns:pages="clr-namespace:MauiApp1" >
 
+    <Shell.BindingContext>
+        <pages:ViewContact/>
+    </Shell.BindingContext>
 
-    <TabBar>
+    <TabBar x:Name="MyTabBar">
         <Tab
             Title = "Home" Icon="hometran.png" >
         <ShellContent ContentTemplate="{DataTemplate local:HomePage}" />
             
         </Tab>
 
-        <Tab
-            Title ="Dogs" Icon = "dogstran.png">
+        <Tab x:Name="DogsPageTab"
+            Title ="Dogs" Icon = "dogstran.png" IsVisible="{Binding IsTrainer}">
             <ShellContent ContentTemplate="{DataTemplate local:DogsPage}" />
 
         </Tab>

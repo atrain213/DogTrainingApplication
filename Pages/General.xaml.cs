@@ -27,4 +27,9 @@ public partial class General : ContentPage
     {
         await Shell.Current.GoToAsync($"/AddDogPage");
     }
+
+    private async void ChangeAccount_Clicked(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync($"/LoginPage");
+    }
 }

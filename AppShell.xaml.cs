@@ -18,6 +18,8 @@ public partial class AppShell : Shell
         Routing.RegisterRoute("HomePage", typeof(HomePage));
         Routing.RegisterRoute("TrainerBioPage", typeof(TrainerBioPage));
         Routing.RegisterRoute("DetailSessions", typeof(DetailSessions));
+        Routing.RegisterRoute("LoginPage", typeof(LoginPage));
+        BindingContext = MyAccount.Contact;
     }
 }
 
