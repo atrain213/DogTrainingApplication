@@ -26,7 +26,7 @@ HorizontalOptions="Start" />
 
         <HorizontalStackLayout>
                     
-                        <Image Source="defaultpfp.png" Margin="4" HeightRequest="120" BackgroundColor="Black"  />
+                        <Image Source="defaultpfp.png" Margin="4" HeightRequest="120" />
                       <VerticalStackLayout>
                 <HorizontalStackLayout>
                     <Label Text="John Smith " FontSize="20" HorizontalOptions="Start" Margin="3" VerticalOptions="Start" />
