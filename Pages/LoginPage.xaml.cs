@@ -1,4 +1,3 @@
-using Xamarin.KotlinX.Coroutines;
 
 namespace MauiApp1;
 

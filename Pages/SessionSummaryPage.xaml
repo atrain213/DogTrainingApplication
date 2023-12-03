@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.SessionSummaryPage"
+             xmlns:local="clr-namespace:MauiApp1"
+             xmlns:inputs="clr-namespace:Syncfusion.Maui.Inputs;assembly=Syncfusion.Maui.Inputs"
+             Shell.TabBarIsVisible="False"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="{StaticResource Primary}">
+
+    <ContentPage.BindingContext>
+        <local:ViewSession/>
+    </ContentPage.BindingContext>
+    <ScrollView>
+        
+
+        <VerticalStackLayout Spacing="15" Padding="15">
+            <Label Text="{Binding CurrentDog.Name}" TextColor="White" FontSize="35" FontAttributes="Bold"/>
+            <Label Text="Training Summary" TextColor="White" FontSize="Large" FontAttributes="Bold"/>
+            <Label Text="Tricks Trained" TextColor="White" FontSize="Medium"/>
+            <Frame BackgroundColor="{StaticResource Secondary}" HeightRequest="300">
+                <CollectionView ItemsSource="{Binding SelectedTricks}" Header="True" >
+                    <CollectionView.HeaderTemplate>
+                        <DataTemplate>
+                            <HorizontalStackLayout>
+                                <Label Text="Trick   " FontSize="15"  WidthRequest="55" FontAttributes="Bold"/>
+                                <Label Text="Repetitions     " FontSize="15"  WidthRequest="130" FontAttributes="Bold"/>
+                                <Label Text=" Accuracy  " FontSize="15" FontAttributes="Bold" />
+                                <Label Text=" Set Level" FontSize="15"  FontAttributes="Bold"/>
+                            </HorizontalStackLayout>
+                        </DataTemplate>
+                    </CollectionView.HeaderTemplate>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <VerticalStackLayout>
+                                <HorizontalStackLayout Spacing="15">
+                                    <Label Text="{Binding Name}" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="90"/>
+                                    <Label Text="{Binding Repetitions}" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="75"/>
+                                    <Label Text="{Binding Accuracy, StringFormat='{0:P1}'}" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="75"/>
+                                    <ImageButton Source="{Binding LevelIcon}" HeightRequest="40" WidthRequest="40" CornerRadius="10" Padding="4" HorizontalOptions="Center" BackgroundColor="{StaticResource Tertiary}" Clicked="SetLevel_Clicked"/>
+                                </HorizontalStackLayout>
+                                <Slider WidthRequest="200" Maximum="{Binding LevelScale}" Value="{Binding Level}" IsVisible="{Binding IsSliderVis}"/>
+                            </VerticalStackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Frame>
+            
+            <Label Text="Training Information" TextColor="White" FontSize="Medium"/>
+            <Frame BackgroundColor="{StaticResource Secondary}">
+                <VerticalStackLayout Spacing="8">
+                    <Label Text="Training Mood:"/>
+                    <Entry BackgroundColor="{StaticResource Tertiary}" Placeholder="Enter training mood (optional)" Text="{Binding Mood}" PlaceholderColor="DarkGray" />
+                </VerticalStackLayout>
+            </Frame>
+            <Frame BackgroundColor="{StaticResource Secondary}">
+                <VerticalStackLayout Spacing="8">
+                    <Label Text="Training Duration:"/>
+                    <HorizontalStackLayout Spacing="5">
+                        <Label Text="Hours: " HorizontalOptions="Center" VerticalOptions="Center" />
+                        <inputs:SfNumericEntry Value="{Binding Hours}" UpDownPlacementMode="Hidden" BackgroundColor="{StaticResource Tertiary}"/>
+                        <Label Text="Minutes: " HorizontalOptions="Center" VerticalOptions="Center"/>
+                        <inputs:SfNumericEntry Value="{Binding Minutes}" UpDownPlacementMode="Hidden" BackgroundColor="{StaticResource Tertiary}"/>
+                    </HorizontalStackLayout>
+                    
+                </VerticalStackLayout>
+            </Frame>
+            <Frame BackgroundColor="{StaticResource Secondary}">
+                <VerticalStackLayout Spacing="8">
+                    <Label Text="Weather:"/>
+                    <Entry BackgroundColor="{StaticResource Tertiary}" Placeholder="Enter any notes on the Weather (optional)" Text="{Binding Weather}" PlaceholderColor="DarkGray" />
+                </VerticalStackLayout>
+            </Frame>
+            <Frame BackgroundColor="{StaticResource Secondary}">
+                <VerticalStackLayout Spacing="8">
+                    <Label Text="Location: "/>
+                    <Entry BackgroundColor="{StaticResource Tertiary}" Placeholder="Enter training location (optional)"  Text="{Binding Location}" PlaceholderColor="DarkGray" />
+                </VerticalStackLayout>
+            </Frame>
+            <Frame BackgroundColor="{StaticResource Secondary}">
+                <VerticalStackLayout Spacing="8">
+                    <Label Text="Comments: "/>
+                    <Editor BackgroundColor="{StaticResource Tertiary}" Placeholder="Enter any other Comments (optional)" Text="{Binding Comments}" PlaceholderColor="DarkGray" />
+                </VerticalStackLayout>
+            </Frame>
+            <Button Text="Submit Report" BackgroundColor="{StaticResource Tertiary}" TextColor="Black" Clicked="Submit_Clicked" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

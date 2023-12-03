@@ -1,5 +1,4 @@
-﻿using Android.Hardware.Lights;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -7,7 +6,6 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
-using static Java.Interop.JniEnvironment;
 
 namespace MauiApp1
 {
@@ -54,6 +52,11 @@ namespace MauiApp1
                     NotifyPropertyChanged();
                 }
             }
+        }
+
+        public override string ToString()
+        {
+            return _name;
         }
     }
 
@@ -678,6 +681,35 @@ namespace MauiApp1
             }
         }
 
+        private int _level;
+        public int Level
+        {
+            get { return _level; }
+            set
+            {
+                if (_level != value)
+                {
+                    _level = value;
+                    NotifyPropertyChanged();
+                    SelectIcon();
+                }
+            }
+        }
+
+        private int _levelScale;
+        public int LevelScale
+        {
+            get { return _levelScale; }
+            set
+            {
+                if (_levelScale != value)
+                {
+                    _levelScale = value;
+                    NotifyPropertyChanged();
+                }
+            }
+        }
+
 
         private Uri _icon = MyBlob.NoPicture;
         public Uri Icon
@@ -693,8 +725,141 @@ namespace MauiApp1
             }
         }
 
+        private bool _selected;
+        public bool Selected
+        {
+            get { return _selected; }
+            set
+            {
+                if (_selected != value)
+                {
+                    _selected = value;
+                    NotifyPropertyChanged();
+                }
+            }
+        }
 
+        private int _success;
+        public int Success
+        {
+            get { return _success; }
+            set
+            {
+                if (_success != value)
+                {
+                    _success = value;
+                    NotifyPropertyChanged();
+                    NotifyPropertyChanged(nameof(Accuracy));
+                    NotifyPropertyChanged(nameof(Repetitions));
+                }
+            }
+        }
 
+        private int _failure;
+        public int Failure
+        {
+            get { return _failure; }
+            set
+            {
+                if (_failure != value)
+                {
+                    _failure = value;
+                    NotifyPropertyChanged();
+                    NotifyPropertyChanged(nameof(Accuracy));
+                    NotifyPropertyChanged(nameof(Repetitions));
+                }
+            }
+        }
+
+        private bool _isSliderVis;
+        public bool IsSliderVis
+        {
+            get { return _isSliderVis; }
+            set
+            {
+                if (_isSliderVis != value)
+                {
+                    _isSliderVis = value;
+                    NotifyPropertyChanged();
+                }
+            }
+        }
+
+        private string _levelIcon = "skill_level_bar_0.png";
+        public string LevelIcon
+        {
+            get { return _levelIcon; }
+            set
+            {
+                if (_levelIcon != value)
+                {
+                    _levelIcon = value;
+                    NotifyPropertyChanged();
+                }
+            }
+        }
+
+        public void SelectIcon()
+        {
+            double prof = (double)Level / (double)LevelScale;
+            if(prof == 0)
+            {
+                LevelIcon = "skill_level_bar_0.png";
+            }
+            else if(prof == 1)
+            {
+                LevelIcon = "skill_level_bar_5.png";
+            }
+            else if(prof < 0.26) 
+            {
+                LevelIcon = "skill_level_bar_1.png";
+            }
+            else if (prof < 0.51)
+            {
+                LevelIcon = "skill_level_bar_2.png";
+            }
+            else if (prof < 0.76)
+            {
+                LevelIcon = "skill_level_bar_3.png";
+            }
+            else 
+            {
+                LevelIcon = "skill_level_bar_4.png";
+            }
+  
+        }
+
+        public double Accuracy
+        {
+            get
+            {
+                if(_success+_failure == 0) 
+                {
+                    return 0;
+                }
+                return (double)_success/ ((double)Repetitions);
+            }
+        }
+
+        public int Repetitions
+        {
+            get
+            {
+                return _success + _failure;
+            }
+        }
+
+   
+
+        public void TrickGood()
+        {
+            Success++;
+        }
+
+        public void TrickBad()
+        {
+            Failure++;
+        }
     }
 
     public class ViewDogTricks:BaseView
@@ -738,10 +903,286 @@ namespace MauiApp1
                     Color = Color.FromArgb("#" + trick.Color),
                     Brush = new SolidColorBrush(Color.FromArgb("#"+trick.Color)),
                     Icon = MyBlob.ImageFile(trick.IconFileName),
-                    Proficiency = new Point(0,(1.01-trick.Proficiency))
-                });;
+                    Proficiency = new Point(0,(1.01-((double)trick.Level/(double)trick.Scale))),
+                    Level = trick.Level,
+                    LevelScale = trick.Scale
+                });
             }
         }
 
     }
+
+    public class ViewSession:ViewDogTricks
+    {
+        private ObservableCollection<ViewDog> _dogs = new();
+        public ObservableCollection<ViewDog> Dogs
+        {
+            get { return _dogs; }
+            set
+            {
+                if (_dogs != value)
+                {
+                    _dogs = value;
+                    NotifyPropertyChanged();
+                }
+            }
+        }
+
+        private ViewDog? _currentDog;
+        public ViewDog? CurrentDog
+        {
+            get { return _currentDog; }
+            set
+            {
+                if (_currentDog != value)
+                {
+                    _currentDog = value;
+                    NotifyPropertyChanged();
+                    Refresh();
+                }
+            }
+        }
+
+        private ViewTrick? _selectedTrick;
+        public ViewTrick? SelectedTrick
+        {
+            get { return _selectedTrick; }
+            set
+            {
+                if (_selectedTrick != value)
+                {
+                    _selectedTrick = value;
+                    NotifyPropertyChanged();
+                }
+            }
+        }
+
+        private ObservableCollection<ViewTrick> _selectedTricks = new();
+        public ObservableCollection<ViewTrick> SelectedTricks
+        {
+            get { return _selectedTricks; }
+            set
+            {
+                if (_selectedTricks != value)
+                {
+                    _selectedTricks = value;
+                    NotifyPropertyChanged();
+                }
+            }
+        }
+
+        private string _mood = string.Empty;
+        public string Mood
+        {
+            get { return _mood; }
+            set
+            {
+                if (_mood != value)
+                {
+                    _mood = value;
+                    NotifyPropertyChanged();
+                }
+            }
+        }
+
+        private DateTime _startTime;
+        public DateTime StartTime
+        {
+            get { return _startTime; }
+            set
+            {
+                if (_startTime != value)
+                {
+                    _startTime = value;
+                    NotifyPropertyChanged();
+                }
+            }
+        }
+
+        private DateTime _endTime;
+        public DateTime EndTime
+        {
+            get { return _endTime; }
+            set
+            {
+                if (_endTime != value)
+                {
+                    _endTime = value;
+                    NotifyPropertyChanged();
+                }
+            }
+        }
+
+
+        private int _hours;
+        public int Hours
+        {
+            get { return _hours; }
+            set
+            {
+                if (_hours != value)
+                {
+                    _hours = value;
+                    NotifyPropertyChanged();
+                }
+            }
+        }
+
+        private int _minutes;
+        public int Minutes
+        {
+            get { return _minutes; }
+            set
+            {
+                if (_minutes != value)
+                {
+                    _minutes = value;
+                    NotifyPropertyChanged();
+                }
+            }
+        }
+
+
+        private string _weather = string.Empty;
+        public string Weather
+        {
+            get { return _weather; }
+            set
+            {
+                if (_weather != value)
+                {
+                    _weather = value;
+                    NotifyPropertyChanged();
+                }
+            }
+        }
+        private string _location = string.Empty;
+        public string Location
+        {
+            get { return _location; }
+            set
+            {
+                if (_location != value)
+                {
+                    _location = value;
+                    NotifyPropertyChanged();
+                }
+            }
+        }
+
+        private string _comments = string.Empty;
+        public string Comments
+        {
+            get { return _comments; }
+            set
+            {
+                if (_comments != value)
+                {
+                    _comments = value;
+                    NotifyPropertyChanged();
+                }
+            }
+        }
+
+
+        public async void Refresh()
+        {
+            Tricks.Clear();
+            if (_currentDog != null)
+            {
+                await LoadByDogTricks(_currentDog.ID);
+            }
+            
+        }
+
+        public async Task LoadAPIbyTrainer(int id)
+        {
+            Dogs.Clear();
+            List<APIDogDetail> api = await WebConnect.DogbyTrainerAsync(id);
+            foreach (APIDogDetail apiItem in api)
+            {
+                Dogs.Add(new ViewDog { ID = apiItem.ID, Name = apiItem.Name });
+            }
+            if (Dogs.Count > 0)
+            {
+                CurrentDog = Dogs.FirstOrDefault();
+            }
+        }
+
+        public async Task LoadAPIbyOwner(int id)
+        {
+            Dogs.Clear();
+            List<APIDogDetail> api = await WebConnect.DogbyOwnerAsync(id);
+            foreach (APIDogDetail apiItem in api)
+            {
+                Dogs.Add(new ViewDog { ID = apiItem.ID, Name = apiItem.Name });
+            }
+            if (Dogs.Count > 0)
+            {
+                CurrentDog = Dogs.FirstOrDefault();
+            }
+        }
+
+        public async Task LoadAPIbyDog(int id)
+        {
+            Dogs.Clear();
+            APIData trainer = await WebConnect.TrainerbyDogAsync(id);
+            List<APIDogDetail> api = await WebConnect.DogbyTrainerAsync(trainer.ID);
+            foreach (APIDogDetail apiItem in api)
+            {
+                Dogs.Add(new ViewDog { ID = apiItem.ID, Name = apiItem.Name });
+            }
+            if (Dogs.Count > 0)
+            {
+                _currentDog = Dogs.FirstOrDefault(f => f.ID == id);
+            }
+        }
+
+        public void SelectAllTricks()
+        {
+            foreach (var item in Tricks)
+            {
+                item.Selected = true;
+            }
+        }
+        public void SelectNone()
+        {
+            foreach (var item in Tricks)
+            {
+                item.Selected = false;
+            }
+        }
+
+        public void SetTricks()
+        {
+            SelectedTricks = new ObservableCollection<ViewTrick>(Tricks.Where(w => w.Selected).ToList());
+
+        }
+
+        public async Task<int> PostDTO()
+        {
+            if (_currentDog != null)
+            {
+                DTOSession session = new DTOSession()
+                {
+                    ID = 0,
+                    Date = DateTime.Now,
+                    DogId = _currentDog.ID,
+                    TrainerID = MyAccount.Contact.TrainerID,
+                    Duration = Hours * 60 + Minutes,
+                    Comment = Comments,
+                    Location = Location,
+                    Mood = Mood,
+                    Tricks = SelectedTricks.Select(s => new DTOTrainingTrick { ProficiencyCount = s.Success, Proficiency = s.Level, Repetitions = s.Repetitions, TrickID = s.ID }).ToList(),
+                    Weather = Weather,
+                };
+                int retval = await WebConnect.SaveSession(session);
+                return retval;
+            }
+            return -1;
+       
+        }
+    }
+
+
 }

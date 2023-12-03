@@ -239,6 +239,60 @@ namespace MauiApp1
             return api;
         }
 
+        public static async Task<APIData> TrainerbyDogAsync(int id)
+        {
+            if (_firstrun) { Init(); }
+            string url = _endpoint + "Dog/mytrainer/" + id.ToString();
+
+            HttpResponseMessage? response;
+
+            APIData api = new();
+            response = await _client.GetAsync(url);
+            if (response != null)
+            {
+                if (response.IsSuccessStatusCode)
+                {
+                    string? msg = await response.Content.ReadAsStringAsync();
+                    if (!string.IsNullOrWhiteSpace(msg))
+                    {
+                        APIData? des = JsonSerializer.Deserialize<APIData>(msg);
+                        if (des != null)
+                        {
+                            api = des;
+                        }
+                    }
+                }
+            }
+            return api;
+        }
+
+        public static async Task<APIData> OwnerbyDogAsync(int id)
+        {
+            if (_firstrun) { Init(); }
+            string url = _endpoint + "Dog/myowner/" + id.ToString();
+
+            HttpResponseMessage? response;
+
+            APIData api = new();
+            response = await _client.GetAsync(url);
+            if (response != null)
+            {
+                if (response.IsSuccessStatusCode)
+                {
+                    string? msg = await response.Content.ReadAsStringAsync();
+                    if (!string.IsNullOrWhiteSpace(msg))
+                    {
+                        APIData? des = JsonSerializer.Deserialize<APIData>(msg);
+                        if (des != null)
+                        {
+                            api = des;
+                        }
+                    }
+                }
+            }
+            return api;
+        }
+
         public static async Task<int> LastDogforTrainerAsync(int id)
         {
             if (_firstrun) { Init(); }
@@ -404,6 +458,36 @@ namespace MauiApp1
         {
             if (_firstrun) { Init(); }
             string url = _endpoint + "Dog/picture";
+
+            HttpResponseMessage? response;
+
+            string body = dto.JsonText();
+            HttpContent? content = null;
+            if (body != null)
+            {
+                content = new StringContent(body, Encoding.UTF8, "application/json");
+            }
+
+            int retval = 0;
+            response = await _client.PostAsync(url, content);
+            if (response != null)
+            {
+                if (response.IsSuccessStatusCode)
+                {
+                    string? msg = await response.Content.ReadAsStringAsync();
+                    if (!string.IsNullOrWhiteSpace(msg))
+                    {
+                        retval = JsonSerializer.Deserialize<int>(msg);
+                    }
+                }
+            }
+            return retval;
+        }
+
+        public static async Task<int> SaveSession(DTOSession dto)
+        {
+            if (_firstrun) { Init(); }
+            string url = _endpoint + "Dog/session";
 
             HttpResponseMessage? response;
 

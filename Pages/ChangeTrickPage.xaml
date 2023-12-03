@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.ChangeTrickPage"
+             Shell.TabBarIsVisible="false"
+             BackgroundColor="{StaticResource Primary}">
+    <VerticalStackLayout Spacing="15" Padding="15" VerticalOptions="Start">
+        <Label Text="Select a behavior:" TextColor="White" FontSize="35"/>
+        <Frame BackgroundColor="{StaticResource Secondary}" MaximumHeightRequest="600" MinimumHeightRequest="250">
+            
+        </Frame>
+    </VerticalStackLayout>
+</ContentPage>

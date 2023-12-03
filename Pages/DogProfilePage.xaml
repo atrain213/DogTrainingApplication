@@ -19,8 +19,8 @@
                     <Label Text="{Binding Dog.Name}" FontAttributes="Bold"   FontSize="Large" HorizontalOptions="Center"/>
                     <HorizontalStackLayout Spacing="4">
                         <Label Text="Owner:"  Padding="0" FontAttributes="Bold"   FontSize="Small" HorizontalOptions="Center"/>
-                        <Label Text="{Binding Dog.Owner}" Padding="0" FontAttributes="Bold"   FontSize="Small" HorizontalOptions="Center"/>
                     </HorizontalStackLayout>
+                    <Label Text="{Binding Dog.Owner}" Padding="0" FontAttributes="Bold"   FontSize="Small" HorizontalOptions="Center"/>
                     <HorizontalStackLayout Spacing="4">
                         <Label Text="Breed:"  Padding="0" FontAttributes="Bold"   FontSize="Small" HorizontalOptions="Center"/>
                         <Label Text="{Binding Dog.Breed}" Padding="0" FontAttributes="Bold"   FontSize="Small" HorizontalOptions="Center"/>
@@ -35,8 +35,9 @@
                     </HorizontalStackLayout>
                     <HorizontalStackLayout Spacing="4">
                         <Label Text="Trainer(s):"  Padding="0" FontAttributes="Bold"   FontSize="Small" HorizontalOptions="Center"/>
-                        <Label Text="{Binding Dog.Owner}" Padding="0" FontAttributes="Bold"   FontSize="Small" HorizontalOptions="Center"/>
+                        
                     </HorizontalStackLayout>
+                    <Label Text="{Binding Dog.Owner}" Padding="0" FontAttributes="Bold"   FontSize="Small" HorizontalOptions="Center"/>
                 </VerticalStackLayout>
             </Frame>
             <Frame Margin="0"  Padding="0" HeightRequest="175" WidthRequest="175" BackgroundColor="Gray">

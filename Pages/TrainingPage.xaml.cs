@@ -6,20 +6,26 @@ public partial class TrainingPage : ContentPage
 	{
 		InitializeComponent();
 	}
+    protected override void OnAppearing()
+    {
+        PlanFrame.IsVisible = MyAccount.Contact.IsTrainer;
+        PlanLabel.IsVisible = MyAccount.Contact.IsTrainer;
+    }
     private async void StartSession_Clicked(object sender, EventArgs e)
 
     {
-
-        await Shell.Current.GoToAsync($"/StartSession");
+        if (MyAccount.Contact.IsTrainer)
+        {
+            await Shell.Current.GoToAsync($"/StartSessionPage");
+        }
+        else
+        {
+            await Shell.Current.GoToAsync($"/StartSessionPage");
+        }
+        
 
     }
-    private async void NewSession_Clicked(object sender, EventArgs e)
 
-    {
-
-        await Shell.Current.GoToAsync($"/NewSession");
-
-    }
     private async void PlanSession_Clicked(object sender, EventArgs e)
 
     {

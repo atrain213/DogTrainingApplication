@@ -68,7 +68,8 @@ namespace MauiApp1
         public string Category { get; set; } = string.Empty;
         public string IconFileName { get; set; } = "11111111-1111-1111-1111-111111111111.png";
         public string Color { get; set; } = "FFFFFFFF";
-        public double Proficiency { get; set; }
+        public int Level { get; set; }
+        public int Scale { get; set; }
     }
 
 
@@ -125,6 +126,39 @@ namespace MauiApp1
     public class DTOPicture : DTOData
     {
         public int type_ID { get; set; }
+
+        public override string JsonText()
+        {
+            return JsonSerializer.Serialize(this);
+        }
+    }
+
+    public class DTOTrainingTrick
+    {
+        public int TrickID { get; set; }
+        public int Repetitions {  get; set; }
+        public int ProficiencyCount { get; set; }
+        public string Comment { get; set; } = string.Empty;
+
+        public int Proficiency {  get; set; }
+
+    }
+
+
+
+    public class DTOSession : DTOData
+    {
+        public int DogId { get; set; }
+        public int TrainerID { get; set; }
+        public string Mood { get; set; } = string.Empty;
+        public int Duration { get; set; }   
+        public string Weather { get; set; } = string.Empty;
+        public string Location { get; set; } = string.Empty;
+        public string Comment { get; set; } = string.Empty;
+        public DateTime Date { get; set; } = DateTime.Now;
+        public List<DTOTrainingTrick> Tricks { get; set; } = new();
+
+
 
         public override string JsonText()
         {

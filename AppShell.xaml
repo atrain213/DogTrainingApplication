@@ -25,7 +25,7 @@
 
         <Tab
             Title = "Training" Icon = "behaviorstrans.png">
-            <ShellContent ContentTemplate="{DataTemplate local:BehaviorPage}" />
+            <ShellContent ContentTemplate="{DataTemplate local:TrainingPage}" />
 
         </Tab>
         <Tab

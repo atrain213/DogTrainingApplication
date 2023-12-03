@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.SessionPage"
+             Shell.NavBarIsVisible="false"
+             Shell.TabBarIsVisible="false"
+             xmlns:local="clr-namespace:MauiApp1"
+             BackgroundColor="{StaticResource Primary}">
+    
+    <ContentPage.BindingContext>
+        <local:ViewSession/>
+    </ContentPage.BindingContext>
+
+    <VerticalStackLayout Spacing="15" Padding="15">
+        <Label Text="{Binding CurrentDog.Name}" FontSize="30" />
+        <Picker   FontSize="65" Title="Behaviors" ItemsSource="{Binding SelectedTricks}" SelectedItem="{Binding SelectedTrick}" TextColor="White" VerticalOptions="Center" />
+        <Label HeightRequest="40"/>
+        <Grid RowSpacing="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="15*"/>
+                <ColumnDefinition Width="70"/>
+            </Grid.ColumnDefinitions>
+
+
+
+            <Button Grid.Row="0" Grid.Column="2" Text="End" BackgroundColor="#FF4444" TextColor="Black" Pressed="End_Pressed"/>
+
+            <HorizontalStackLayout Grid.Row="1" Spacing="4" >
+                <Label Text="✓" FontSize="Medium" TextColor="#86BC6F" VerticalOptions="End" HorizontalOptions="Start"/>
+                <Label Text="{Binding SelectedTrick.Success}" FontSize="Medium" TextColor="White" VerticalOptions="End"/>
+                <Label Text="✗" FontSize="Medium" TextColor="#FF6666" VerticalOptions="End"/>
+                <Label Text="{Binding SelectedTrick.Failure}" FontSize="Medium" TextColor="White" VerticalOptions="End"/>
+            </HorizontalStackLayout>
+
+            <Label Grid.Row="1" Grid.Column="1" Text="Accuracy  " FontSize="Medium" TextColor="White" VerticalOptions="End" HorizontalOptions="End"/>
+            <Label Grid.Row="1" Grid.Column="2" x:Name="AccuracyLabel"  Text="{Binding SelectedTrick.Accuracy,StringFormat='{0:P1}'}" FontSize="Medium" TextColor="White" VerticalOptions="End" HorizontalOptions="End"/>
+
+            <Frame Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" BackgroundColor="#86BC6F" HeightRequest="250" >
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Good_Tapped"/>
+                </Frame.GestureRecognizers>
+                <Label Text="Good" TextColor="Black" FontAttributes="Bold" FontSize="Large" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            </Frame>
+            <Frame Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" BackgroundColor="#FF6666" HeightRequest="250" >
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Bad_Tapped"/>
+                </Frame.GestureRecognizers>
+                <Label Text="Bad" TextColor="White" FontAttributes="Bold" FontSize="Large" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            </Frame>
+        </Grid>
+    </VerticalStackLayout>
+    
+</ContentPage>

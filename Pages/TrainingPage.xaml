@@ -1,40 +1,42 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:listview="clr-namespace:Syncfusion.Maui.ListView;assembly=Syncfusion.Maui.ListView"
              x:Class="MauiApp1.TrainingPage"
-             Title="TrainingPage">
-    
-    <VerticalStackLayout>
-        <Label 
-            Text="Dog Training Session Tracker" 
-            FontSize="20"
-            VerticalOptions="Center" 
-            HorizontalOptions="CenterAndExpand"/>
+             BackgroundColor="{StaticResource Primary}"
+             xmlns:local="clr-namespace:MauiApp1">
+    <ContentPage.BindingContext>
+        <local:BehaviorViewModel/>
+    </ContentPage.BindingContext>
 
-        <Button
-            Text="Start Session"
-            Clicked="StartSession_Clicked"
-            HorizontalOptions="Center" />
+    <VerticalStackLayout Spacing="10" Padding="10">
+        <Label Text="Dog Training Session" FontSize="Large" HorizontalOptions="Center" TextColor="White" FontAttributes="Bold"/>
+        <Label Text="Upcoming Training Sessions:" FontSize="Medium" TextColor="White"/>
+        <Frame BackgroundColor="{StaticResource Secondary}">
+            <Label Text="You have no upcoming Training Sessions" FontSize="Default" FontAttributes="Italic" HorizontalTextAlignment="Center"/>
+        </Frame>
+
         
-        <Button
-            Text="Create New Session"
-            Clicked="NewSession_Clicked"
-            HorizontalOptions="Center" />
+        <Label Text="New Training Session:" FontSize="Medium" TextColor="White"/>
+        <Frame HeightRequest="150" BackgroundColor="{StaticResource Tertiary}" >
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Tapped="StartSession_Clicked"/>
+            </Frame.GestureRecognizers>
+            <Label Text="Start Session" FontSize="Medium" HorizontalOptions="Center" VerticalTextAlignment="Center"/>
+        </Frame>
 
-        <Button
-            Text="Plan Session"
-            Clicked="PlanSession_Clicked"
-            HorizontalOptions="Center" />
-
-        <Button
-            Text="Tricks"
-            Clicked="Tricks_Clicked"
-            HorizontalOptions="Center" />
-
-        <Button
-            Text="Detail Sessions"
-            Clicked="DetailSessions_Clicked"
-            HorizontalOptions="Center" />
+        <Label x:Name="PlanLabel" Text="Plan New Session:" FontSize="Medium" TextColor="White"/>
+        <Frame x:Name="PlanFrame" HeightRequest="150" BackgroundColor="{StaticResource Tertiary}">
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Tapped="PlanSession_Clicked"/>
+            </Frame.GestureRecognizers>
+            <Label Text="Plan Session" FontSize="Medium" HorizontalOptions="Center" VerticalOptions="Center"/>
+        </Frame>
+        <HorizontalStackLayout HorizontalOptions="Center" Spacing="5" Padding="5">
+            <Button Text="Behaviors" Clicked="Tricks_Clicked" BackgroundColor="{StaticResource Tertiary}" TextColor="Black"/>
+            <Button Text="Training History" BackgroundColor="{StaticResource Tertiary}" TextColor="Black"/>
+            <Button Text="Trainers" BackgroundColor="{StaticResource Tertiary}"  TextColor="Black"/>
+        </HorizontalStackLayout>
 
     </VerticalStackLayout>
 </ContentPage>

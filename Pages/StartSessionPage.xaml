@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:listview="clr-namespace:Syncfusion.Maui.ListView;assembly=Syncfusion.Maui.ListView"
+             x:Class="MauiApp1.Pages.StartSessionPage"
+             xmlns:local="clr-namespace:MauiApp1"
+             Shell.NavBarIsVisible="True"
+             Shell.TabBarIsVisible="false"
+             BackgroundColor="{StaticResource Primary}">
+    
+    <ContentPage.BindingContext>
+        <local:ViewSession/>
+    </ContentPage.BindingContext>
+    
+    
+    <VerticalStackLayout Padding="10" Spacing="10">
+        <Label Text="Select a Dog" FontSize="Large" FontAttributes="Bold" TextColor="White"/>
+        <Frame BackgroundColor="{StaticResource Secondary}"> 
+            <Picker x:Name="DogPicker" ItemsSource="{Binding Dogs}" SelectedItem="{Binding CurrentDog}"/>
+        </Frame>
+       
+        <HorizontalStackLayout Spacing="10" HeightRequest="30">
+            <Label Text="Select Behaviors" FontSize="Large" FontAttributes="Bold" TextColor="White"/>
+            <Button Text="Select All" BackgroundColor="{StaticResource Secondary}" Padding="5" Pressed="SelectAll_Pressed"/>
+            <Button Text="Select None" BackgroundColor="{StaticResource Secondary}" Padding="5" Pressed="SelectNone_Pressed"/>
+        </HorizontalStackLayout>
+        <Frame BackgroundColor="{StaticResource Secondary}" HeightRequest="300">
+            <listview:SfListView x:Name="listView" ItemsSource="{Binding Tricks}" SelectionMode="Multiple" SelectionGesture="Tap" TapCommandParameter="TapGestureRecognizer_Tapped" SelectionBackground="{StaticResource Tertiary}" ItemSpacing="6" ItemSize="100">
+                <listview:SfListView.ItemsLayout>
+                    <listview:GridLayout SpanCount="4" />
+                </listview:SfListView.ItemsLayout>
+                <listview:SfListView.ItemTemplate>
+                    <DataTemplate>
+                        <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center">
+                            <Border Stroke="{Binding Color}" StrokeThickness="4" HeightRequest="75" WidthRequest="75" Padding="-5" HorizontalOptions="Center" VerticalOptions="Center">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="6,6,6,6"/>
+                                </Border.StrokeShape>
+                                <Image Source="{Binding Icon}" >
+                                    <Image.Background>
+                                        <LinearGradientBrush StartPoint="{Binding Proficiency}" EndPoint="0,0">
+                                            <GradientStop Color="{Binding Color}" Offset="0"/>
+                                            <GradientStop Color="White" Offset="1.0"/>
+                                        </LinearGradientBrush>
+                                    </Image.Background>
+                                </Image>
+                            </Border>
+                            <Label Text="{Binding Name}" TextColor="Black" HorizontalOptions="Center"/>
+                        </VerticalStackLayout>
+                    </DataTemplate>
+                </listview:SfListView.ItemTemplate>
+            </listview:SfListView>
+        </Frame>
+        <Frame BackgroundColor="{StaticResource Tertiary}">
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Tapped="StartTraining_Tapped"/>
+            </Frame.GestureRecognizers>
+            <Label Text="Start" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Large"/>
+        </Frame>
+
+    </VerticalStackLayout>
+</ContentPage>
