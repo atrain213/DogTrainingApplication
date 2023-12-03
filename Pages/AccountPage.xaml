@@ -2,35 +2,36 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiApp1.AccountPage"
-             Title="AccountPage">
+             Title="AccountPage" BackgroundColor="LightGoldenrodYellow">
     <VerticalStackLayout Padding="5">
         
         <HorizontalStackLayout>
 
-            <Button 
-Text="Edit Info"
-VerticalOptions="Center" Margin="2"
-HorizontalOptions="Center"  />
+           
 
         </HorizontalStackLayout>
         <Label 
 Text="Your Account" FontSize="26" FontAttributes="Bold" FontFamily="OpenSans-SemiBold.ttf" Margin="10"
 VerticalOptions="Center" 
 HorizontalOptions="Start" />
+        <Frame BorderColor="{StaticResource Tertiary}"
+         BackgroundColor="Transparent"
+ CornerRadius="5" 
+ Padding="22">
+            <StackLayout>
+              
         <HorizontalStackLayout>
           
-            <Image Source="defaultpfp.png" Aspect="AspectFit" HeightRequest="160"/>
+            <Image Source="defaultpfp.png" Aspect="AspectFit" HeightRequest="160" HorizontalOptions="Start"/>
             <VerticalStackLayout>
-        <Label 
-     Text="Username: JohnSmith123" Margin="5"
-     VerticalOptions="Center" 
-     HorizontalOptions="Start" />
-                <Label 
-     Text="Name: John Smith" Margin="5"
-     VerticalOptions="Center"
-     HorizontalOptions="Start" />
-      
-                <Label 
+              
+                    <HorizontalStackLayout>
+                        <Label Text="John Smith " FontSize="20" HorizontalOptions="Start" Margin="3" VerticalOptions="Start" />
+                        <Label Text=" johnsmith123" FontAttributes="Italic"  FontSize="15"  HorizontalOptions="Start" Margin="5" VerticalOptions="Center" />
+                    </HorizontalStackLayout>
+                   
+
+                            <Label 
      Text="Account Type: Trainer"  Margin="5"
      VerticalOptions="Center" 
      HorizontalOptions="Start" />
@@ -42,30 +43,30 @@ HorizontalOptions="Start" />
 Text="Created on: XX-XX-20XX" Margin="5"
 VerticalOptions="Center" 
 HorizontalOptions="Start" />
+                        <Button 
+Text="Edit Profile" Scale=".8"
+VerticalOptions="Center" Margin="2"
+HorizontalOptions="End"  />
+                    </VerticalStackLayout>
+            
+               
+              
                 
-            </VerticalStackLayout>
-        </HorizontalStackLayout>
-        <HorizontalStackLayout>
-        <Button Text="Edit Profile Picture"
-                  VerticalOptions="Center" Margin="5"
-                  HorizontalOptions="Start" FontSize="13"/>
+                </HorizontalStackLayout>
+
+            </StackLayout>
+        </Frame>
+    
+        
+   
           
 
-        </HorizontalStackLayout>
+      
         <Label 
      Text="Contact Information"
      VerticalOptions="Center"  Margin="10" FontSize="18" FontAttributes="Bold" FontFamily="OpenSans-SemiBold.ttf"
      HorizontalOptions="Start" />
-        <HorizontalStackLayout HorizontalOptions="Center">
-            <Label 
-Text="Bio: John Smith has been training dogs for 16 years. . ." FontSize="14"
-VerticalOptions="Center" 
-HorizontalOptions="StartAndExpand"/>
-            <Button 
-Text="Edit Bio >"  Scale=".75" Clicked="Bio_Clicked"
-VerticalOptions="Center" 
-HorizontalOptions="Center" />
-        </HorizontalStackLayout>
+      
         <Label 
             Text="Training Affiliation: Dog Training Inc."
             VerticalOptions="Center" Margin="10"
@@ -75,14 +76,23 @@ HorizontalOptions="Center" />
      VerticalOptions="Center" Margin="10"
      HorizontalOptions="Center" />
         <Label 
-     Text="Email: johnsmith123@dogtraininginc.com"
-     VerticalOptions="Center"  Margin="10"
-     HorizontalOptions="Center" />
-        <Label 
-     Text="Phone Number: 555-123-4567"
+     Text="Phone: 555-123-4567"
      VerticalOptions="Center" Margin="10"
      HorizontalOptions="Center" />
-       
+        <Label 
+Text="Email: johnsmith123@dogtraininginc.com"
+VerticalOptions="Center"  Margin="10"
+HorizontalOptions="Center" />
+        <HorizontalStackLayout HorizontalOptions="Center">
+            <Label 
+Text="John Smith has been training dogs for 16 years. . ." FontSize="13" FontAttributes="Italic"
+VerticalOptions="Center" 
+HorizontalOptions="StartAndExpand"/>
+            <Button 
+Text="Edit Info >"  Scale=".75" Clicked="Bio_Clicked"
+VerticalOptions="Center" 
+HorizontalOptions="Center" />
+        </HorizontalStackLayout>
         <Button 
 Text="Location: ENABLED" Margin="7" BackgroundColor="ForestGreen"
 VerticalOptions="Center" 
