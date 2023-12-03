@@ -2,55 +2,63 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
               xmlns:listview="clr-namespace:Syncfusion.Maui.ListView;assembly=Syncfusion.Maui.ListView"
-             x:Class="MauiApp1.General"
+             x:Class="MauiApp1.General" BackgroundColor="LightGoldenrodYellow"
               xmlns:local="clr-namespace:MauiApp1">
 
-<VerticalStackLayout Padding="3">
+<VerticalStackLayout Padding="4">
         <Label 
-Text="General"   Margin="5" FontAttributes="Bold" FontSize="25"
+Text="General"   Margin="8" FontAttributes="Bold" FontSize="25"
  VerticalOptions="Center" 
  HorizontalOptions="Start" />
-       <Label
-    Text="Your Account at a Glance"   Margin="5" FontAttributes="Bold" FontSize="20"
-    VerticalOptions="Center" 
-    HorizontalOptions="Start" />
+        <Frame BorderColor="{StaticResource Tertiary}"
+               BackgroundColor="Transparent"
+       CornerRadius="5" 
+       Padding="18">
+            <StackLayout>
+                <Label
+Text="Your Account at a Glance" FontAttributes="Bold" FontSize="20" 
+VerticalOptions="Center" 
+HorizontalOptions="Start" />
+                <BoxView
+             HeightRequest="2" Color="{StaticResource Tertiary}"
+             HorizontalOptions="Fill" Margin="1,10" />
+             
 
         <HorizontalStackLayout>
-            <Image Source="defaultpfp.png" Margin="10" HeightRequest="120"/>
-            <VerticalStackLayout>
+                    
+                        <Image Source="defaultpfp.png" Margin="4" HeightRequest="120" BackgroundColor="Black"  />
+                      <VerticalStackLayout>
                 <HorizontalStackLayout>
-                    <Label Text="John Smith " FontSize="16" HorizontalOptions="Start" Margin="3" VerticalOptions="Start" />
-                    <Label Text=" johnsmith123" FontAttributes="Italic"  FontSize="13"  HorizontalOptions="Start" Margin="5" VerticalOptions="Center" />
+                    <Label Text="John Smith " FontSize="20" HorizontalOptions="Start" Margin="3" VerticalOptions="Start" />
+                    <Label Text=" johnsmith123" FontAttributes="Italic"  FontSize="15"  HorizontalOptions="Start" Margin="5" VerticalOptions="Center" />
                 </HorizontalStackLayout>
-                <Label  Text="Trainer" FontAttributes="Bold" FontSize="14" HorizontalOptions="Start"  Margin="2" VerticalOptions="End" />
-                <Label Text="Total Dogs: #"  HorizontalOptions="Start" Margin="2" VerticalOptions="End" />
-            </VerticalStackLayout>
+                        <HorizontalStackLayout>
+                            <VerticalStackLayout>
+                                <Label  Text="Owner" FontAttributes="Bold" FontSize="16" HorizontalOptions="Start"  Margin="2" VerticalOptions="End" />
+              
+                <Label Text="Your Dogs: #"  HorizontalOptions="Start" Margin="2" VerticalOptions="End" />
+                                </VerticalStackLayout>
+                                    <Button 
+                    Text="Add a Dog" Scale=".8" Margin="5"
+                    VerticalOptions="Center" BackgroundColor="{StaticResource Secondary}" 
+                    HorizontalOptions="Start"   Clicked="AddNewDog_Clicked"/>
+                        </HorizontalStackLayout>
+                        <Label Text="Created on: XX-XX-20XX"  HorizontalOptions="Start" Margin="2" VerticalOptions="End" />
+
+
+                    </VerticalStackLayout>
         </HorizontalStackLayout>
-       
-        <HorizontalStackLayout HorizontalOptions="Start">
-
-
-          
-
-            <Button 
-     Text="Change Account" Scale=".9"
-     VerticalOptions="Center"
-     HorizontalOptions="Center" 
-                Clicked="ChangeAccount_Clicked"/>
-        <Button 
-     Text="Email"   Scale=".9"
-     VerticalOptions="Center" 
-     HorizontalOptions="Center" />
-        <Button 
-     Text="Phone"  Scale=".9" 
-     VerticalOptions="Center"
-     HorizontalOptions="Center" />
-
-            <Button 
-Text="View Full Profile >"
+                <Button 
+Text="View Full Profile >" Scale="1" BackgroundColor="{StaticResource Tertiary}" TextColor="Black"
 VerticalOptions="End"  Clicked="AccountPage_Clicked"
-HorizontalOptions="End"  />
-        </HorizontalStackLayout>
+HorizontalOptions="Start"  />
+            </StackLayout>
+        </Frame>
+
+
+
+      
+       
 
      
 
@@ -63,22 +71,22 @@ HorizontalOptions="End"  />
 
 
         <Button 
-        Text="Trainer Search >" Clicked="TrainerSearch_Clicked"
+        Text="Trainer Search >" Clicked="TrainerSearch_Clicked" BackgroundColor="{StaticResource Tertiary}" TextColor="Black"
         VerticalOptions="End"  Margin="2"
         HorizontalOptions="Fill" />
 
 
         <Button 
-        Text="Print/Export Data >"  Margin="2" Clicked="DataExportPage_Clicked"
+        Text="Print/Export Data >"  Margin="2" Clicked="DataExportPage_Clicked" BackgroundColor="{StaticResource Tertiary}" TextColor="Black"
         VerticalOptions="End" 
         HorizontalOptions="Fill" />
 
         <Button 
-Text="Location Services: ON" BackgroundColor="ForestGreen"
+Text="Location Services: ON" BackgroundColor="SpringGreen"  TextColor="Black"
 VerticalOptions="End"  Margin="2"
 HorizontalOptions="Fill" />
         <Button 
- Text="Sound Effects: ON" BackgroundColor="ForestGreen"
+ Text="Sound Effects: ON" BackgroundColor="SpringGreen" TextColor="Black"
  VerticalOptions="End"  Margin="2"
  HorizontalOptions="Fill" />
            
@@ -102,7 +110,7 @@ HorizontalOptions="Fill" />
             <Button
  Text="Log Out" BackgroundColor="Red"
  VerticalOptions="End"   Margin="2"
-  HorizontalOptions="Fill" />
+  HorizontalOptions="Fill"  Clicked="ChangeAccount_Clicked" />
 
             <Button
         Text="Deactivate/Delete Account" BackgroundColor="Red"

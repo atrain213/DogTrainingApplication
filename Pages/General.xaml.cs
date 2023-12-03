@@ -32,4 +32,8 @@ public partial class General : ContentPage
     {
         await Shell.Current.GoToAsync($"/LoginPage");
     }
+    private async void LastDogs_Clicked(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync($"/SessionSummaryPage");
+    }
 }
