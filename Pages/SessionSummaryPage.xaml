@@ -23,8 +23,8 @@
                     <CollectionView.HeaderTemplate>
                         <DataTemplate>
                             <HorizontalStackLayout>
-                                <Label Text="Trick   " FontSize="15"  WidthRequest="55" FontAttributes="Bold"/>
-                                <Label Text="Repetitions     " FontSize="15"  WidthRequest="130" FontAttributes="Bold"/>
+                                <Label Text="Trick   " FontSize="15"  WidthRequest="60" FontAttributes="Bold"/>
+                                <Label Text="Repetitions     " FontSize="15"  WidthRequest="90" FontAttributes="Bold"/>
                                 <Label Text=" Accuracy  " FontSize="15" FontAttributes="Bold" />
                                 <Label Text=" Set Level" FontSize="15"  FontAttributes="Bold"/>
                             </HorizontalStackLayout>
@@ -34,9 +34,9 @@
                         <DataTemplate>
                             <VerticalStackLayout>
                                 <HorizontalStackLayout Spacing="15">
-                                    <Label Text="{Binding Name}" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="90"/>
-                                    <Label Text="{Binding Repetitions}" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="75"/>
-                                    <Label Text="{Binding Accuracy, StringFormat='{0:P1}'}" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="75"/>
+                                    <Label Text="{Binding Name}" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="80"/>
+                                    <Label Text="{Binding Repetitions}" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="50"/>
+                                    <Label Text="{Binding Accuracy, StringFormat='{0:P1}'}" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="60"/>
                                     <ImageButton Source="{Binding LevelIcon}" HeightRequest="40" WidthRequest="40" CornerRadius="10" Padding="4" HorizontalOptions="Center" BackgroundColor="{StaticResource Tertiary}" Clicked="SetLevel_Clicked"/>
                                 </HorizontalStackLayout>
                                 <Slider WidthRequest="200" Maximum="{Binding LevelScale}" Value="{Binding Level}" IsVisible="{Binding IsSliderVis}"/>

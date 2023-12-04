@@ -8,8 +8,9 @@ public partial class AppShell : Shell
 	{
 		InitializeComponent();
         Routing.RegisterRoute("DogProfilePage", typeof(DogProfilePage));
-		Routing.RegisterRoute("BehaviorPage", typeof(SpecificBehaviorInfoPage));
-		Routing.RegisterRoute("AddDogPage", typeof(AddDogPage));
+		Routing.RegisterRoute("SpecificBehaviorPage", typeof(SpecificBehaviorInfoPage));
+        Routing.RegisterRoute("BehaviorPage", typeof(BehaviorPage));
+        Routing.RegisterRoute("AddDogPage", typeof(AddDogPage));
 		Routing.RegisterRoute("NewSession", typeof(NewSession));
         Routing.RegisterRoute("TrainerSearch", typeof(TrainerSearch));
         Routing.RegisterRoute("AccountPage", typeof(AccountPage));
@@ -25,6 +26,7 @@ public partial class AppShell : Shell
         Routing.RegisterRoute("ChangeTrickPage", typeof(ChangeTrickPage));
         Routing.RegisterRoute("ReportPage", typeof(ReportPage));
         Routing.RegisterRoute("SessionSummaryPage", typeof(SessionSummaryPage));
+        Routing.RegisterRoute("CalendarPage", typeof(CalenderPage));
         BindingContext = MyAccount.Contact;
     }
 }

@@ -35,7 +35,7 @@
         
        
 
-        <Frame Margin="5" BackgroundColor="{StaticResource Gray200}">
+        <Frame Margin="5" BackgroundColor="{StaticResource Secondary}">
             <VerticalStackLayout>
                 <Label Text="Trainings:" FontSize="Large" FontAttributes="Bold"  />
                 <Grid Padding="10">
@@ -69,7 +69,7 @@
             </VerticalStackLayout>
         </Frame>
 
-        <Frame Margin="5" BackgroundColor="{StaticResource Gray200}">
+        <Frame Margin="5" BackgroundColor="{StaticResource Secondary}">
             <VerticalStackLayout>
                 <Label Text="Updates:" FontSize="Large" FontAttributes="Bold"  />
                 <Grid Padding="10" RowSpacing="10">

@@ -31,22 +31,37 @@
                 </listview:SfListView.ItemsLayout>
                 <listview:SfListView.ItemTemplate>
                     <DataTemplate>
-                        <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center">
-                            <Border Stroke="{Binding Color}" StrokeThickness="4" HeightRequest="75" WidthRequest="75" Padding="-5" HorizontalOptions="Center" VerticalOptions="Center">
+                        <Grid VerticalOptions="Center" HorizontalOptions="Center">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="75"/>
+                                <RowDefinition Height="20"/>
+                            </Grid.RowDefinitions>
+                            <Border Stroke="{Binding Color}" StrokeThickness="10"  HeightRequest="90" WidthRequest="90">
                                 <Border.StrokeShape>
                                     <RoundRectangle CornerRadius="6,6,6,6"/>
                                 </Border.StrokeShape>
-                                <Image Source="{Binding Icon}" >
-                                    <Image.Background>
+                                <Rectangle>
+                                    <Rectangle.Background>
                                         <LinearGradientBrush StartPoint="{Binding Proficiency}" EndPoint="0,0">
                                             <GradientStop Color="{Binding Color}" Offset="0"/>
                                             <GradientStop Color="White" Offset="1.0"/>
                                         </LinearGradientBrush>
-                                    </Image.Background>
-                                </Image>
+                                    </Rectangle.Background>
+                                </Rectangle>
                             </Border>
-                            <Label Text="{Binding Name}" TextColor="Black" HorizontalOptions="Center"/>
-                        </VerticalStackLayout>
+                            
+                            <Image Source="{Binding Icon}" Scale=".75" HorizontalOptions="Center" VerticalOptions="Center"  />
+                            <!--<Border Stroke="{Binding Color}" StrokeThickness="4" HeightRequest="75" WidthRequest="75" Padding="-6" HorizontalOptions="Center" VerticalOptions="Center">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="6,6,6,6"/>
+                                </Border.StrokeShape>
+                                <Image Source="{Binding Icon}" Scale=".75" HorizontalOptions="Center" VerticalOptions="Center"  >
+
+                                </Image>
+                                <Rectangle/>
+                            </Border>-->
+                            <Label Grid.Row="1" Text="{Binding Name}" TextColor="Black" HorizontalOptions="Center"/>
+                        </Grid>
                     </DataTemplate>
                 </listview:SfListView.ItemTemplate>
             </listview:SfListView>

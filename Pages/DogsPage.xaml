@@ -43,14 +43,14 @@
 
         </HorizontalStackLayout>
         <Label Text="Recent: " Grid.Row="1" FontAttributes="Bold" Margin="4" FontSize="Medium" TextColor="White"/>
-        <Frame Margin="5" Grid.Row="2" Padding="0" HeightRequest="200" BackgroundColor="Gray" BindingContext="{Binding LastDog}">
+        <Frame Margin="5" Grid.Row="2" Padding="0" HeightRequest="200" BackgroundColor="{StaticResource Secondary}" BindingContext="{Binding LastDog}">
             <Frame.GestureRecognizers>
                 <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
             </Frame.GestureRecognizers>
             <VerticalStackLayout >
                 <Image Source="{Binding Picture}" Aspect="AspectFill" HeightRequest="160"/>
                 <HorizontalStackLayout Spacing="2">
-                    <Label Text="{Binding Name}" TextColor="{StaticResource Secondary}"  FontSize="Large" FontAttributes="Bold" Margin="4" />
+                    <Label Text="{Binding Name}" TextColor="{StaticResource Primary}"  FontSize="Large" FontAttributes="Bold" Margin="4" />
                     <Label Text="|" TextColor="{StaticResource Primary}" FontSize="Large" VerticalTextAlignment="Center" />
                     <Label Text="{Binding Owner}" TextColor="{StaticResource Tertiary}"  VerticalTextAlignment="Center" FontSize="Medium" />
                 </HorizontalStackLayout>
@@ -58,7 +58,7 @@
             </VerticalStackLayout>
         </Frame>
         <Label Text="All Dogs: " Grid.Row="3" FontAttributes="Bold" Margin="4" FontSize="Medium" TextColor="White"/>
-        <Frame Margin="5" Grid.Row="4" BackgroundColor="Gray" HeightRequest="400" Padding="5">
+        <Frame Margin="5" Grid.Row="4" BackgroundColor="{StaticResource Secondary}" HeightRequest="400" Padding="5">
             <listview:SfListView x:Name="listView"  ItemsSource="{Binding Dogs}" ItemSize="140" SelectionMode="None" SelectionGesture="Tap" TapCommandParameter="TapGestureRecognizer_Tapped" SelectionBackground="Red" >
                 <listview:SfListView.ItemsLayout>
                     <listview:GridLayout SpanCount="2"/>
@@ -80,7 +80,7 @@
                                 </Grid.ColumnDefinitions>
                                 <Image  Aspect="AspectFill" Grid.RowSpan="3" Grid.ColumnSpan="2" Source="{Binding Picture}" />
 
-                                <Label Text="{Binding Name}" Padding="0" Margin="4" FontAttributes="Bold" TextColor="{StaticResource Secondary}" FontSize="21" Grid.ColumnSpan="2" Grid.Row="0" />
+                                <Label Text="{Binding Name}" Padding="0" Margin="4" FontAttributes="Bold" TextColor="{StaticResource Primary}" FontSize="21" Grid.ColumnSpan="2" Grid.Row="0" />
                                 <Label Text="{Binding Owner}" Padding="2" TextColor="White" Grid.Row="2" Grid.Column="0" FontSize="15" HorizontalOptions="Center"/>
                             </Grid>
                         </Frame>

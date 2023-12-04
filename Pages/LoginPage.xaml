@@ -2,10 +2,15 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiApp1.LoginPage"
-             Title="Change Account">
+             Title="Change Account"
+             BackgroundColor="{StaticResource Primary}">
     
-    <VerticalStackLayout>
-        <Picker x:Name="Contacts"/>
-        <Button Text="Select" Clicked="Select_Clicked"/>
+    <VerticalStackLayout Padding="10" VerticalOptions="Center">
+        <Frame BackgroundColor="{StaticResource Secondary}">
+            <VerticalStackLayout >
+                <Picker x:Name="Contacts"/>
+                <Button Text="Select" Clicked="Select_Clicked" BackgroundColor="{StaticResource Tertiary}"/>
+            </VerticalStackLayout>
+        </Frame>
     </VerticalStackLayout>
 </ContentPage>

@@ -74,12 +74,7 @@ xmlns:inputs="clr-namespace:Syncfusion.Maui.Inputs;assembly=Syncfusion.Maui.Inpu
                 </VerticalStackLayout>
             </Frame>
 
-            <Frame   BackgroundColor="White">
-                <HorizontalStackLayout>
-                    <Label Text="Add Trainer:" VerticalOptions="Center"/>
-                    <inputs:SfComboBox WidthRequest="200" HeightRequest="50" IsEditable="True" Placeholder="Select Dog Breed" ItemsSource="{Binding Breeds}" SelectedItem="{Binding Breed}"></inputs:SfComboBox>
-                </HorizontalStackLayout>
-            </Frame>
+  
 
                 <Frame IsVisible="false" x:Name="PhotoFrame" Grid.Row="6" >
                 <VerticalStackLayout Margin="5">

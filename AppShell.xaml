@@ -28,40 +28,19 @@
             <ShellContent ContentTemplate="{DataTemplate local:TrainingPage}" />
 
         </Tab>
+
+        <Tab
+       Title="Calendar" Icon = "calendartran.png">
+            <ShellContent ContentTemplate="{DataTemplate local:CalenderPage}" />
+
+        </Tab>
+
         <Tab
            Title="General" Icon = "general.png">
             <ShellContent ContentTemplate="{DataTemplate local:General}" />
 
         </Tab>
-    <Tab
-       Title="Testing Page" Icon = "calendartran.png">
-            <ShellContent ContentTemplate="{DataTemplate local:AccountPage}" />
 
-        </Tab>
-
-    <Tab
-        Title = "Report Page">
-            <ShellContent ContentTemplate="{DataTemplate local:ReportPage}" />
-
-        </Tab>
-
-    <Tab
-        Title = "Specific Behavior Page">
-            <ShellContent ContentTemplate="{DataTemplate local:SpecificBehaviorInfoPage}" />
-
-        </Tab>
-
-
-     <Tab
-        Title = "Training Page">
-            <ShellContent ContentTemplate="{DataTemplate local:TrainingPage}" />
-
-        </Tab>
-    <Tab
-        Title = "Main Page">
-            <ShellContent ContentTemplate="{DataTemplate local:MainPage}" />
-
-        </Tab>
     </TabBar>
     <ShellContent Shell.TabBarIsVisible="False" Shell.TabBarForegroundColor="Red" ContentTemplate="{DataTemplate local:DogProfilePage}"/>
     <ShellContent ContentTemplate="{DataTemplate local:SpecificBehaviorInfoPage}"/>

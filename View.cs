@@ -5,7 +5,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
-using System.Threading.Tasks;
+
 
 namespace MauiApp1
 {
@@ -338,6 +338,7 @@ namespace MauiApp1
             {
                 Breeds.Add(apiItem);
             }
+            ID = dog.ID;
             Name = dog.Name;
             Sex = dog.Sex;
             Weight = (double)dog.Weight;
@@ -369,9 +370,161 @@ namespace MauiApp1
         }
     }
 
-    
+    public class ViewDogProfile:BaseView
+    {
+        private ViewDogDetail _dog= new();
+        public ViewDogDetail Dog
+        {
+            get { return _dog; }
+            set
+            {
+                if (_dog != value)
+                {
+                    _dog = value;
+                    NotifyPropertyChanged();
+                }
+            }
+        }
+        private ViewDogTricks _tricks = new();
+        public ViewDogTricks Tricks
+        {
+            get { return _tricks; }
+            set
+            {
+                if (_tricks != value)
+                {
+                    _tricks = value;
+                    NotifyPropertyChanged();
+                }
+            }
+        }
 
-    public class ViewDog:BaseView
+        private ViewHistory _history = new();
+        public ViewHistory History
+        {
+            get { return _history; }
+            set
+            {
+                if (_history != value)
+                {
+                    _history = value;
+                    NotifyPropertyChanged();
+                }
+            }
+        }
+
+
+        public async Task loadAPIAsync(int id)
+        {
+            await Dog.loadAPI(id);
+            await Tricks.LoadDetailsByDogAsync(id);
+            await History.LoadDetailsByDogAsync(id);
+        }
+
+    }
+
+    public class ViewTrainingHistory:BaseView
+    {
+        private DateTime _date;
+        public DateTime Date
+        {
+            get { return _date; }
+            set
+            {
+                if (_date != value)
+                {
+                    _date = value;
+                    NotifyPropertyChanged();
+                }
+            }
+        }
+
+        private string _trainer = string.Empty;
+        public string Trainer
+        {
+            get { return _trainer; }
+            set
+            {
+                if (_trainer != value)
+                {
+                    _trainer = value;
+                    NotifyPropertyChanged();
+                }
+            }
+        }
+
+        private int _duration;
+        public int Duration
+        {
+            get { return _duration; }
+            set
+            {
+                if (_duration != value)
+                {
+                    _duration = value;
+                    NotifyPropertyChanged();
+                    NotifyPropertyChanged(nameof(DurationTime));
+                }
+            }
+        }
+
+        public string DurationTime
+        {
+            get
+            {
+                string tm = string.Empty;
+                int hours = (int)Math.Floor((decimal)_duration / 60);
+                int minutes = _duration % 60;
+                if (hours > 0)
+                {
+                    tm = hours.ToString() + " Hr " + minutes.ToString("00") + " Min";
+                }
+                else
+                {
+                    tm = minutes.ToString() + " Min";
+                }
+                return tm;
+            }
+        }
+    }
+
+    public class ViewHistory : BaseView
+    {
+        private ObservableCollection<ViewTrainingHistory> _sessions = new();
+        public ObservableCollection<ViewTrainingHistory> Sessions
+        {
+            get { return _sessions; }
+            set
+            {
+                if (_sessions != value)
+                {
+                    _sessions = value;
+                    NotifyPropertyChanged();
+                }
+            }
+        }
+
+        public async Task LoadDetailsByDogAsync(int id)
+        {
+            List<ApiDogTraingHistory> api = await WebConnect.HistoryByDogAsync(id);
+            Sessions.Clear();
+            foreach (ApiDogTraingHistory session in api)
+            {
+                Sessions.Add(new ViewTrainingHistory
+                {
+                    ID = session.ID,
+                    Name = session.Name,
+                    Date = session.Date,
+                    Duration = session.Duration,
+                    Trainer = session.Trainer
+                });
+            }
+
+        }
+
+    }
+
+        public class ViewDog:BaseView
     {
         private Uri _picture = MyBlob.ImageFile(Guid.Empty,1);
         public Uri Picture
@@ -469,6 +622,20 @@ namespace MauiApp1
                 }
             }
         }
+
+        private Uri _picture = MyBlob.ImageFile(Guid.Empty, 1);
+        public Uri Picture
+        {
+            get { return _picture; }
+            set
+            {
+                if (_picture != value)
+                {
+                    _picture = value;
+                    NotifyPropertyChanged();
+                }
+            }
+        }
         public async Task loadAPI(int id)
         {
             APIDogDetail api = await WebConnect.DogAsync(id);
@@ -478,6 +645,7 @@ namespace MauiApp1
             Weight = api.Weight;
             Breed = api.Breed;
             Sex = api.Sex;
+            Picture = MyBlob.ImageFile(api.Photo);
             if(api.Owners.Count > 0)
             {
                 Owner = api.Owners[0].Name;
@@ -640,6 +808,29 @@ namespace MauiApp1
 
     public class ViewTrick:BaseView
     {
+        private DateTime _lastTrained;
+        public DateTime LastTrained
+        {
+            get { return _lastTrained; }
+            set
+            {
+                if (_lastTrained != value)
+                {
+                    _lastTrained = value;
+                    NotifyPropertyChanged();
+                    NotifyPropertyChanged(nameof(ShowLastTrained));
+                }
+            }
+        }
+
+        public bool ShowLastTrained
+        {
+            get
+            {
+                return _lastTrained != DateTime.MinValue;
+            }
+        }
+
         private Color _color = Colors.Magenta;
         public Color Color
         {
@@ -706,6 +897,7 @@ namespace MauiApp1
                 {
                     _levelScale = value;
                     NotifyPropertyChanged();
+                    SelectIcon();
                 }
             }
         }
@@ -801,6 +993,7 @@ namespace MauiApp1
 
         public void SelectIcon()
         {
+            int scale = LevelScale;
             double prof = (double)Level / (double)LevelScale;
             if(prof == 0)
             {
@@ -891,6 +1084,33 @@ namespace MauiApp1
 
         }
 
+
+        public async Task LoadDetailsByDogAsync(int id)
+        {
+            List<APITrickDetail> api = await WebConnect.TrickDetailsByDogAsync(id);
+            Tricks.Clear();
+            foreach (APITrickDetail trick in api)
+            {
+                Tricks.Add(new ViewTrick
+                {
+                    ID = trick.ID,
+                    Name = trick.Name,
+                    LastTrained = trick.Trainings.OrderByDescending (s => s.Date).Select(s => s.Date).FirstOrDefault(),
+                    Color = Color.FromArgb("#" + trick.Color),
+                    Brush = new SolidColorBrush(Color.FromArgb("#" + trick.Color)),
+                    Icon = MyBlob.ImageFile(trick.IconFileName),
+                    Proficiency = new Point(0, (1.01 - ((double)trick.Level / (double)trick.Scale))),
+                    Level = trick.Level,
+                    LevelScale = trick.Scale
+                });
+            }
+
+
+        }
+
+
+
+
         private void ProcessApi(List<APITrick> api)
         {
             Tricks.Clear();
@@ -899,7 +1119,7 @@ namespace MauiApp1
                 Tricks.Add(new ViewTrick
                 {
                     ID = trick.ID,
-                    Name = trick.Name,
+                    Name = trick.Name,                  
                     Color = Color.FromArgb("#" + trick.Color),
                     Brush = new SolidColorBrush(Color.FromArgb("#"+trick.Color)),
                     Icon = MyBlob.ImageFile(trick.IconFileName),

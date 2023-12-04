@@ -400,7 +400,7 @@ namespace MauiApp1
         public static async Task<List<APITrick>> TricksByDogAsync(int id)
         {
             if (_firstrun) { Init(); }
-            string url = _endpoint + "Dog/dogtrick/"+ id.ToString();
+            string url = _endpoint + "Dog/dogtrick/" + id.ToString();
 
             HttpResponseMessage? response;
 
@@ -414,6 +414,62 @@ namespace MauiApp1
                     if (!string.IsNullOrWhiteSpace(msg))
                     {
                         List<APITrick>? des = JsonSerializer.Deserialize<List<APITrick>>(msg);
+                        if (des != null)
+                        {
+                            api = des;
+                        }
+                    }
+                }
+            }
+            return api;        
+        }
+
+        public static async Task<List<APITrickDetail>> TrickDetailsByDogAsync(int id)
+        {
+            if (_firstrun) { Init(); }
+            string url = _endpoint + "Dog/dogtrick/details/" + id.ToString();
+
+            HttpResponseMessage? response;
+
+            List<APITrickDetail> api = new();
+            response = await _client.GetAsync(url);
+            if (response != null)
+            {
+                if (response.IsSuccessStatusCode)
+                {
+                    string? msg = await response.Content.ReadAsStringAsync();
+                    if (!string.IsNullOrWhiteSpace(msg))
+                    {
+                        List<APITrickDetail>? des = JsonSerializer.Deserialize<List<APITrickDetail>>(msg);
+                        if (des != null)
+                        {
+                            api = des;
+                        }
+                    }
+                }
+            }
+            return api;
+        }
+
+
+
+        public static async Task<List<ApiDogTraingHistory>> HistoryByDogAsync(int id)
+        {
+            if (_firstrun) { Init(); }
+            string url = _endpoint + "Dog/sessions/" + id.ToString();
+
+            HttpResponseMessage? response;
+                
+            List<ApiDogTraingHistory> api = new();
+            response = await _client.GetAsync(url);
+            if (response != null)
+            {
+                if (response.IsSuccessStatusCode)
+                {
+                    string? msg = await response.Content.ReadAsStringAsync();
+                    if (!string.IsNullOrWhiteSpace(msg))
+                    {
+                        List<ApiDogTraingHistory>? des = JsonSerializer.Deserialize<List<ApiDogTraingHistory>>(msg);
                         if (des != null)
                         {
                             api = des;

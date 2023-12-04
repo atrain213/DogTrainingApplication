@@ -4,7 +4,7 @@ namespace MauiApp1;
 [QueryProperty(nameof(ID), "ID")]
 public partial class DogProfilePage : ContentPage
 {
-    public BehaviorViewModel View { get; set; } = new();
+    public ViewDogProfile View { get; set; } = new();
 
     private int _id;
     public int ID
@@ -25,6 +25,10 @@ public partial class DogProfilePage : ContentPage
 		InitializeComponent();
         BindingContext = View;
 	}
+    protected override void OnAppearing()
+    {
+        Refresh();
+    }
     protected override void OnNavigatedTo(NavigatedToEventArgs args)
     {
         base.OnNavigatedTo(args);
@@ -33,7 +37,7 @@ public partial class DogProfilePage : ContentPage
 
     private async void TapGestureRecognizer_Tapped(object sender, TappedEventArgs e)
     {
-        await Shell.Current.GoToAsync($"/BehaviorPage");
+        await Shell.Current.GoToAsync($"/SpecificBehaviorPage");
     }
 
     private async void ImageCell_Tapped(object sender, EventArgs e)
@@ -43,6 +47,21 @@ public partial class DogProfilePage : ContentPage
 
     private async void Refresh()
     {
-        await View.Refresh(ID);
+        await View.loadAPIAsync(ID);
+    }
+
+    private async void ViewAllBehaviors_Clicked(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync($"/BehaviorPage");
+    }
+
+    private async void StartTraining_Clicked(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync($"/StartSessionPage");
+    }
+
+    private async void Edit_Button_Clicked(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync($"/AddDogPage?ID={View.Dog.ID.ToString()}");
     }
 }

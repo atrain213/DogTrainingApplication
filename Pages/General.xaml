@@ -2,16 +2,17 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
               xmlns:listview="clr-namespace:Syncfusion.Maui.ListView;assembly=Syncfusion.Maui.ListView"
-             x:Class="MauiApp1.General" BackgroundColor="LightGoldenrodYellow"
+             x:Class="MauiApp1.General" BackgroundColor="{StaticResource Primary}"
               xmlns:local="clr-namespace:MauiApp1">
-
+    <ScrollView>
 <VerticalStackLayout Padding="4">
         <Label 
 Text="General"   Margin="8" FontAttributes="Bold" FontSize="25"
  VerticalOptions="Center" 
- HorizontalOptions="Start" />
-        <Frame BorderColor="{StaticResource Tertiary}"
-               BackgroundColor="Transparent"
+ HorizontalOptions="Start" 
+            TextColor="White"/>
+        <Frame 
+               BackgroundColor="{StaticResource Secondary}"
        CornerRadius="5" 
        Padding="18">
             <StackLayout>
@@ -40,8 +41,8 @@ HorizontalOptions="Start" />
                                 </VerticalStackLayout>
                                     <Button 
                     Text="Add a Dog" Scale=".8" Margin="5"
-                    VerticalOptions="Center" BackgroundColor="{StaticResource Secondary}" 
-                    HorizontalOptions="Start"   Clicked="AddNewDog_Clicked"/>
+                    VerticalOptions="Center" BackgroundColor="{StaticResource Tertiary}" 
+                    HorizontalOptions="Start"   Clicked="AddNewDog_Clicked" TextColor="Black"/>
                         </HorizontalStackLayout>
                         <Label Text="Created on: XX-XX-20XX"  HorizontalOptions="Start" Margin="2" VerticalOptions="End" />
 
@@ -57,67 +58,74 @@ HorizontalOptions="Start"  />
 
 
 
-      
+
+
+
+
+
+            <HorizontalStackLayout>
+                <Label 
+                     Text="Settings" FontSize="24" Margin="16" FontAttributes="Bold"
+                     VerticalOptions="Center" 
+                     HorizontalOptions="Start" 
+                     TextColor="White"/>
+                <Button x:Name="SettingsButton" Text="Show Settings" HeightRequest="40" Clicked="ShowSettings_Clicked" BackgroundColor="{StaticResource Tertiary}" TextColor="Black"/>
+            </HorizontalStackLayout>      
+            
+
+
+            <Frame x:Name="SettingsFrame" Padding="2" BackgroundColor="{StaticResource Secondary}" IsVisible="False">
+                <VerticalStackLayout>
+                    <Button 
+                        Text="Trainer Search >" Clicked="TrainerSearch_Clicked" BackgroundColor="{StaticResource Tertiary}" TextColor="Black"
+                        VerticalOptions="End"  Margin="2"
+                        HorizontalOptions="Fill" />
+                    <Button 
+                        Text="Print/Export Data >"  Margin="2" Clicked="DataExportPage_Clicked" BackgroundColor="{StaticResource Tertiary}" TextColor="Black"
+                        VerticalOptions="End" 
+                        HorizontalOptions="Fill" />         
+                    <Button 
+                        Text="Location Services: ON" BackgroundColor="SpringGreen"  TextColor="Black"
+                        VerticalOptions="End"  Margin="2"
+                        HorizontalOptions="Fill" />
+                    <Button 
+                        Text="Sound Effects: ON" BackgroundColor="SpringGreen" TextColor="Black"
+                        VerticalOptions="End"  Margin="2"
+                        HorizontalOptions="Fill" />
+                    <Button 
+                        Text="Notifications"
+                        VerticalOptions="End"  Margin="2"
+                        HorizontalOptions="Fill" />
+                    <Button 
+                        Text="Privacy"
+                        VerticalOptions="End"   Margin="2"
+                        HorizontalOptions="Fill" />
+                    <Button 
+                         Text="Export Connections"
+                         VerticalOptions="End"  Margin="2"
+                         HorizontalOptions="Fill" />
+                    <Button 
+                         Text="Support"
+                         VerticalOptions="End"  Margin="2"
+                         HorizontalOptions="Fill" />
+                    <Button
+                         Text="Deactivate/Delete Account" BackgroundColor="Red"
+                         VerticalOptions="End"   Margin="2"
+                         HorizontalOptions="Fill" />
+                </VerticalStackLayout>
+            </Frame>
+        
        
-
-     
-
-      
-            <Label 
-        Text="Settings" FontSize="24" Margin="16" FontAttributes="Bold"
-        VerticalOptions="Center" 
-        HorizontalOptions="Start" />
-       
-
-
-        <Button 
-        Text="Trainer Search >" Clicked="TrainerSearch_Clicked" BackgroundColor="{StaticResource Tertiary}" TextColor="Black"
-        VerticalOptions="End"  Margin="2"
-        HorizontalOptions="Fill" />
-
-
-        <Button 
-        Text="Print/Export Data >"  Margin="2" Clicked="DataExportPage_Clicked" BackgroundColor="{StaticResource Tertiary}" TextColor="Black"
-        VerticalOptions="End" 
-        HorizontalOptions="Fill" />
-
-        <Button 
-Text="Location Services: ON" BackgroundColor="SpringGreen"  TextColor="Black"
-VerticalOptions="End"  Margin="2"
-HorizontalOptions="Fill" />
-        <Button 
- Text="Sound Effects: ON" BackgroundColor="SpringGreen" TextColor="Black"
- VerticalOptions="End"  Margin="2"
- HorizontalOptions="Fill" />
-           
-            <Button 
-        Text="Notifications"
-        VerticalOptions="End"  Margin="2"
-        HorizontalOptions="Fill" />
-            <Button 
-       Text="Privacy"
-       VerticalOptions="End"   Margin="2"
-       HorizontalOptions="Fill" />
-            <Button 
- Text="Export Connections"
- VerticalOptions="End"  Margin="2"
- HorizontalOptions="Fill" />
-            <Button 
- Text="Support"
- VerticalOptions="End"  Margin="2"
- HorizontalOptions="Fill" />
 
             <Button
  Text="Log Out" BackgroundColor="Red"
  VerticalOptions="End"   Margin="2"
   HorizontalOptions="Fill"  Clicked="ChangeAccount_Clicked" />
 
-            <Button
-        Text="Deactivate/Delete Account" BackgroundColor="Red"
-        VerticalOptions="End"   Margin="2"
-         HorizontalOptions="Fill" />
+
 
 
     </VerticalStackLayout>
+    </ScrollView>
     
 </ContentPage>

@@ -20,4 +20,9 @@ public partial class BehaviorPage : ContentPage
         await _trick.LoadByDogTricks(1);
         int x = _trick.Tricks.Count;
     }
+
+    private async void NewTraining_Tapped(object sender, TappedEventArgs e)
+    {
+        await Shell.Current.GoToAsync($"/StartSessionPage");
+    }
 }

@@ -60,11 +60,13 @@
 	  <None Remove="Resources\Images\calendaricon.png" />
 	  <None Remove="Resources\Images\calendartran.png" />
 	  <None Remove="Resources\Images\cocoa_test_image.JPG" />
+	  <None Remove="Resources\Images\distraction_icon.png" />
 	  <None Remove="Resources\Images\dogs.png" />
 	  <None Remove="Resources\Images\dogstran.png" />
 	  <None Remove="Resources\Images\general.png" />
 	  <None Remove="Resources\Images\home.png" />
 	  <None Remove="Resources\Images\hometran.png" />
+	  <None Remove="Resources\Images\location_icon.png" />
 	  <None Remove="Resources\Images\plusicon.png" />
 	  <None Remove="Resources\Images\pug_test_image.jpg" />
 	  <None Remove="Resources\Images\refresh.png" />

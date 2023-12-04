@@ -16,6 +16,6 @@ public partial class App : Application
 	}
 	public async void Setup()
 	{
-		await MyAccount.LoadContantAsync(1);
+		await MyAccount.LoadContantAsync(3);
 	}
 }

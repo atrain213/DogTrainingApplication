@@ -1,12 +1,28 @@
 namespace MauiApp1;
 
+[QueryProperty(nameof(ID), "ID")]
 public partial class AddDogPage : ContentPage
 {
+
     public ViewDogEdits View { get; set; } = new();
     private Stream _source = null;
     private Stream _savesource = null;
     private string _type = string.Empty;
 
+    private int _id;
+    public int ID
+    {
+        get { return _id; }
+        set
+        {
+            if (_id != value)
+            {
+                _id = value;
+                OnPropertyChanged();
+                Refresh();
+            }
+        }
+    }
     public AddDogPage()
     {
         InitializeComponent();
@@ -16,7 +32,8 @@ public partial class AddDogPage : ContentPage
 
     public async void Refresh()
     {
-        await View.loadAPI(0);
+        await Task.Delay(100);
+        await View.loadAPI(_id);
     }
 
 
@@ -32,35 +49,42 @@ public partial class AddDogPage : ContentPage
 
     private async void Submit_Button_Clicked(object sender, EventArgs e)
     {
-        int photoID = 1;
-        if(!string.IsNullOrEmpty(_type))
+        Button? button = sender as Button;
+        if (button != null)
         {
-            int newphotoid = View.PhotoID == 1 ?  0 : View.PhotoID;
-            int typeid = _type.Contains("png") ? 1 : 2;
-            DTOPicture dto = new() { ID = newphotoid, Name = View.Name + "'s Picture", type_ID = typeid };
-            photoID = await WebConnect.SavePicture(dto);
-            if (photoID < 1)
-            { 
-                photoID = 1;
+            button.IsEnabled = false;
+            int photoID = 1;
+            if (!string.IsNullOrEmpty(_type))
+            {
+                int newphotoid = View.PhotoID == 1 ? 0 : View.PhotoID;
+                int typeid = _type.Contains("png") ? 1 : 2;
+                DTOPicture dto = new() { ID = newphotoid, Name = View.Name + "'s Picture", type_ID = typeid };
+                photoID = await WebConnect.SavePicture(dto);
+                if (photoID < 1)
+                {
+                    photoID = 1;
+                }
+                else
+                {
+                    APIPicture pic = await WebConnect.GetPicture(photoID);
+                    if (pic.ID > 0)
+                    {
+                        MyBlob.UploadImage(_savesource, pic.FileName());
+                    }
+                }
+            }
+
+
+            View.PhotoID = photoID;
+            if (await View.saveData())
+            {
+                await Shell.Current.GoToAsync("..");
+                button.IsEnabled = true;
             }
             else
             {
-                APIPicture pic = await WebConnect.GetPicture(photoID);
-                if (pic.ID > 0)
-                {
-                    MyBlob.UploadImage(_savesource, pic.FileName());
-                }
+                //alert
             }
-        }
-
-        View.PhotoID = photoID;
-        if (await View.saveData())
-        {
-            await Shell.Current.GoToAsync("..");
-        }
-        else
-        {
-            //alert
         }
     }
 
@@ -81,11 +105,13 @@ public partial class AddDogPage : ContentPage
 
     private async void Upload_Button_Clicked(object sender, EventArgs e)
     {
-        FileResult photo = await MediaPicker.Default.PickPhotoAsync();
-        if (photo != null)
-        {
-            await SetImageAsync(photo);
-        }
+       
+
+            FileResult photo = await MediaPicker.Default.PickPhotoAsync();
+            if (photo != null)
+            {
+                await SetImageAsync(photo);
+            }
 
     }
 

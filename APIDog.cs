@@ -75,7 +75,7 @@ namespace MauiApp1
 
 
 
-    public class APITraining : APIData
+    public class APITrickTraining : APIData
     {
         public DateTime Date { get; set; }
         public int Repetitions { get; set; }
@@ -86,13 +86,23 @@ namespace MauiApp1
 
     public class APITrickDetail : APITrick
     {
-        public List<APITraining> Trainings { get; set; } = new();
+        public List<APITrickTraining> Trainings { get; set; } = new();
         public string VerbalCue { get; set; } = string.Empty;
         public string VisualCue { get; set; } = string.Empty;
         public string VerbalRelease { get; set; } = string.Empty;
         public string VisualRelease { get; set; } = string.Empty;
         public string Comment { get; set; } = string.Empty;
     }
+
+
+    public class ApiDogTraingHistory : APIData
+    {
+        public DateTime Date { get; set; }
+        public int Duration { get; set; }
+        public string Trainer { get; set; } = string.Empty;
+    }
+
+
 
     public class DTOData : APIData
     {
@@ -136,11 +146,11 @@ namespace MauiApp1
     public class DTOTrainingTrick
     {
         public int TrickID { get; set; }
-        public int Repetitions {  get; set; }
+        public int Repetitions { get; set; }
         public int ProficiencyCount { get; set; }
         public string Comment { get; set; } = string.Empty;
 
-        public int Proficiency {  get; set; }
+        public int Proficiency { get; set; }
 
     }
 
@@ -151,7 +161,7 @@ namespace MauiApp1
         public int DogId { get; set; }
         public int TrainerID { get; set; }
         public string Mood { get; set; } = string.Empty;
-        public int Duration { get; set; }   
+        public int Duration { get; set; }
         public string Weather { get; set; } = string.Empty;
         public string Location { get; set; } = string.Empty;
         public string Comment { get; set; } = string.Empty;

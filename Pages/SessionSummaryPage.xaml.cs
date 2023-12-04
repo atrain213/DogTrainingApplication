@@ -11,12 +11,19 @@ public partial class SessionSummaryPage : ContentPage
 
     private async void Submit_Clicked(object sender, EventArgs e)
     {
-        int retval = await _session.PostDTO();
-        if (retval > 0) 
+        Button button  = (Button)sender;
+        if (button != null)
         {
-            await Shell.Current.GoToAsync($"../../../");
+            button.IsEnabled = false;
+            int retval = await _session.PostDTO();
+            if (retval > 0)
+            {
+                await Shell.Current.GoToAsync($"../../../");
+                
+            }
+            button.IsEnabled = true;
+            //Else Error
         }
-        //Else Error
         
     }
 

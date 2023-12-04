@@ -3,8 +3,10 @@
 xmlns:listview="clr-namespace:Syncfusion.Maui.ListView;assembly=Syncfusion.Maui.ListView"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiApp1.BehaviorPage"
-             Title="Cloud's Behaviors"
-             xmlns:local="clr-namespace:MauiApp1">
+             Title="{Binding Name}"
+             xmlns:local="clr-namespace:MauiApp1"
+             BackgroundColor="{StaticResource Primary}"
+             Shell.TabBarIsVisible="False">
 
     <ContentPage.BindingContext>
         <local:ViewDogTricks/>
@@ -21,7 +23,7 @@ xmlns:listview="clr-namespace:Syncfusion.Maui.ListView;assembly=Syncfusion.Maui.
             <ColumnDefinition Width=".5*"/>
         </Grid.ColumnDefinitions>
 
-        <Frame   Grid.Row="0"  Grid.Column="0" Grid.ColumnSpan="3">
+        <Frame   Grid.Row="0"  Grid.Column="0" Grid.ColumnSpan="3" BackgroundColor="{StaticResource Secondary}">
             <listview:SfListView x:Name="listView" ItemsSource="{Binding Tricks}" SelectionMode="None" SelectionGesture="Tap" TapCommandParameter="TapGestureRecognizer_Tapped" SelectionBackground="Red" ItemSpacing="6" ItemSize="100">
                 <listview:SfListView.ItemsLayout>
                     <listview:GridLayout SpanCount="4" />
@@ -48,20 +50,23 @@ xmlns:listview="clr-namespace:Syncfusion.Maui.ListView;assembly=Syncfusion.Maui.
                 </listview:SfListView.ItemTemplate>
             </listview:SfListView>
         </Frame>
-        <Frame  Grid.Row="1"  Grid.Column="0" HorizontalOptions="Center">
-            <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
-                <Image Source="cake.png"/>
-                <Label Text="Training Locations" LineBreakMode="WordWrap" WidthRequest="90" HorizontalTextAlignment="Center"/>
+        <Frame  Grid.Row="1"  Grid.Column="0" HorizontalOptions="Center" BackgroundColor="{StaticResource Tertiary}">
+            <HorizontalStackLayout Spacing="-15"  HorizontalOptions="Center">
+                <Image Source="location_icon.png" Scale=".85"/>
+                <Label Text="Training Locations" LineBreakMode="WordWrap" WidthRequest="90" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
             </HorizontalStackLayout>
         </Frame>
-        <Frame  Grid.Row="1"  Grid.Column="1">
-            <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
-                <Image Source="cake.png"/>
-                <Label Text="Usual Distractions" LineBreakMode="WordWrap" WidthRequest="90" HorizontalTextAlignment="Center"/>
+        <Frame  Grid.Row="1"  Grid.Column="1" BackgroundColor="{StaticResource Tertiary}" Padding="5">
+            <HorizontalStackLayout Spacing="-25" HorizontalOptions="Center" VerticalOptions="Center">
+                <Image Source="distraction_icon.png" Scale=".5"/>
+                <Label Text="Usual Distractions" LineBreakMode="WordWrap" WidthRequest="90" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
             </HorizontalStackLayout>
         </Frame>
-        <Frame  Grid.Row="2"  Grid.Column="0" Grid.ColumnSpan="2">
-            <Label Text="New Training" HorizontalTextAlignment="Center" FontSize="Large" LineBreakMode="NoWrap" VerticalTextAlignment="Center"/>
+        <Frame  Grid.Row="2"  Grid.Column="0" Grid.ColumnSpan="2" BackgroundColor="{StaticResource Tertiary}">
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Tapped="NewTraining_Tapped"/>
+            </Frame.GestureRecognizers>
+            <Label Text="New Training" HorizontalTextAlignment="Center" FontSize="Large" LineBreakMode="NoWrap" VerticalTextAlignment="Center" />
         </Frame>
 
         
